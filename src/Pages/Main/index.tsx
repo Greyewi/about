@@ -6,13 +6,14 @@ function Main() {
     return (
         <Wrapper>
             <Legend>
-                Hi there! I'm Suntsev Sergey from Russia's Ural.
+                Hi there! I'm Suntsev Sergey.
                 I'm glad to see you on my site. Make yourself at home!
             </Legend>
             <Description>
-                I specialize in quality web development.
+                I specialize in quality web development.<br/>
                 I show my journey on Instagram and commit code to Github.
             </Description>
+
         </Wrapper>
     )
 }

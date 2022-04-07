@@ -13,4 +13,5 @@ export const Legend = styled.h1`
 export const Description = styled.div`
     color: ${variables.text10Color};
     margin: 10px 0 10px 13%;
+    line-height: 20px;
 `

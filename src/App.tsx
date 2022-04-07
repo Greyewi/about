@@ -1,8 +1,9 @@
 import React from 'react';
-import {Layout, GlobalStyles} from './styles'
-import Header from './Components/Header'
-import {Switch, Route} from 'react-router-dom'
-import Main from './Pages/Main'
+import {Layout, GlobalStyles} from './styles';
+import Header from './Components/Header';
+import {Switch, Route} from 'react-router-dom';
+import Main from './Pages/Main';
+import Portfolio from "./Pages/Portfolio";
 
 function App() {
     return (
@@ -11,7 +12,7 @@ function App() {
             <Header/>
             <Switch>
                 <Route exact path="/"><Main/></Route>
-                <Route path="/portfolio"></Route>
+                <Route path="/portfolio"><Portfolio/></Route>
                 <Route path="/links"></Route>
                 <Route path="*">404</Route>
             </Switch>
