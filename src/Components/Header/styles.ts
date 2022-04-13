@@ -7,6 +7,7 @@ export const HeaderElement = styled.header`
   background-color: ${variables.blue10Color};
   width:100vw;
   align-items: center;
+  height: 100px;
 `
 
 export const NavBar = styled.span`
@@ -18,4 +19,8 @@ export const NavBar = styled.span`
 
 export const Logo = styled.div`
   width: 203px;
+
+  @media (max-width: 768px) {
+    width: 170px;
+  }
 `

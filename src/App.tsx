@@ -13,7 +13,6 @@ function App() {
             <Switch>
                 <Route exact path="/"><Main/></Route>
                 <Route path="/portfolio"><Portfolio/></Route>
-                <Route path="/links"></Route>
                 <Route path="*">404</Route>
             </Switch>
         </Layout>

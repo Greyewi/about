@@ -1,9 +1,10 @@
 import styled from 'styled-components'
+import {variables} from "../../styles";
 
 export const MapContainer = styled.div`
   width: 100vw;
-  height: 500px;
-  background-color: rgba(49,67,90, 0.5);
+  height: calc(100vh - 250px);
+  background-color: ${variables.blue30Color};
   display: flex;
   align-items: center;
   overflow-x: scroll;
@@ -20,11 +21,13 @@ export const PointArea = styled.div`
 
 type PointProps = {
     onClick?: () => void;
+    clickable?: boolean
 }
 
 interface Props {
     isExpand: boolean,
-    className?: string
+    className?: string,
+    top?:string
 }
 
 export const Line = styled.span<LineProps>`
@@ -32,7 +35,7 @@ export const Line = styled.span<LineProps>`
   height: 5px;
   background-color: #e1dcd0;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   box-shadow: 1px 0 4px 0 rgb(0 0 0 / 50%);
 `
@@ -42,7 +45,7 @@ export const Point = styled.div<PointProps>`
   height: 15px;
   background-color: #e1dcd0;
   border-radius: 50%;
-  cursor: pointer;
+  cursor: ${props => props.clickable ? "pointer" : "auto"};
   box-shadow: 0 0 4px 0 rgb(0 0 0 / 50%);
   color: #dcdcd2;
   display: flex;
@@ -59,16 +62,32 @@ export const Addition = styled.div`
   left: -10px;
 `
 
-export const Expand = styled.div<Props>`
+export const TopExpand = styled.div<Props>`
   border: 2px solid #e1dcd0;
-  width: fit-content;
   height: fit-content;
+  max-height: 250px;
   padding: 5px;
   border-radius: 7px;
   position:absolute;
-  top: -100px;
+  top: ${props => props.top};
+  width: 230px;
   display: ${props => props.isExpand ? "block" : 'none'};
   cursor: auto;
+  font-family: 'RobotoSlab',serif;
+`
+
+export const BottomExpand = styled.div<Props>`
+  border: 2px solid #e1dcd0;
+  height: fit-content;
+  max-height: 250px;
+  padding: 5px;
+  border-radius: 7px;
+  position:absolute;
+  top: ${props => props.top};
+  width: 230px;
+  display: ${props => props.isExpand ? "block" : 'none'};
+  cursor: auto;
+  font-family: 'RobotoSlab',serif;
 `
 
 export const Static = styled.div`
