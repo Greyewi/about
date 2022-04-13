@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import {Addition, TopExpand, Point, Static} from "./styles";
+import {Addition, Expand, Point, Static} from "./styles";
 import {PointI} from './StoryPointsList'
 
 
@@ -22,14 +22,22 @@ const StoryPoint = ({point, openedPoint, handleExpanded}: {point: PointI, opened
     return (
         <Point onClick={pointerToggle(point.id)} clickable={handleExpanded}>
             <Addition>{point.addition}</Addition>
-            <TopExpand
+            <Expand
                 isExpand={expanded.includes(point.id) || (!handleExpanded && point.id === openedPoint)}
                 onClick={e => e.stopPropagation()}
-                top={point.top}
+                top={point.plotPosition}
             >
                 {point.plot}
-            </TopExpand>
+            </Expand>
             <Static>{point.date}</Static>
+            <Expand
+                isExpand={expanded.includes(point.id) || (!handleExpanded && point.id === openedPoint)}
+                onClick={e => e.stopPropagation()}
+                isSlide
+                top={point.goalsPosition}
+            >
+                {point.goals}
+            </Expand>
         </Point>
     )
 }
