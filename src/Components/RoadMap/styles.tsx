@@ -3,7 +3,8 @@ import {variables} from "../../styles";
 
 export const MapContainer = styled.div`
   width: 100vw;
-  height: calc(100vh - 250px);
+  min-height: 580px;
+  height: 70vh;
   background-color: ${variables.blue30Color};
   display: flex;
   align-items: center;
@@ -27,7 +28,8 @@ type PointProps = {
 interface Props {
     isExpand: boolean,
     className?: string,
-    top?:string
+    top?: string,
+    isSlide?: boolean
 }
 
 export const Line = styled.span<LineProps>`
@@ -62,30 +64,18 @@ export const Addition = styled.div`
   left: -10px;
 `
 
-export const TopExpand = styled.div<Props>`
+export const Expand = styled.div<Props>`
   border: 2px solid #e1dcd0;
   height: fit-content;
   max-height: 250px;
   padding: 5px;
   border-radius: 7px;
   position:absolute;
-  top: ${props => props.top};
+  top: ${props => props.isSlide ? props.isExpand ? props.top : '0px' : props.top};
   width: 230px;
-  display: ${props => props.isExpand ? "block" : 'none'};
-  cursor: auto;
-  font-family: 'RobotoSlab',serif;
-`
-
-export const BottomExpand = styled.div<Props>`
-  border: 2px solid #e1dcd0;
-  height: fit-content;
-  max-height: 250px;
-  padding: 5px;
-  border-radius: 7px;
-  position:absolute;
-  top: ${props => props.top};
-  width: 230px;
-  display: ${props => props.isExpand ? "block" : 'none'};
+  opacity: ${props => props.isExpand ? "1" : '0'};
+  z-index: ${props => props.isExpand ? "100" : '-1'};
+  transition-duration: 1s;
   cursor: auto;
   font-family: 'RobotoSlab',serif;
 `
@@ -94,3 +84,8 @@ export const Static = styled.div`
   position: absolute;
   top: 20px;
 `
+
+export const GoalPoint = styled.span`
+  color: ${variables.text20Color}
+`
+
