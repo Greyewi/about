@@ -9,14 +9,13 @@ function Header() {
             <WrapperInline>
                 <H2>
                     <Logo>
-                        <Typography>┬─┬﻿ ノ( ゜-゜ノ)</Typography>
+                        <Typography>┬─┬ ノ( ゜-゜ノ)</Typography>
                         <div>Sergey Suntsev</div>
                     </Logo>
                 </H2>
                 <NavBar>
                     <Link to="/"><Typography>Main</Typography></Link>
                     <Link to="/portfolio"><Typography>Portfolio</Typography></Link>
-                    <Link to="/links"><Typography>Links</Typography></Link>
                 </NavBar>
             </WrapperInline>
         </HeaderElement>
