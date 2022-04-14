@@ -1,29 +1,18 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, memo} from "react";
 import {Addition, Expand, Point, Static} from "./styles";
 import {PointI} from './StoryPointsList'
+import useTraceUpdate from '../../Hooks/useTraceUpdate'
 
+const StoryPoint = ({point, handleExpanded, isOpenedPoint}: {point: PointI, isOpenedPoint: boolean, handleExpanded: boolean}) => {
+    const [isExpanded, setExpanded] = useState<boolean>(false)
 
-const toggle = <T, >(arr: T[], item: T): T[] => {
-    if (arr.includes(item)) return arr.filter(i => i !== item)
-    else return [...arr, item];
-}
-
-const StoryPoint = ({point, openedPoint, handleExpanded}: {point: PointI, openedPoint: string, handleExpanded: boolean}) => {
-    const [expanded, setExpanded] = useState<string[]>([])
-
-    const pointerToggle = (item: string) => () => {
-        handleExpanded && setExpanded(prev => toggle<string>(prev, item))
-    }
-
-    useEffect(() => {
-        !handleExpanded && setExpanded(prev => [...prev, openedPoint])
-    }, [openedPoint])
+    useTraceUpdate({point, handleExpanded})
 
     return (
-        <Point onClick={pointerToggle(point.id)} clickable={handleExpanded}>
+        <Point onClick={() => setExpanded(prev => !prev)} clickable={handleExpanded}>
             <Addition>{point.addition}</Addition>
             <Expand
-                isExpand={expanded.includes(point.id) || (!handleExpanded && point.id === openedPoint)}
+                isExpand={isExpanded || (!handleExpanded && isOpenedPoint)}
                 onClick={e => e.stopPropagation()}
                 top={point.plotPosition}
             >
@@ -31,7 +20,7 @@ const StoryPoint = ({point, openedPoint, handleExpanded}: {point: PointI, opened
             </Expand>
             <Static>{point.date}</Static>
             <Expand
-                isExpand={expanded.includes(point.id) || (!handleExpanded && point.id === openedPoint)}
+                isExpand={isExpanded || (!handleExpanded && isOpenedPoint)}
                 onClick={e => e.stopPropagation()}
                 isSlide
                 top={point.goalsPosition}
@@ -42,4 +31,4 @@ const StoryPoint = ({point, openedPoint, handleExpanded}: {point: PointI, opened
     )
 }
 
-export default StoryPoint
+export default memo(StoryPoint)

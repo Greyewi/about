@@ -1,32 +1,45 @@
 import {Line, MapContainer} from './styles'
 import {StoryPointsList} from './StoryPointsList'
 import StoryPoint from './StoryPoint'
-import {useScrollPosition} from '../../Hooks/useScrollPosition'
+import useScrollPosition from '../../Hooks/useScrollPosition'
+import {useState, useEffect} from "react"
 
-const POINT_WIDTH = 800
+const POINT_WIDTH = 700
 const roadMapWidth = StoryPointsList.length * POINT_WIDTH
+const bodyStyle = window.document.body.style
 
 const RoadMap = () => {
     const [scrollPosition, setScrollPosition] = useScrollPosition(0, 200)
+    const [openedPointList, setOpenedPointList] = useState<string[]>([])
+
+    useEffect(() => setOpenedPointList(prev => [...prev, StoryPointsList[scrollPosition].id]), [scrollPosition])
 
     return (
             <MapContainer
-                onWheel={(e) => e.currentTarget.scrollLeft = e.currentTarget.scrollLeft + e.deltaY}
-                onScroll={e => {
-                    setScrollPosition(e, Math.round(e.currentTarget.scrollLeft / (roadMapWidth - e.currentTarget.clientWidth) * 10))
-                    if(e.currentTarget.offsetWidth + e.currentTarget.scrollLeft >= e.currentTarget.scrollWidth){
-                        window.document.body.style.overflow = "auto"
+                onWheel={(e) => {
+                    const target = e.currentTarget
+                    const scrollLeft = target.scrollLeft
+                    const clientWidth = target.clientWidth
+
+                    setScrollPosition(e, Math.round(scrollLeft / (roadMapWidth - clientWidth) * 10))
+
+                    target.scrollLeft = scrollLeft + e.deltaY
+                    if(target.offsetWidth + scrollLeft >= target.scrollWidth){
+                        bodyStyle.overflow = "auto"
+                    }
+                    if(scrollLeft === 0){
+                        bodyStyle.overflow = "hidden"
                     }
                 }}
-                onMouseEnter={() => window.document.body.style.overflow = "hidden"}
-                onMouseLeave={() => window.document.body.style.overflow = "auto"}
+                onMouseEnter={() => window.scrollY === 0 ? bodyStyle.overflow = "hidden" : bodyStyle.overflow = "auto"}
+                onMouseLeave={() => bodyStyle.overflow = "auto"}
             >
                 <Line width={roadMapWidth}>
                     {StoryPointsList.map((item, key) =>
                         <StoryPoint
                             point={item}
                             key={item.id + key}
-                            openedPoint={StoryPointsList[scrollPosition].id}
+                            isOpenedPoint={openedPointList.includes(item.id)}
                             handleExpanded={false}
                         />)}
                 </Line>
