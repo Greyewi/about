@@ -3,7 +3,7 @@ import {variables} from "../../styles";
 
 export const CVContainer = styled.div`
   width: 100%;
-  height: 1000px;
+  height: 1500px;
   background-color: ${variables.text10Color};
   font-family: 'RobotoSlab',serif;
   display: flex;
@@ -51,6 +51,10 @@ export const CVAsideParagraph = styled.div<CVAsideParagraphProps>`
   a {
     color: ${variables.glow20Color}
   }
+  
+  h3, h4 {
+    margin: 0;
+  }
 `
 
 
@@ -84,6 +88,53 @@ export const CVAsideSkillLabelContainer = styled.div<CVAsideParagraphProps>`
 
 
 export const CVMainContainer = styled.div`
-  padding: 20px 18px 0;
+  padding: 18px 18px 0;
   width: calc(70vw - 36px);
+  color: rgba(0,0,0,0.8);
+  line-height: 26px;
+`
+
+export const CVMainCaption = styled.h2`
+  border-top: 1px solid rgba(42, 33, 33, 0.3);
+  border-bottom: 1px solid rgba(42, 33, 33, 0.2);
+  line-height: 50px;
+  margin: 10px 0 10px;
+`
+
+export const CVMainText = styled.div`
+  width: calc(70vw - 36px);
+`
+
+export const CVExperiencePoint = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+`
+
+export const CVExperienceDate = styled.div`
+  width: 15%;
+`
+
+export const CVExperienceBody = styled.div`
+  width: 85%;
+`
+
+export const CVExperienceTitle = styled.h2`
+  margin: 0 0 5px;
+  padding: 0;
+`
+
+export const CVExperienceCompany = styled.span`
+  font-style: italic;
+`
+
+export const CVExperienceLogo = styled.div`
+  padding: 18px 0 18px;
+  
+  img {
+    max-width: calc(100% - 36px);
+    max-height: 100%;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0, 0.2);
+  }
 `
