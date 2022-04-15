@@ -3,7 +3,8 @@ import {variables} from "../../styles";
 
 export const CVContainer = styled.div`
   width: 100%;
-  height: 1500px;
+  min-height: fit-content;
+  height: 1640px;
   background-color: ${variables.text10Color};
   font-family: 'RobotoSlab',serif;
   display: flex;
@@ -11,7 +12,7 @@ export const CVContainer = styled.div`
 
 export const CVLeftAside = styled.div`
   width: calc(30vw - 36px);
-  height: 100%;
+  height:100%;
   background-color: ${variables.blue20Color};
   padding: 0 18px;
   color: ${variables.text10Color};
