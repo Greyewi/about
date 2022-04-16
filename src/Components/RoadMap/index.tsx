@@ -1,18 +1,18 @@
 import {Line, MapContainer} from './styles'
-import {StoryPointsList} from './StoryPointsList'
+import {StoryPointsDataList} from './StoryPointsDataList'
 import StoryPoint from './StoryPoint'
 import useScrollPosition from '../../Hooks/useScrollPosition'
 import {useState, useEffect} from "react"
 
 const POINT_WIDTH = 700
-const roadMapWidth = StoryPointsList.length * POINT_WIDTH
+const roadMapWidth = StoryPointsDataList.length * POINT_WIDTH
 const bodyStyle = window.document.body.style
 
 const RoadMap = () => {
     const [scrollPosition, setScrollPosition] = useScrollPosition(0, 200)
     const [openedPointList, setOpenedPointList] = useState<string[]>([])
-
-    useEffect(() => setOpenedPointList(prev => [...prev, StoryPointsList[scrollPosition].id]), [scrollPosition])
+    console.log(bodyStyle.overflow)
+    useEffect(() => setOpenedPointList(prev => [...prev, StoryPointsDataList[scrollPosition].id]), [scrollPosition])
 
     return (
             <MapContainer
@@ -27,7 +27,7 @@ const RoadMap = () => {
                     if(target.offsetWidth + scrollLeft >= target.scrollWidth){
                         bodyStyle.overflow = "auto"
                     }
-                    if(scrollLeft === 0){
+                    if(target.offsetWidth + scrollLeft < target.scrollWidth){
                         bodyStyle.overflow = "hidden"
                     }
                 }}
@@ -35,7 +35,7 @@ const RoadMap = () => {
                 onMouseLeave={() => bodyStyle.overflow = "auto"}
             >
                 <Line width={roadMapWidth}>
-                    {StoryPointsList.map((item, key) =>
+                    {StoryPointsDataList.map((item, key) =>
                         <StoryPoint
                             point={item}
                             key={item.id + key}
