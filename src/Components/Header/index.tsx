@@ -10,12 +10,13 @@ function Header() {
                 <H2>
                     <Logo>
                         <Typography>┬─┬ ノ( ゜-゜ノ)</Typography>
-                        <div>Sergey Suntsev</div>
+                        <div>Greyewi</div>
                     </Logo>
                 </H2>
                 <NavBar>
                     <Link to="/"><Typography>Main</Typography></Link>
-                    <Link to="/portfolio"><Typography>Portfolio</Typography></Link>
+                    <Link to="/portfolio"><Typography>Road Map</Typography></Link>
+                    <Link to="/cv"><Typography>CV</Typography></Link>
                 </NavBar>
             </WrapperInline>
         </HeaderElement>

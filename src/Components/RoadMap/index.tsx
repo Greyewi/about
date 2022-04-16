@@ -13,7 +13,11 @@ const RoadMap = () => {
     const [openedPointList, setOpenedPointList] = useState<string[]>([])
     console.log(bodyStyle.overflow)
     useEffect(() => setOpenedPointList(prev => [...prev, StoryPointsDataList[scrollPosition].id]), [scrollPosition])
-
+    useEffect(() => {
+        return () => {
+            bodyStyle.overflow = "auto"
+        }
+    }, [])
     return (
             <MapContainer
                 onWheel={(e) => {
