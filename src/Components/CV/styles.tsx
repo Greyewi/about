@@ -4,7 +4,6 @@ import {variables} from "../../styles";
 export const CVContainer = styled.div`
   width: 100%;
   min-height: fit-content;
-  height: 1640px;
   background-color: ${variables.text10Color};
   font-family: 'RobotoSlab',serif;
   display: flex;
@@ -12,7 +11,6 @@ export const CVContainer = styled.div`
 
 export const CVLeftAside = styled.div`
   width: calc(30vw - 36px);
-  height:100%;
   background-color: ${variables.blue20Color};
   padding: 0 18px;
   color: ${variables.text10Color};
@@ -93,6 +91,7 @@ export const CVMainContainer = styled.div`
   width: calc(70vw - 36px);
   color: rgba(0,0,0,0.8);
   line-height: 26px;
+  min-height: fit-content;
 `
 
 export const CVMainCaption = styled.h2`

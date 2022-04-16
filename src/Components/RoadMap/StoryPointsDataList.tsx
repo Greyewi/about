@@ -18,7 +18,7 @@ export interface PointI {
     goalsPosition?: string,
 }
 
-export const StoryPointsList: PointI[] = [
+export const StoryPointsDataList: PointI[] = [
     {
         id: "the first time",
         date: '2011',
