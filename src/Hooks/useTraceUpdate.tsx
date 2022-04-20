@@ -1,13 +1,15 @@
 import {useEffect, useRef} from "react"
 
-export default function useTraceUpdate<T>(props: T) {
+interface ObjectDict {
+    [index: string]: any
+}
+
+export default function useTraceUpdate(props: any) {
     const prev = useRef(props)
     useEffect(() => {
         const changedProps = Object.entries(props).reduce(
-            (accumulator, [key, value]) => {
-                // @ts-ignore
+            (accumulator: ObjectDict, [key, value]) => {
                 if (prev.current[key] !== value) {
-                    // @ts-ignore
                     accumulator[key] = [prev.current[key], value]
                 }
                 return accumulator

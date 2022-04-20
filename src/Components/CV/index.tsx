@@ -76,7 +76,7 @@ const CV = () => {
                 {experience.list.map((point, key) => <CVExperiencePoint key={point.company + key}>
                     <CVExperienceDate>
                         {point.date}
-                        <CVExperienceLogo><img src={point.logo}/></CVExperienceLogo>
+                        <CVExperienceLogo><img src={point.logo} alt={point.company}/></CVExperienceLogo>
                     </CVExperienceDate>
                     <CVExperienceBody>
                         <CVExperienceTitle>{point.jobName}</CVExperienceTitle>

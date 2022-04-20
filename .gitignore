@@ -128,3 +128,8 @@ yarn-error.log*
 
 .idea
 yarn.lock
+
+dynamic.js
+Stack.js
+LinkedList.ts
+LinkedList.js
