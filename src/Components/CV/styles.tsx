@@ -138,10 +138,23 @@ export const CVExperiencePoint = styled.div`
 
 export const CVExperienceDate = styled.div`
   width: 15%;
+
+  @media (max-width: 1000px) {
+    width: 25%;
+  }
 `
 
 export const CVExperienceBody = styled.div`
   width: 85%;
+  
+  ul {
+    padding-left: 20px;
+  }
+  
+  @media (max-width: 1000px) {
+    width: 75%;
+    padding-left: 10px;
+  }
 `
 
 export const CVExperienceTitle = styled.h2`
@@ -161,5 +174,9 @@ export const CVExperienceLogo = styled.div`
     max-height: 100%;
     background-color: #fff;
     border: 1px solid rgba(0,0,0, 0.2);
+
+    @media (max-width: 1000px) {
+      max-width: calc(100% - 16px);
+    }
   }
 `
