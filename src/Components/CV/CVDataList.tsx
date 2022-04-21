@@ -48,7 +48,7 @@ export const CVDataAside = (): CVDataAside => ({
             {name: 'JS', description: "ES++", strength: 80},
             {name: 'React', description: "Hooks, Context, Concurrent mode", strength: 80},
             {name: 'state managers', description: "Redux, toolkit, thunk, sagas", strength: 90},
-            {name: 'Typescript', description: "", strength: 60},
+            {name: 'Typescript', description: "", strength: 50},
             {name: 'Node JS', description: "express, nest", strength: 40},
             {name: 'System Design', description: "solid, yagni, patterns", strength: 75},
             {name: 'Q/A engineering', description: "Jest, RTL, puppeteer", strength: 70},
