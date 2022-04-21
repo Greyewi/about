@@ -7,6 +7,10 @@ export const CVContainer = styled.div`
   background-color: ${variables.text10Color};
   font-family: 'RobotoSlab',serif;
   display: flex;
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+  }
 `
 
 export const CVLeftAside = styled.div`
@@ -24,6 +28,15 @@ export const CVLeftAside = styled.div`
   > h3 {
     margin-top: 0;
   }
+
+  @media (max-width: 1200px) {
+    width: calc(37vw - 36px);
+  }
+
+  @media (max-width: 1000px) {
+    width: calc(100vw - 36px);
+  }
+  
 `
 
 export const CVAsideCaption = styled.div`
@@ -92,6 +105,14 @@ export const CVMainContainer = styled.div`
   color: rgba(0,0,0,0.8);
   line-height: 26px;
   min-height: fit-content;
+
+  @media (max-width: 1200px) {
+    width: calc(63vw - 36px);
+  }
+
+  @media (max-width: 1000px) {
+    width: calc(100vw - 36px);
+  }
 `
 
 export const CVMainCaption = styled.h2`
@@ -103,6 +124,10 @@ export const CVMainCaption = styled.h2`
 
 export const CVMainText = styled.div`
   width: calc(70vw - 36px);
+  
+  @media (max-width: 1000px) {
+    width: calc(100vw - 36px);
+  }
 `
 
 export const CVExperiencePoint = styled.div`

@@ -25,7 +25,7 @@ const CV = () => {
     const {about, experience} = CVDataMain
 
     return (
-        <CVContainer>
+        <CVContainer id="cv-container">
             <CVLeftAside>
                 <h1>Suntsev Sergey</h1>
                 <h3>Web Engineer</h3>

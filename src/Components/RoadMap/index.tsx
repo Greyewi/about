@@ -6,7 +6,6 @@ import {useState, useLayoutEffect, useCallback, useRef} from "react"
 
 const RoadMap = () => {
     const {current} = useRef({
-        POINT_WIDTH: 700,
         roadMapWidth: StoryPointsDataList.length * 700,
         bodyStyle: window.document.body.style
     })
