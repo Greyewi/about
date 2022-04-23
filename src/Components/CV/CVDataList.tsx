@@ -171,7 +171,7 @@ export const CVDataMain: CVDataMain = {
                                     Administration of different services. Support of computer's classes.
                                 </li>
                                 <li>
-                                    There were a plenty of time in this job where I had a sub-work as it freelancer
+                                    There were a plenty of time in this job where I had a sub-work as IT freelancer
                                 </li>
                                 <li>
                                     Made some web layout and created small application by PHP, Yii2

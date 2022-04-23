@@ -5,6 +5,7 @@ import {Switch, Route} from 'react-router-dom';
 import Main from './Pages/Main';
 import Portfolio from "./Pages/Portfolio";
 import History from "./Pages/History";
+import MindMap from "./Components/MindMap";
 
 function App() {
     return (
@@ -15,6 +16,7 @@ function App() {
                 <Route exact path="/"><Main/></Route>
                 <Route path="/history"><History/></Route>
                 <Route path="/cv"><Portfolio/></Route>
+                <Route path="/mind-map"><MindMap/></Route>
                 <Route path="*">404</Route>
             </Switch>
         </Layout>
