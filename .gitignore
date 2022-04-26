@@ -129,3 +129,5 @@ yarn-error.log*
 .idea
 yarn.lock
 public
+
+.env

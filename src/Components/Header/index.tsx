@@ -15,7 +15,7 @@ function Header() {
                 </H2>
                 <NavBar>
                     <Link to="/"><Typography>Main</Typography></Link>
-                    <Link to="/portfolio"><Typography>Portfolio</Typography></Link>
+                    <Link to="/cv"><Typography>CV</Typography></Link>
                     <Link to="/links"><Typography>Links</Typography></Link>
                 </NavBar>
             </WrapperInline>
