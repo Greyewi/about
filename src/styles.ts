@@ -3,6 +3,7 @@ import PressStart from './shared/fonts/PressStart.ttf'
 import SuperLegend from './shared/fonts/SuperLegend.ttf'
 import ModeSeven from './shared/fonts/Modeseven.ttf'
 import Ubuntu from './shared/fonts/Ubuntu-Regular.ttf'
+import RobotoSlab from './shared/fonts/RobotoSlab.ttf'
 
 interface IVariables {
     [property: string]: string
@@ -45,6 +46,14 @@ export const GlobalStyles = createGlobalStyle`
       font-style: normal;
       font-display: auto;
     }
+   
+    @font-face {
+        font-family: 'RobotoSlab';
+        src: url(${RobotoSlab}) format('truetype');
+        font-style: normal;
+        font-display: auto;
+      }
+    
     * {
         transition-duration: 300ms;
     }

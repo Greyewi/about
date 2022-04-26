@@ -1,7 +1,6 @@
 import React from 'react';
 import {Wrapper, Description} from '../../styles'
-import {Legend, Photo} from './styles'
-import Articles from './articles'
+import {Legend} from './styles'
 
 function Main() {
     return (
@@ -11,13 +10,11 @@ function Main() {
                     Hi there! I'm Suntsev Sergey from Russia's Ural. <br/>
                     I'm a programmer. Make yourself at home!
                 </div>
-                <Photo/>
             </Legend>
             <Description>
-                I specialize in quality web development.
+                I specialize in quality web development.<br/>
                 I show my journey on Instagram and commit code to Github.
             </Description>
-            <Articles/>
         </Wrapper>
     )
 }
