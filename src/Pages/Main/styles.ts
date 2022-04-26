@@ -20,11 +20,12 @@ export const Legend = styled.h1`
 export const Photo = styled.div`
     height: 126px;
     min-width: 122px;
+    max-width: 122px;
     border-radius: 50%;
     background: url(${MyPhoto}) top no-repeat;
     background-size: 160px;
     border: 4px solid ${variables.glow20Color};
-    margin: 0 25px;
+    margin: 10px 0;
 `
 export const ArticleList = styled.div`
     display: flex;
@@ -52,5 +53,6 @@ export const ArticleTitle = styled(H2)`
 `
 
 export const ArticleBody = styled.div`
-    
+    margin: 10px 0 10px 13%;
+    line-height: 20px;
 `
