@@ -3,18 +3,18 @@ import {variables, H2} from '../../styles'
 import MyPhoto from '../../shared/images/photo.jpeg'
 
 export const Legend = styled.h1`
-    color: ${variables.glow10Color};
-    font-family: 'Legend','ModeSeven',Roboto;
-    line-height: 179%;
-    font-weight: 500;
-    font-size: 32px;
-    margin: 75px 0 10px 0;
-    display: flex;
-    align-items: center;
-    
-    @media (max-width: 768px) {
-        flex-direction: column;
-    }
+  color: ${variables.glow10Color};
+  font-family: 'Legend','ModeSeven',Roboto;
+  line-height: 179%;
+  font-weight: 500;
+  font-size: 32px;
+  margin: 100px 0 10px 13%;
+`
+
+export const Description = styled.div`
+    color: ${variables.text10Color};
+    margin: 10px 0 10px 13%;
+    line-height: 20px;
 `
 
 export const Photo = styled.div`
