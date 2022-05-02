@@ -84,8 +84,8 @@ interface CVDataMainI {
 export const CVDataMain: CVDataMainI = {
     about: `Result-oriented web developer for over 7 years with 5 years of experience as frontend and 3 years as full-stack.
             During this time I have finished a lot of big projects. It was CRM, user profiles, administration services, integration systems, multi-room chats, and so on.
-            I would like to work in a product command. I am big on working with flexible methodologies, like agile with scrum and kanban approaches.
-            I prefer to automate everything, enthusiastic to educate people.`,
+            I would like to work in a product team. I am big on working with flexible methodologies, like agile with scrum and kanban approaches.
+            I prefer to automize everything, enthusiastic to educate people.`,
     experience: {
         list: [
             {
@@ -94,10 +94,10 @@ export const CVDataMain: CVDataMainI = {
                 logo: MentorLogo,
                 company: "Self-employed",
                 description: <ul>
-                                <li>I give my experience with distinct developers. We already solved a lot of complex tasks and meet deadlines.</li>
-                                <li>I also prepare candidates to interview for different positions: front/back, junior/middle/senior js developer.</li>
+                                <li>I share my experience with different developers. We already solved a lot of complex tasks and met deadlines.</li>
+                                <li>I also prepare candidates to the interview for different positions: front/back, junior/middle/senior js developer.</li>
                                 <li>Sometimes i take some freelance orders to make MVP or fix functional</li>
-                                <li>I have eager to learn, each day I spend ay least 4 hours to my pet projects or learning new technologies.</li>
+                                <li>I am eager to learn, each day I spend ay least 4 hours on my pet projects or learning new technologies.</li>
                             </ul>
             },
             {
@@ -171,7 +171,7 @@ export const CVDataMain: CVDataMainI = {
                                     Administration of different services. Support of computer's classes.
                                 </li>
                                 <li>
-                                    There were a plenty of time in this job where I had a sub-work as IT freelancer
+                                    There was a plenty of time in this job where I had a side-work as IT freelancer
                                 </li>
                                 <li>
                                     Made some web layout and created small application by PHP, Yii2

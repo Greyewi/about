@@ -22,5 +22,6 @@ export const MMItem = styled.div`
   justify-content: center;
   user-select: none;
   z-index: 9;
+  color: ${variables.text10Color}
 `
 
