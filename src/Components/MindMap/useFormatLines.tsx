@@ -1,21 +1,29 @@
-import {useState, useCallback} from 'react'
-import {SteppedLineTo} from 'react-lineto'
+import React, {useRef, useCallback, useLayoutEffect} from 'react'
+import LineTo from 'react-lineto'
 
-const useFormatLine = ({id, to, from}: {id: string, to?: string, from?: string}, dispatch: any) => {
-    const [lines, setLines] = useState<any>([])
+type ItemDirection = {
+    id: string,
+    to?: string,
+    from?: string
+}
 
-    const onMoveLineAfterDrag: any = useCallback((id: string, to: string) => {
-        if(to){
-            setLines([
-                <SteppedLineTo key={id + to } from={id} to={to}/>
-            ])
-            dispatch({type: "CHANGE_ITEM_POSITION", payload: id})
-        } else if(!to && from) {
-            dispatch({type: "CHANGE_ITEM_POSITION", payload: id})
+const useFormatLine = (items: ItemDirection[], dispatch: any) => {
+    let lines = useRef<JSX.Element[] | null>(items.map((block) => {
+        if(block.from && !block.to) {
+            return <LineTo key={block.id} from={block.from} to={block.id} delay={true}/>
+        } else if(!block.from && block.to) {
+            return <LineTo key={block.id} from={block.id} to={block.to} delay={true}/>
+        } else if(block.from && block.to) {
+            return <LineTo key={block.id} from={block.id} to={block.to} delay={true}/>
         }
+        return <LineTo key={block.id} from={block.id} to={block.id}/>
+    }))
+
+    const onMoveLineAfterDrag = useCallback((id) => {
+        dispatch({type: "CHANGE_ITEM_POSITION", payload: id})
     }, [])
 
-    return [lines, onMoveLineAfterDrag]
+    return [lines.current, onMoveLineAfterDrag]
 }
 
 export default useFormatLine

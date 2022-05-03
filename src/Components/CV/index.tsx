@@ -28,7 +28,7 @@ const CV = () => {
         <CVContainer id="cv-container">
             <CVLeftAside>
                 <h1>Suntsev Sergey</h1>
-                <h3>Web Engineer</h3>
+                <h3>Web Engineer, {new Date().getFullYear() - 1992} years old</h3>
                 <Photo/>
                 <CVAsideCaption>Personal Info</CVAsideCaption>
                 <CVAsideParagraph height={person.height}>

@@ -1,6 +1,6 @@
-import {useCallback, useRef, memo, useLayoutEffect} from 'react'
+import {useCallback, useRef, memo} from 'react'
 import {MMItem} from "./styles"
-import useFormatLines from './useFormatLines'
+import useTraceUpdate from "../../Hooks/useTraceUpdate";
 
 type MutableRefObject = {
     top: number
@@ -17,19 +17,12 @@ type Props = {
     dragCallback?: any,
     lastChangedId: string | null,
     lines?: any,
-    dispatch?: any,
+    setMoveBlock?: any,
 }
 
-function DraggableItem({children, id, to, from, defaultTop = 250, defaultLeft = 250, lastChangedId, dispatch}: Props) {
+function DraggableItem({children, id, defaultTop = 250, defaultLeft = 250, setMoveBlock}: Props) {
     const insideRectRef = useRef<MutableRefObject | null>(null)
     const rootElementRef = useRef<HTMLDivElement>(null)
-    const [line, movedLine] = useFormatLines({id, to, from}, dispatch)
-
-    useLayoutEffect(() => {
-        if(lastChangedId === to) {
-            movedLine(id, to)
-        }
-    }, [lastChangedId])
 
     const handleDragStart = useCallback((e) => {
         const rect = e.target.getBoundingClientRect()
@@ -53,9 +46,9 @@ function DraggableItem({children, id, to, from, defaultTop = 250, defaultLeft = 
 
             rootElementRef.current.style.top = top + 'px'
             rootElementRef.current.style.left = left + 'px'
-            movedLine(id, to)
+            setMoveBlock(id)
         }
-    }, [movedLine, id, to])
+    }, [setMoveBlock, id])
 
     return (
         <>
@@ -71,10 +64,16 @@ function DraggableItem({children, id, to, from, defaultTop = 250, defaultLeft = 
             >
                 {children}
             </MMItem>
-            {line}
         </>
 
     )
 }
 
-export default memo(DraggableItem)
+const compareChangedId = (prev: Props, next: Props) => {
+    if(next.lastChangedId === next.to || next.lastChangedId === next.id) {
+        return false
+    }
+    return true
+}
+
+export default memo(DraggableItem, compareChangedId)
