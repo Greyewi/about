@@ -1,4 +1,4 @@
-import {useCallback, useRef, memo, useLayoutEffect} from 'react'
+import {useCallback, useRef, memo, useEffect} from 'react'
 import {MMItem} from "./styles"
 import useFormatLines from './useFormatLines'
 
@@ -25,31 +25,32 @@ function DraggableItem({children, id, to, from, defaultTop = 250, defaultLeft = 
     const rootElementRef = useRef<HTMLDivElement>(null)
     const [line, movedLine] = useFormatLines({id, to, from}, dispatch)
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         if(lastChangedId === to) {
             movedLine(id, to)
         }
-    }, [lastChangedId])
+    }, [movedLine, id, to, lastChangedId])
 
     const handleDragStart = useCallback((e) => {
         const rect = e.target.getBoundingClientRect()
-        insideRectRef.current = {top: e.clientY - rect.top, left: e.clientX - rect.left}
+        insideRectRef.current = {top: e.pageY - rect.top, left: e.pageX - rect.left}
     }, [])
 
-    const handleDragEnd = useCallback(() => {
+    const handleDragEnd = () => {
         insideRectRef.current = null
-    }, [])
+    }
 
-    const handleDragOver = useCallback((e) => {
+    const handleDragOver = (e: { preventDefault: () => void; dataTransfer: { dropEffect: string } }) => {
         e.preventDefault()
         e.dataTransfer.dropEffect = 'move'
-    }, [])
+    }
 
     const handleDragBlock = useCallback((e) => {
         e.preventDefault()
-        if (insideRectRef.current && rootElementRef.current && e.clientY && e.clientX){
-            const top = e.clientY - insideRectRef.current.top
-            const left = e.clientX - insideRectRef.current.left
+        if (insideRectRef.current && rootElementRef.current && e.pageY && e.pageX){
+
+            const top = e.pageY - insideRectRef.current.top + window.scrollY
+            const left = e.pageX - insideRectRef.current.left + window.scrollX
 
             rootElementRef.current.style.top = top + 'px'
             rootElementRef.current.style.left = left + 'px'
@@ -73,7 +74,6 @@ function DraggableItem({children, id, to, from, defaultTop = 250, defaultLeft = 
             </MMItem>
             {line}
         </>
-
     )
 }
 

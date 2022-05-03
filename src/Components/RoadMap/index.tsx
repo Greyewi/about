@@ -1,8 +1,8 @@
 import {Line, MapContainer} from './styles'
 import {StoryPointsDataList} from './StoryPointsDataList'
 import StoryPoint from './StoryPoint'
-import useScrollPosition from '../../Hooks/useScrollPosition'
-import {useState, useLayoutEffect, useCallback, useRef} from "react"
+import useScrollPosition from './useScrollPosition'
+import {useState, useEffect, useCallback, useRef} from "react"
 
 const RoadMap = () => {
     const {current} = useRef({
@@ -13,8 +13,8 @@ const RoadMap = () => {
     const [scrollPosition, setScrollPosition] = useScrollPosition(0, 200)
     const [openedPointList, setOpenedPointList] = useState<string[]>([])
 
-    useLayoutEffect(() => setOpenedPointList(prev => [...prev, StoryPointsDataList[scrollPosition].id]), [scrollPosition])
-    useLayoutEffect(() => {
+    useEffect(() => setOpenedPointList(prev => [...prev, StoryPointsDataList[scrollPosition].id]), [scrollPosition])
+    useEffect(() => {
         return () => {
             current.bodyStyle.overflow = "auto"
         }

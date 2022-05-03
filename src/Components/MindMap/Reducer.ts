@@ -8,6 +8,10 @@ export type DragItem = {
     dragCallback?: any,
 }
 
+export enum ACTION_TYPES {
+    CHANGE_ITEM_POSITION = "CHANGE_ITEM_POSITION"
+}
+
 export const dataItems: DragItem[] = [
     {
         id: "html",
@@ -32,13 +36,21 @@ export const dataItems: DragItem[] = [
     {
         id: "react",
         from: 'js',
+        to: "git",
         label: "React",
         defaultTop: 700,
         defaultLeft: 450,
     },
+    {
+        id: "git",
+        from: 'react',
+        label: "GIT",
+        defaultTop: 800,
+        defaultLeft: 600,
+    },
 ]
 
-type initialState = {
+type InitialState = {
     items: DragItem[],
     lastChangedId: string | null
 }
@@ -48,12 +60,12 @@ export const initialState = {
     lastChangedId: null
 }
 
-export const Reducer = (state: initialState, action: any) => {
-    const { payload, type } = action;
+export const Reducer = (state: InitialState, action: { type: string, payload: number }) => {
+    const { payload, type } = action
     switch (type) {
-        case "CHANGE_ITEM_POSITION":
-            return Object.assign({}, state, { lastChangedId: payload });
+        case ACTION_TYPES.CHANGE_ITEM_POSITION:
+            return Object.assign({}, state, { lastChangedId: payload })
         default:
-            return state;
+            return state
     }
 };
