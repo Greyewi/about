@@ -7,6 +7,7 @@ export const MMContainer = styled.div`
   background-color: ${variables.blue30Color};
   font-family: 'RobotoSlab',serif;
   display: flex;
+  height: 1000px;
 `
 
 export const MMItem = styled.div`
