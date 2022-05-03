@@ -1,22 +1,16 @@
 import {useCallback, useRef, memo, useEffect} from 'react'
 import {MMItem} from "./styles"
 import useFormatLines from './useFormatLines'
+import {DragItem} from './Reducer'
 
 type MutableRefObject = {
     top: number
     left: number
 }
 
-type Props = {
+interface Props extends Omit<DragItem, 'label'> {
     children: string,
-    id: string,
-    to?: string,
-    from?: string,
-    defaultTop?: number,
-    defaultLeft?: number,
-    dragCallback?: any,
     lastChangedId: string | null,
-    lines?: any,
     dispatch?: any,
 }
 
@@ -26,7 +20,7 @@ function DraggableItem({children, id, to, from, defaultTop = 250, defaultLeft = 
     const [line, movedLine] = useFormatLines({id, to, from}, dispatch)
 
     useEffect(() => {
-        if(lastChangedId === to) {
+        if(to?.includes(String(lastChangedId))) {
             movedLine(id, to)
         }
     }, [movedLine, id, to, lastChangedId])

@@ -1,11 +1,13 @@
-export type DragItem = {
-    label: string,
+export type LineProps = {
     id: string,
-    to?: string,
+    to?: string[],
     from?: string,
+}
+
+export interface DragItem extends LineProps{
+    label: string,
     defaultTop?: number,
     defaultLeft?: number,
-    dragCallback?: any,
 }
 
 export enum ACTION_TYPES {
@@ -15,12 +17,12 @@ export enum ACTION_TYPES {
 export const dataItems: DragItem[] = [
     {
         id: "html",
-        to: "css",
+        to: ["css"],
         label: "HTML",
     },
     {
         id: "css",
-        to: "js",
+        to: ["js"],
         from: 'html',
         label: "CSS",
         defaultTop: 400,
@@ -29,25 +31,24 @@ export const dataItems: DragItem[] = [
     {
         id: "js",
         label: "JS",
-        to: "react",
+        to: ["react", 'git'],
         from: 'css',
         defaultTop: 550
     },
     {
-        id: "react",
-        from: 'js',
-        to: "git",
-        label: "React",
-        defaultTop: 700,
-        defaultLeft: 450,
-    },
-    {
         id: "git",
-        from: 'react',
+        from: 'js',
         label: "GIT",
         defaultTop: 800,
         defaultLeft: 600,
     },
+    {
+        id: "react",
+        from: 'js',
+        label: "React",
+        defaultTop: 700,
+        defaultLeft: 450,
+    }
 ]
 
 type InitialState = {
