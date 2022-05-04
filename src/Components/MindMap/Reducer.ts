@@ -39,15 +39,15 @@ export const dataItems: DragItem[] = [
         id: "git",
         from: 'js',
         label: "GIT",
-        defaultTop: 800,
-        defaultLeft: 600,
+        defaultTop: 550,
+        defaultLeft: 700,
     },
     {
         id: "react",
         from: 'js',
         label: "React",
-        defaultTop: 700,
-        defaultLeft: 450,
+        defaultTop: 830,
+        defaultLeft: 400,
     }
 ]
 
