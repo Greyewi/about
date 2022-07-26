@@ -11,13 +11,14 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "@types/jest": "^26.0.15",
-    "@types/node": "^12.0.0",
+    "@types/node": "^18.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@types/react-router": "^5.1.16",
     "@types/react-router-dom": "^5.1.8",
     "@types/styled-components": "^5.1.13",
     "axios": "^0.21.3",
+    "dotenv": "^16.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-error-overlay": "^6.0.10",
@@ -27,6 +28,9 @@
     "react-scripts": "^5.0.1",
     "react-xarrows": "^2.0.2",
     "styled-components": "^5.3.1",
+    "telegraf": "^4.8.5",
+    "ts-node-dev": "^2.0.0",
+    "typegram": "^3.10.0",
     "typescript": "^4.1.2",
     "web-vitals": "^1.0.1"
   },
@@ -34,7 +38,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "bot": "ts-node-dev bot/server.ts",
+    "botGame": "ts-node-dev botRougue/server.ts",
+    "bot_deploy": "node bot/server.js"
   },
   "eslintConfig": {
     "extends": [

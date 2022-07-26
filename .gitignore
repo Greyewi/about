@@ -126,7 +126,8 @@ dist
 yarn.lock
 public
 
-.env
+*/*.env
+*/*.js
 
 dynamic.js
 Stack.js
