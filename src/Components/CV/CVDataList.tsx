@@ -75,23 +75,21 @@ interface CVDataExpItem {
 }
 
 interface CVDataMainI {
-    numberOfYears: (arg: string) => number,
-    about: () => string,
+    about: string,
     experience: {
       list:  CVDataExpItem[]
     },
 }
 
+const numberOfYears = (start: string): number => {
+  return Math.round((new Date().getTime() - new Date(start).getTime())/(1000*60*60*24*365))
+}
+
 export const CVDataMain: CVDataMainI = {
-    numberOfYears: (start) => {
-      return Math.round((new Date().getTime() - new Date(start).getTime())/(1000*60*60*24*365))
-    },
-    about: function() {
-      return `Result-oriented web developer for over ${this.numberOfYears('2015')} years with ${this.numberOfYears('2016')} years of experience as frontend and ${this.numberOfYears('2019')} years as full-stack.
+    about: `Result-oriented web developer for over ${numberOfYears('2015')} years with ${numberOfYears('2016')} years of experience as frontend and ${numberOfYears('2019')} years as full-stack.
             During this time I have finished a lot of big projects. It was CRM, user profiles, administration services, integration systems, multi-room chats, and so on.
             I would like to work in a product team. I am big on working with flexible methodologies, like agile with scrum and kanban approaches.
-            I prefer to automize everything, enthusiastic to educate people.`
-    },
+            I prefer to automize everything, enthusiastic to educate people.`,
     experience: {
         list: [
             {
