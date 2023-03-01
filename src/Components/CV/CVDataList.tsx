@@ -75,17 +75,23 @@ interface CVDataExpItem {
 }
 
 interface CVDataMainI {
-    about: string,
+    numberOfYears: (arg: string) => number,
+    about: () => string,
     experience: {
       list:  CVDataExpItem[]
     },
 }
 
 export const CVDataMain: CVDataMainI = {
-    about: `Result-oriented web developer for over 7 years with 5 years of experience as frontend and 3 years as full-stack.
+    numberOfYears: (start) => {
+      return Math.round((new Date().getTime() - new Date(start).getTime())/(1000*60*60*24*365))
+    },
+    about: function() {
+      return `Result-oriented web developer for over ${this.numberOfYears('2015')} years with ${this.numberOfYears('2016')} years of experience as frontend and ${this.numberOfYears('2019')} years as full-stack.
             During this time I have finished a lot of big projects. It was CRM, user profiles, administration services, integration systems, multi-room chats, and so on.
             I would like to work in a product team. I am big on working with flexible methodologies, like agile with scrum and kanban approaches.
-            I prefer to automize everything, enthusiastic to educate people.`,
+            I prefer to automize everything, enthusiastic to educate people.`
+    },
     experience: {
         list: [
             {
@@ -95,6 +101,7 @@ export const CVDataMain: CVDataMainI = {
                 company: "Self-employed",
                 description: <ul>
                                 <li>I share my experience with different developers. We already solved a lot of complex tasks and met deadlines.</li>
+                                <li>I work with a big customers, where I works with architecture an performance.</li>
                                 <li>I also prepare candidates to the interview for different positions: front/back, junior/middle/senior js developer.</li>
                                 <li>Sometimes i take some freelance orders to make MVP or fix functional</li>
                                 <li>I am eager to learn, each day I spend ay least 4 hours on my pet projects or learning new technologies.</li>

@@ -69,7 +69,7 @@ const CV = () => {
             </CVLeftAside>
             <CVMainContainer>
                 <CVMainText>
-                    {about}
+                    {about()}
                 </CVMainText>
                 <CVMainCaption>
                     Experience
