@@ -1,24 +1,23 @@
-import React, {FC} from "react";
-import {Line, NavBar, ExpandedBtn} from './styles'
-import {H2, Typography, WrapperInline} from "../../styles";
-import {Link} from 'react-router-dom'
+import React, {FC, ReactNode, useState} from "react";
+import {Line, NavBar, ExpandedBtn, ExpandedArea} from './styles'
 
 interface Props {
-  links: string[]
+  children: ReactNode[]
 }
 
-const ExpandedNavBar: FC<Props> = ({links}) => {
+const ExpandedNavBar: FC<Props> = ({children}) => {
+  const [expanded, setExpanded] = useState(false)
   return (
     <NavBar>
-      <ExpandedBtn>
+      <ExpandedBtn onClick={() => setExpanded(prev => !prev)}>
         <Line/>
         <Line/>
         <Line/>
       </ExpandedBtn>
-      {/*<Link to="/"><Typography>Main</Typography></Link>*/}
-      {/*<Link to="/history"><Typography>Story</Typography></Link>*/}
-      {/*<Link to="/cv"><Typography>CV</Typography></Link>*/}
-      {/*<Link to="/mind-map"><Typography>Mind map</Typography></Link>*/}
+      <ExpandedArea expanded={expanded} onClick={() => setExpanded(prev => !prev)}>
+        {children}
+      </ExpandedArea>
+      {children}
     </NavBar>
   );
 }

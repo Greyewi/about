@@ -2,7 +2,13 @@ import React, {useState, memo} from "react";
 import {Addition, Expand, Point, Static} from "./styles";
 import {PointI} from './StoryPointsDataList'
 
-const StoryPoint = ({point, handleExpanded, isOpenedPoint}: {point: PointI, isOpenedPoint: boolean, handleExpanded: boolean}) => {
+interface StoryPointI {
+  point: PointI,
+  isOpenedPoint: boolean,
+  handleExpanded: boolean
+}
+
+const StoryPoint = ({point, handleExpanded, isOpenedPoint}: StoryPointI) => {
     const [isExpanded, setExpanded] = useState<boolean>(false)
 
     return (

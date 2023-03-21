@@ -18,17 +18,23 @@ export const NavBar = styled.span`
   
   @media (max-width: 768px) {
     justify-content: flex-end;
+    > a {
+      display: none;
+    }
   }
 `
 
-
-export const ExpandedBtn = styled.div`
-  display: flex;
+export const ExpandedBtn = styled.div.attrs((props) => ({ onClick: props.onClick }))`
+  display: none;
   flex-direction: column;
   width: 60px;
   height: 55px;
   cursor: pointer;
   justify-content: space-between;
+
+  @media (max-width: 768px) {
+    display: flex;
+  }
 `
 
 export const Line = styled.span`
@@ -39,6 +45,28 @@ export const Line = styled.span`
   background-color: ${variables.text20Color};
 `
 
+export const ExpandedArea = styled.nav.attrs((props) => ({ onClick: props.onClick }))`
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: calc(100vh - 100px);
+  position: fixed;
+  background: cadetblue;
+  left: ${(props:{expanded: boolean}) => props.expanded ? '0' : '-100'}vw;
+  top: 100px;
+  opacity: ${(props:{expanded: boolean}) => props.expanded ? '1' : '0'};
+  transition-duration: 0.3s;
+  z-index: ${(props:{expanded: boolean}) => props.expanded ? '101' : '-2'};
+  align-items: center;
+
+  > a {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+  }
+`
 
 export const Logo = styled.div`
   width: 203px;

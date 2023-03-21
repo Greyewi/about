@@ -37,7 +37,7 @@ interface CVDataAsideI {
 
 export const CVDataAside = (): CVDataAsideI => ({
     person: {
-        phone: "+7(919)459-78-24",
+        phone: "+7(919)459-78-24(RU) +972(536)29-40-60 (IL)",
         email: "greyewi@gmail.com",
         tg: "greyewi",
         linkedin: "greyewi",
