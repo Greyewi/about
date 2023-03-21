@@ -25,7 +25,7 @@ const RoadMap = () => {
         const scrollLeft = target.scrollLeft
         const clientWidth = target.clientWidth
 
-        setScrollPosition(e, Math.round(scrollLeft / (current.roadMapWidth - clientWidth) * 10))
+        setScrollPosition(e, Math.round(scrollLeft / (current.roadMapWidth - clientWidth) * (StoryPointsDataList.length -1)))
 
         target.scrollLeft = scrollLeft + e.deltaY
         if (target.offsetWidth + scrollLeft >= target.scrollWidth) {

@@ -6,6 +6,7 @@ import WorkHistoryIcon from "@mui/icons-material/WorkHistory";
 import LocationCityIcon from "@mui/icons-material/LocationCity";
 import HomeWorkIcon from "@mui/icons-material/HomeWork";
 import PsychologyIcon from "@mui/icons-material/Psychology";
+import CurrencyBitcoin from "@mui/icons-material/CurrencyBitcoin";
 import {GoalPoint} from "./styles"
 
 export interface PointI {
@@ -112,10 +113,19 @@ export const StoryPointsDataList: PointI[] = [
     {
         id: "the nine time",
         date: '2021',
-        plot: "I came back to Russia to concentrated on learning English. Right now I still work as a freelancer, take a lot of time to increase my programming level, and learn new tech from the IT world.",
+        plot: "I came back to Russia to concentrate on learning English. Right now I still work as a freelancer, taking a lot of time to increase my programming level and learn new tech from the IT world.",
         goals: <span>New skills: <GoalPoint>System Design</GoalPoint>, <GoalPoint>MongoDB/mongoose</GoalPoint>, <GoalPoint>Vite</GoalPoint></span>,
         addition: <PsychologyIcon fontSize="large"/>,
         plotPosition: '-240px',
         goalsPosition: "100px"
+    },
+    {
+        id: "the ten time",
+        date: '2022',
+        plot: "I have tried to be employed by a big international company, but unfortunately, one political crisis made influenced my decision, so I took the opportunity became a full-stack developer and started to learn the crypto world. ",
+        goals: <span>New skills: <GoalPoint>Transactions system architecture</GoalPoint>, <GoalPoint>gitlab CI</GoalPoint>, <GoalPoint>Solidity</GoalPoint>, <GoalPoint>Prisma ORM</GoalPoint>, <GoalPoint>English B2</GoalPoint></span>,
+        addition: <CurrencyBitcoin fontSize="large"/>,
+        plotPosition: '-280px',
+        goalsPosition: "70px"
     },
 ]
