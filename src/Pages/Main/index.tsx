@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef} from 'react';
+import React from 'react';
 import {Wrapper} from '../../styles'
 import {Legend, Description} from './styles'
 import { PopupWidget } from "react-calendly";

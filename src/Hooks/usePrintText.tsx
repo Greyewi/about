@@ -13,7 +13,7 @@ export default function usePrintText(speed: number, text: string) {
         return prev + text[prev.length]
       })
     }, speed)
-  }, [])
+  }, [speed, text])
 
   return legend
 }
