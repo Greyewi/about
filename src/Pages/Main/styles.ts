@@ -11,6 +11,10 @@ export const Legend = styled.h1`
   margin: 100px 0 10px 13%;
 `
 
+export const OuterLink = styled.a.attrs((props) => ({ ...props }))`
+  color: ${variables.glow20Color};
+`
+
 export const Description = styled.div`
     color: ${variables.text10Color};
     margin: 10px 0 10px 13%;

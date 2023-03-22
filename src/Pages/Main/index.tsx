@@ -1,6 +1,6 @@
 import React from 'react';
 import {Wrapper} from '../../styles'
-import {Legend, Description} from './styles'
+import {Legend, Description, OuterLink} from './styles'
 import { PopupWidget } from "react-calendly";
 import usePrintText from '../../Hooks/usePrintText'
 
@@ -16,7 +16,7 @@ function Main() {
             </Legend>
             <Description>
                 I specialize in quality web development.<br/>
-                I show my journey on Instagram and commit code to Github.
+              I show my journey on <OuterLink href="https://www.instagram.com/greyewi">Instagram</OuterLink> and commit code to <OuterLink href="https://github.com/Greyewi">Github</OuterLink>.
             </Description>
           <PopupWidget
             url="https://calendly.com/greyewi/60min"
