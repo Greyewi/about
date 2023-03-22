@@ -12,7 +12,7 @@ export default function usePrintText(speed: number, text: string) {
         }
         return prev + text[prev.length]
       })
-    }, Math.random() * speed)
+    }, speed)
   }, [])
 
   return legend
