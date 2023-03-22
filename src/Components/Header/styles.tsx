@@ -27,8 +27,8 @@ export const NavBar = styled.span`
 export const ExpandedBtn = styled.div.attrs((props) => ({ onClick: props.onClick }))`
   display: none;
   flex-direction: column;
-  width: 60px;
-  height: 55px;
+  width: 45px;
+  height: 35px;
   cursor: pointer;
   justify-content: space-between;
 
@@ -40,8 +40,8 @@ export const ExpandedBtn = styled.div.attrs((props) => ({ onClick: props.onClick
 export const Line = styled.span`
   display: flex;
   flex-direction: column;
-  width: 60px;
-  height: 9px;
+  width: 45px;
+  height: 4px;
   background-color: ${variables.text20Color};
 `
 
