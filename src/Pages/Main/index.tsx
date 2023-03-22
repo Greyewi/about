@@ -8,7 +8,7 @@ const fullLegend = `Hi there! I'm Suntsev Sergey.
                 I'm glad to see you on my site. Make yourself at home!`
 
 function Main() {
-    const legend = usePrintText(200, fullLegend)
+    const legend = usePrintText(70, fullLegend)
     return (
         <Wrapper>
             <Legend>
