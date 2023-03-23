@@ -107,7 +107,7 @@ export const StoryPointsDataList: PointI[] = [
         plot: "I got a visa to the educational program in Israel and it was my chance. Unfortunately, this visa didn't permit me to work, and I became a freelancer. Since then I created a lot of pet projects and tried myself in the education area. Right now I help people in IT.",
         goals: <span>New skills: <GoalPoint>Typescript</GoalPoint>, <GoalPoint>Functional programming</GoalPoint>, <GoalPoint>Nest.js</GoalPoint>, <GoalPoint>Docker</GoalPoint>, <GoalPoint>Styled-components</GoalPoint>, <GoalPoint>English B1</GoalPoint></span>,
         addition: <PsychologyIcon fontSize="large"/>,
-        plotPosition: '-305px',
+        plotPosition: '-273px',
         goalsPosition: "100px"
     },
     {
