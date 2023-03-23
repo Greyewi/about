@@ -52,8 +52,8 @@ export const CVDataAside = (): CVDataAsideI => ({
             {name: 'Node JS', description: "express, nest, prisma", strength: 60},
             {name: 'System Design', description: "solid, yagni, patterns", strength: 75},
             {name: 'Q/A engineering', description: "Jest, RTL, puppeteer", strength: 70},
-            {name: 'Databases', description: "posgress, mongoDB, redis, firebase", strength: 50},
-            {name: 'DevOps', description: "Nginx, Docker, Supervisor, Bash, gitlab CI", strength: 50},
+            {name: 'Databases', description: "sql, posgress, mongoDB, redis", strength: 60},
+            {name: 'DevOps', description: "Nginx, Docker, Bash, gitlab CI", strength: 50},
             {name: 'English', description: "B2", strength: 65},
         ],
         height: function(){ return this.list.length * 55}
