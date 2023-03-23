@@ -13,7 +13,7 @@ export const Legend = styled.h1`
 
   @media (max-width: 768px) {
     font-size: 25px;
-    margin: 50px 0px 10px 13%;
+    margin: 50px 0 10px 13%;
   }
 `
 
