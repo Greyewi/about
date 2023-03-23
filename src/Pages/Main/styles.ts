@@ -4,11 +4,17 @@ import MyPhoto from '../../shared/images/photo.jpeg'
 
 export const Legend = styled.h1`
   color: ${variables.glow10Color};
-  font-family: 'Legend','ModeSeven',Roboto;
+  font-family: 'Legend','ModeSeven',Roboto,serif;
   line-height: 179%;
   font-weight: 500;
   font-size: 32px;
   margin: 100px 0 10px 13%;
+
+
+  @media (max-width: 768px) {
+    font-size: 25px;
+    margin: 50px 0px 10px 13%;
+  }
 `
 
 export const OuterLink = styled.a.attrs((props) => ({ ...props }))`
