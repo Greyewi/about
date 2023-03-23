@@ -95,6 +95,7 @@ export const CVAsideSkillLabelContainer = styled.div<CVAsideParagraphProps>`
 
   > label {
     opacity: 0.5;
+    text-align: end;
   }
 `
 

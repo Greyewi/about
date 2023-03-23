@@ -17,7 +17,7 @@ export const OuterLink = styled.a.attrs((props) => ({ ...props }))`
 
 export const Description = styled.div`
     color: ${variables.text10Color};
-    margin: 10px 0 10px 13%;
+    margin: 10px 0 190px 13%;
     line-height: 20px;
 `
 
