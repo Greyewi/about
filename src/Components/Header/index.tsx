@@ -18,7 +18,7 @@ function Header() {
                     <Link to="/"><Typography>Main</Typography></Link>
                     <Link to="/history"><Typography>Story</Typography></Link>
                     <Link to="/cv"><Typography>CV</Typography></Link>
-                    <Link to="/mind-map"><Typography>Mind map</Typography></Link>
+                    {/*<Link to="/mind-map"><Typography>Mind map</Typography></Link>*/}
                 </ExpandedNavBar>
             </WrapperInline>
         </HeaderElement>
