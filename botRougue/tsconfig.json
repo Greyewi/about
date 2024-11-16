@@ -1,8 +1,12 @@
 {
     "compilerOptions": {
-        "target": "es5",
+        "target": "ESNext",
+        "moduleResolution": "node",
         "sourceMap": true,
-        "skipLibCheck": true
+        "outDir": "./dist",
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "lib": [ "es2015" ]
     },
     "exclude": [
         "../node_modules"

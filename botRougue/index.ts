@@ -1,4 +1,4 @@
-import { BotsLoader, CommandBuilder, ActionBuilder } from '../../src'
+import { BotsLoader, CommandBuilder, ActionBuilder } from 'tg-builder'
 
 const name = 'TRPG'
 

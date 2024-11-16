@@ -8,6 +8,14 @@ export const HeaderElement = styled.header`
   width:100vw;
   align-items: center;
   height: 100px;
+
+  @media print {
+      display: none !important;
+      
+      * {
+        display: none !important;
+      }
+  }
 `
 
 export const NavBar = styled.span`

@@ -1,5 +1,5 @@
 import Enemies from "./enemy";
-const {Telegraf} = require('telegraf')
+import {Telegraf} from 'telegraf';
 require('dotenv').config()
 
 const bot = new Telegraf(process.env.BOT_GAME_TOKEN)
