@@ -173,10 +173,10 @@ export const StoryPointsDataList: PointI[] = [
     {
         id: "the fourteen time",
         date: '2024',
-        plot: "We finally completed the projects. Meanwhile, the situation in Israel escalated with the outbreak of war, prompting me to move back to cold Russia. During this difficult time, I decided to find solace in a new D&D community. Now, I can both play and lead 'Dungeons and Dragons'-style games.",
+        plot: "I started a new project from scratch, using a monorepo ecosystem with an inner core library. During this time, I also sought comfort in a new D&D community, finding balance between work and play. Now, I can both play and lead 'Dungeons and Dragons'-style games.",
         goals: <span>New skills: <GoalPoint>Monorepo</GoalPoint>, <GoalPoint>NX and Lerna.js</GoalPoint>, <GoalPoint>Playwright</GoalPoint>, <GoalPoint>TON network</GoalPoint>, <GoalPoint>Blueprint</GoalPoint>, <GoalPoint>Tact</GoalPoint></span>,
         addition: <CastleIcon fontSize="large"/>,
-        plotPosition: '-300px',
+        plotPosition: '-280px',
         goalsPosition: "100px"
     },
 ]
