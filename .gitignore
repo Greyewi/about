@@ -124,7 +124,6 @@ dist
 
 .idea
 yarn.lock
-public
 
 */*.env
 */*.js
