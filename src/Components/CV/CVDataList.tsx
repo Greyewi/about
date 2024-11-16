@@ -4,6 +4,8 @@ import CodabraLogo from '../../shared/img/07f127a9-5aa3-4e59-baf2-fed12e1b8953_t
 import InitGroupLogo from '../../shared/img/podkl_6.png'
 import CkDigitalLogo from '../../shared/img/medium_37e3e54613a14bf780935b3b7ad1a5b6.png'
 import PspuLogo from '../../shared/img/PSPU.webp'
+import PlayToEarnLogo from '../../shared/img/playToEarn.jpeg'
+import React from 'react'
 
 interface CVPerson {
     phone: string,
@@ -37,30 +39,31 @@ interface CVDataAsideI {
 
 export const CVDataAside = (): CVDataAsideI => ({
     person: {
-        phone: "+7(919)459-78-24(RU) +972(536)29-40-60 (IL)",
+        phone: "+972(536)29-40-60 (IL)",
         email: "greyewi@gmail.com",
         tg: "greyewi",
         linkedin: "greyewi",
-        height: 240
+        height: 140
     },
     skills: {
         list: [
-            {name: 'JS', description: "ES++", strength: 80},
-            {name: 'React', description: "Hooks, Context, Concurrent mode", strength: 80},
-            {name: 'State managers', description: "Redux, toolkit, thunk, sagas", strength: 90},
-            {name: 'Typescript', description: "", strength: 70},
-            {name: 'Node JS', description: "express, nest, prisma", strength: 60},
-            {name: 'System Design', description: "solid, yagni, patterns", strength: 75},
-            {name: 'Q/A engineering', description: "Jest, RTL, puppeteer", strength: 70},
-            {name: 'Databases', description: "sql, posgress, mongoDB, redis", strength: 60},
-            {name: 'DevOps', description: "Nginx, Docker, Bash, gitlab CI", strength: 50},
-            {name: 'English', description: "B2", strength: 65},
+            {name: 'JS', description: "ES++", strength: 90},
+            {name: 'React', description: "Hooks, SSR, Concurrent mode", strength: 90},
+            {name: 'State managers', description: "Redux, toolkit, Context, query", strength: 95},
+            {name: 'Typescript', description: "v5", strength: 85},
+            {name: 'Node JS', description: "express, nest, prisma", strength: 75},
+            {name: 'System Design', description: "solid, yagni, patterns", strength: 85},
+            {name: 'Q/A engineering', description: "Jest, RTL, playwright, vitest", strength: 70},
+            {name: 'Databases', description: "sql, posgress, mongoDB, redis, *MQ", strength: 70},
+            {name: 'Architecture', description: "Micro services, monorepo, NX, Lerna", strength: 50},
+            {name: 'DevOps', description: "Nginx, Docker, Bash, CI/CD", strength: 60},
+            {name: 'English', description: "B2+", strength: 80},
         ],
         height: function(){ return this.list.length * 55}
     },
     education: {
-        height: 180,
-        name: 'Perm State Humanitarian Pedagogical University',
+        height: 91,
+        name: 'Perm State Pedagogical University',
         description: '2010 - 2016 Master\'s degree, Information Science Education',
         gradeLevel: 'Grade: 9.4'
     }
@@ -69,7 +72,7 @@ export const CVDataAside = (): CVDataAsideI => ({
 interface CVDataExpItem {
     date: string,
     jobName: string,
-    company: string,
+    company: string | JSX.Element,
     logo: string,
     description: string | JSX.Element
 }
@@ -89,38 +92,50 @@ export const CVDataMain: CVDataMainI = {
     about: `Result-oriented web developer for over ${numberOfYears('2015')} years with ${numberOfYears('2016')} years of experience as frontend and ${numberOfYears('2019')} years as full-stack.
             During this time I have finished a lot of big projects. It was CRM, user profiles, administration services, integration systems, multi-room chats, and so on.
             I would like to work in a product team. I am big on working with flexible methodologies, like agile with scrum and kanban approaches.
-            I prefer to automize everything, enthusiastic to educate people.`,
+            I prefer to automate everything and I am enthusiastic about tackling challenging work..`,
     experience: {
         list: [
             {
-                date: "2020 - present",
+              date: "2022 - 2024",
+              jobName: "JS Full-Stack Developer",
+              logo: PlayToEarnLogo,
+              company: "Play to Earn",
+              description: <ul>
+                <li>Engaged in a significant play-to-earn cryptocurrency project, contributing to its overall development and success.</li>
+                <li>Successfully refactored the existing legacy codebase, enhancing efficiency and maintainability.</li>
+                <li>Implemented Walletconnect v2 authentication and developed a parser for Ethereum blocks using web3 and web sockets, improving overall connectivity and data handling.</li>
+                <li>Conducted a comprehensive system audit and integrated the findings with Telegram for streamlined reporting.</li>
+                <li>Designed and developed an internal NFT marketplace, statistics page, and crafting system, providing valuable tools for user engagement.</li>
+                <li>Configured and managed GitLab Continuous Integration (CI) to ensure seamless code deployment and testing.</li>
+              </ul>
+            },
+            {
+                date: "2020 - 2022",
                 jobName: "IT Mentor",
                 logo: MentorLogo,
                 company: "Self-employed",
                 description: <ul>
-                                <li>I share my experience with different developers. We already solved a lot of complex tasks and met deadlines.</li>
-                                <li>I work with a big customers, where I works with architecture an performance.</li>
-                                <li>I also prepare candidates to the interview for different positions: front/back, junior/middle/senior js developer.</li>
-                                <li>Sometimes i take some freelance orders to make MVP or fix functional</li>
-                                <li>I am eager to learn, each day I spend ay least 4 hours on my pet projects or learning new technologies.</li>
+                                <li>Collaborate with various developers, sharing knowledge and experience to successfully tackle complex tasks and meet stringent deadlines.</li>
+                                <li>Engage with major clients, focusing on optimizing architecture and performance to meet their unique needs and demands.</li>
+                                <li>Occasionally undertake freelance projects to develop Minimum Viable Products (MVPs) or troubleshoot functional issues, applying my expertise in a flexible and responsive manner.</li>
                             </ul>
             },
             {
                 date: "2020",
                 logo: MerlionLogo,
                 jobName: "JS, PHP Full-Stack Developer",
-                company: "Merlion",
+                company: <a href="https://merlion.com/eng/about/" target="_blank" rel="noreferrer">Merlion</a>,
                 description: <ul>
-                                <li>Developed frontend part of big-data service for federal wholesale, b2b store.</li>
-                                <li>I have Updated a lot of legacies react class components to hook components</li>
-                                <li>Wrote automated ui, e2e and regress tests</li>
-                                <li>Took a part in scrum activity</li>
+                                <li>Developed the frontend components of a big-data service tailored for federal wholesale and B2B stores, enhancing user experience and functionality.</li>
+                                <li>Modernized numerous legacy React class components by updating them to hook components, improving performance and maintainability.</li>
+                                <li>Authored automated UI, end-to-end, and regression tests, ensuring quality control and stability of the application.</li>
+                                <li>Actively participated in Scrum activities, contributing to agile development and collaboration within the team.</li>
                             </ul>
             },
             {
                 date: "2018 - 2020",
                 jobName: "JS, React and Node.js developer",
-                company: "Codabra",
+                company: <a href="https://codabra.org" target="_blank" rel="noreferrer">Codabra</a>,
                 logo: CodabraLogo,
                 description: <ul>
                                 <li>
@@ -139,7 +154,7 @@ export const CVDataMain: CVDataMainI = {
                 date: "2017 - 2018",
                 jobName: "JS, React developer",
                 logo: InitGroupLogo,
-                company: "InitGroup cash-box decisions",
+                company: <a href="https://initpro.ru/kassa" target="_blank" rel="noreferrer">InitGroup cash-box decisions</a>,
                 description: <ul>
                                 <li>
                                     Developed inner CRM system

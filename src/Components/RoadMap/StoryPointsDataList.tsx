@@ -6,7 +6,13 @@ import WorkHistoryIcon from "@mui/icons-material/WorkHistory";
 import LocationCityIcon from "@mui/icons-material/LocationCity";
 import HomeWorkIcon from "@mui/icons-material/HomeWork";
 import PsychologyIcon from "@mui/icons-material/Psychology";
+import CoronavirusIcon from '@mui/icons-material/Coronavirus';
+import GroupsIcon from '@mui/icons-material/Groups';
 import CurrencyBitcoin from "@mui/icons-material/CurrencyBitcoin";
+import SurfingIcon from '@mui/icons-material/Surfing';
+import VideogameAssetIcon from '@mui/icons-material/VideogameAsset';
+import ShowChartIcon from '@mui/icons-material/ShowChart';
+import CastleIcon from '@mui/icons-material/Castle';
 import {GoalPoint} from "./styles"
 
 export interface PointI {
@@ -95,7 +101,7 @@ export const StoryPointsDataList: PointI[] = [
     {
         id: "the seven time",
         date: '2020',
-        plot: "Due to Covid 19 our startup got into trouble and our team was disbanded. I found a job in a big Russian holding, where I created a part of a big marketplace.",
+        plot: "Because of Covid19 our startup got into trouble and our team was disbanded. I found a job in a big Russian holding, where I created a part of a big marketplace.",
         goals: <span>New skills: <GoalPoint>React-hooks</GoalPoint>, <GoalPoint>Selenium</GoalPoint>, <GoalPoint>RabbitMQ</GoalPoint></span>,
         addition: <HomeWorkIcon fontSize="large"/>,
         plotPosition: '-220px',
@@ -104,16 +110,25 @@ export const StoryPointsDataList: PointI[] = [
     {
         id: "the eight time",
         date: '2020',
-        plot: "I got a visa to the educational program in Israel and it was my chance. Unfortunately, this visa didn't permit me to work, and I became a freelancer. Since then I created a lot of pet projects and tried myself in the education area. Right now I help people in IT.",
-        goals: <span>New skills: <GoalPoint>Typescript</GoalPoint>, <GoalPoint>Functional programming</GoalPoint>, <GoalPoint>Nest.js</GoalPoint>, <GoalPoint>Docker</GoalPoint>, <GoalPoint>Styled-components</GoalPoint>, <GoalPoint>English B1</GoalPoint></span>,
-        addition: <PsychologyIcon fontSize="large"/>,
+        plot: "I got a visa to the educational program in Israel and it was my chance. Unfortunately, this visa didn't permit me to work, and I became a freelancer. Since then I created a lot of pet projects and tried myself in the education area.",
+        goals: <span>New skills: <GoalPoint>Typescript</GoalPoint>, <GoalPoint>Nest.js</GoalPoint>, <GoalPoint>Docker</GoalPoint>, <GoalPoint>Styled-components</GoalPoint>, <GoalPoint>English B1</GoalPoint></span>,
+        addition: <CoronavirusIcon fontSize="large"/>,
         plotPosition: '-273px',
         goalsPosition: "100px"
     },
     {
         id: "the nine time",
         date: '2021',
-        plot: "I came back to Russia to concentrate on learning English. Right now I still work as a freelancer, taking a lot of time to increase my programming level and learn new tech from the IT world.",
+        plot: "I have gathered a wide range of educational materials for my students. Currently, over 90% of them are employed by IT companies. Some are now working as QA engineers in international IT companies. I continue to support them in their development, while also improving my own QA skills.",
+        goals: <span>New skills: <GoalPoint>Functional programming</GoalPoint>, <GoalPoint>Emotion.js</GoalPoint>, <GoalPoint>Team leadership</GoalPoint>, <GoalPoint>Webdriver.IO</GoalPoint></span>,
+        addition: <GroupsIcon fontSize="large"/>,
+        plotPosition: '-273px',
+        goalsPosition: "100px"
+    },
+    {
+        id: "the ten time",
+        date: '2021',
+        plot: "I returned to Russia to focus on improving my English. Currently, I continue to work as a mentor and freelancer, dedicating significant time to advancing my programming skills and learning new technologies in the IT field.",
         goals: <span>New skills: <GoalPoint>System Design</GoalPoint>, <GoalPoint>MongoDB/mongoose</GoalPoint>, <GoalPoint>Vite</GoalPoint></span>,
         addition: <PsychologyIcon fontSize="large"/>,
         plotPosition: '-240px',
@@ -122,10 +137,46 @@ export const StoryPointsDataList: PointI[] = [
     {
         id: "the ten time",
         date: '2022',
-        plot: "I have tried to be employed by a big international company, but unfortunately, one political crisis made influenced my decision, so I took the opportunity became a full-stack developer and started to learn the crypto world. ",
-        goals: <span>New skills: <GoalPoint>Transactions system architecture</GoalPoint>, <GoalPoint>gitlab CI</GoalPoint>, <GoalPoint>Solidity</GoalPoint>, <GoalPoint>Prisma ORM</GoalPoint>, <GoalPoint>English B2</GoalPoint></span>,
+        plot: "I have tried to be employed by a big international company, but unfortunately, one political crisis made influenced my decision, so I took the opportunity became a full-stack developer and started to learn the crypto world.",
+        goals: <span>New skills: <GoalPoint>Solidity</GoalPoint>, <GoalPoint>CSS-modules</GoalPoint>, <GoalPoint>Prisma ORM</GoalPoint>, <GoalPoint>English B2</GoalPoint></span>,
         addition: <CurrencyBitcoin fontSize="large"/>,
         plotPosition: '-280px',
-        goalsPosition: "70px"
+        goalsPosition: "100px"
+    },
+    {
+        id: "the eleven time",
+        date: '2022',
+        plot: "A new opportunity arose with a startup at a small distributed company, where I worked as a senior full-stack developer. I eventually obtained Israeli citizenship and relocated to Netanya. It’s a lovely city with a distinct 'Miami in the 90s' vibe.",
+        goals: <span>New skills: <GoalPoint>Mobx</GoalPoint>, <GoalPoint>gitlab CI/CD</GoalPoint>, <GoalPoint>Transactions system architecture</GoalPoint>, <GoalPoint>PGPool</GoalPoint>, <GoalPoint>ETH network</GoalPoint>, <GoalPoint>Vitest</GoalPoint></span>,
+        addition: <SurfingIcon fontSize="large"/>,
+        plotPosition: '-280px',
+        goalsPosition: "100px"
+    },
+    {
+        id: "the twelve time",
+        date: '2023',
+        plot: "I am still working at the startup, where I developed a play-to-earn game. Although the game has launched, it remains under ongoing development and support. I have implemented extensive testing and emergency systems to protect the game from hackers.",
+        goals: <span>New skills: <GoalPoint>Job Workers</GoalPoint>, <GoalPoint>Telegraf</GoalPoint>, <GoalPoint>Postfix</GoalPoint>, <GoalPoint>Solana network</GoalPoint>, <GoalPoint>Gitlab actions</GoalPoint></span>,
+        addition: <VideogameAssetIcon fontSize="large"/>,
+        plotPosition: '-280px',
+        goalsPosition: "100px"
+    },
+    {
+        id: "the thirteen time",
+        date: '2023',
+        plot: "While working at this startup, I developed a comprehensive trading system. I also participated in a Solana Hackathon with a local community, where we placed fifth.",
+        goals: <span>New skills: <GoalPoint>victory.js</GoalPoint>, <GoalPoint>tanstack/query (React-query)</GoalPoint>, <GoalPoint>WalletConnect2</GoalPoint>, <GoalPoint>Wagme.js</GoalPoint>, <GoalPoint>Ant Design</GoalPoint></span>,
+        addition: <ShowChartIcon fontSize="large"/>,
+        plotPosition: '-280px',
+        goalsPosition: "100px"
+    },
+    {
+        id: "the fourteen time",
+        date: '2024',
+        plot: "We finally completed the projects. Meanwhile, the situation in Israel escalated with the outbreak of war, prompting me to move back to cold Russia. During this difficult time, I decided to find solace in a new D&D community. Now, I can both play and lead 'Dungeons and Dragons'-style games.",
+        goals: <span>New skills: <GoalPoint>Monorepo</GoalPoint>, <GoalPoint>NX and Lerna.js</GoalPoint>, <GoalPoint>Playwright</GoalPoint>, <GoalPoint>TON network</GoalPoint>, <GoalPoint>Blueprint</GoalPoint>, <GoalPoint>Tact</GoalPoint></span>,
+        addition: <CastleIcon fontSize="large"/>,
+        plotPosition: '-300px',
+        goalsPosition: "100px"
     },
 ]

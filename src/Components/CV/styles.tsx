@@ -11,6 +11,7 @@ export const CVContainer = styled.div`
   @media (max-width: 1000px) {
     flex-direction: column;
   }
+    
 `
 
 export const CVLeftAside = styled.div`
@@ -27,6 +28,7 @@ export const CVLeftAside = styled.div`
   
   > h3 {
     margin-top: 0;
+    margin-bottom: 5px;
   }
 
   @media (max-width: 1200px) {
@@ -66,6 +68,14 @@ export const CVAsideParagraph = styled.div<CVAsideParagraphProps>`
   
   h3, h4 {
     margin: 0;
+  }
+
+  @media print {
+    page-break-after: auto;
+
+    h3 {
+      display: none;
+    }
   }
 `
 
@@ -129,16 +139,34 @@ export const CVMainText = styled.div`
   @media (max-width: 1000px) {
     width: calc(100vw - 36px);
   }
+
+  @media print {
+    page-break-after: avoid;
+    display: none;
+  }
 `
 
 export const CVExperiencePoint = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 10px 0;
+
+  
+    &:nth-child(3n) {
+      @media print {
+        page-break-after: always;
+    }
+  }
+  
+  
 `
 
 export const CVExperienceDate = styled.div`
   width: 15%;
+
+  @media print {
+    page-break-after: avoid;
+  }
 
   @media (max-width: 1000px) {
     width: 25%;
@@ -150,6 +178,15 @@ export const CVExperienceBody = styled.div`
   
   ul {
     padding-left: 20px;
+    @media print {
+      page-break-after: avoid;
+    }
+    
+    li {
+      @media print {
+        page-break-after: avoid;
+      }
+    }
   }
   
   @media (max-width: 1000px) {
@@ -161,14 +198,49 @@ export const CVExperienceBody = styled.div`
 export const CVExperienceTitle = styled.h2`
   margin: 0 0 5px;
   padding: 0;
+
+  @media print {
+    page-break-after: avoid;
+  }
 `
 
 export const CVExperienceCompany = styled.span`
   font-style: italic;
+
+  a {
+    color: black;
+    text-decoration: aqua;
+  }
+  
+  @media print {
+    page-break-after: avoid;
+  }
+`
+
+export const SummaryWithPhoto = styled.div`
+  display: flex;
+  justify-content: space-between;
+
+  span {
+    display: none;
+  }
+
+  @media print {
+    span {
+      display: inline;
+      width: 80%;
+      padding: 15px 0;
+      text-align: right;
+    }
+  }
 `
 
 export const CVExperienceLogo = styled.div`
   padding: 18px 0 18px;
+
+  @media print {
+    page-break-after: avoid;
+  }
   
   img {
     max-width: calc(100% - 36px);
@@ -179,5 +251,20 @@ export const CVExperienceLogo = styled.div`
     @media (max-width: 1000px) {
       max-width: calc(100% - 16px);
     }
+    @media print {
+      page-break-after: avoid;
+    }
+  }
+`
+
+export const Contacts = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  gap: 10px;
+  
+  span {
+    word-break: keep-all;
+    display: inline-block;
   }
 `

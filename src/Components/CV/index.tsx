@@ -1,6 +1,7 @@
 import {
     CVAsideCaption,
     CVContainer,
+    Contacts,
     CVLeftAside,
     CVAsideParagraph,
     CVSkillScale,
@@ -13,9 +14,11 @@ import {
     CVExperienceBody,
     CVExperienceTitle,
     CVExperienceLogo,
-    CVExperienceCompany
+    CVExperienceCompany,
+    SummaryWithPhoto
 } from './styles'
 import {Photo} from '../../Pages/Main/styles'
+import MyPhoto from '../../shared/images/photo.jpeg'
 import {CVDataAside, CVDataMain} from './CVDataList'
 
 import React, {memo} from "react"
@@ -29,25 +32,28 @@ const CV = () => {
             <CVLeftAside>
                 <h1>Suntsev Sergey</h1>
                 <h3>Web Engineer</h3>
-                <Photo/>
+                <SummaryWithPhoto>
+                    <Photo src={MyPhoto} alt="Sergey's photo"/>
+                    <span>{about}</span>
+                </SummaryWithPhoto>
                 <CVAsideCaption>Personal Info</CVAsideCaption>
                 <CVAsideParagraph height={person.height}>
-                    <div>
+                    <Contacts>
                         <b>Phone</b>
                         <div>{person.phone}</div>
-                    </div>
-                    <div>
+                    </Contacts>
+                    <Contacts>
                         <b>E-mail</b>
                         <div><a href={"mailto:"+person.email}>{person.email}</a></div>
-                    </div>
-                    <div>
+                    </Contacts>
+                    <Contacts>
                         <b>Telegram</b>
                         <div><a href={"https://t.me/" + person.tg}>@{person.tg}</a></div>
-                    </div>
-                    <div>
+                    </Contacts>
+                    <Contacts>
                         <b>Linkedin</b>
                         <div><a href={"https://www.linkedin.com/in/"+ person.linkedin}>linkedin.com/in/{person.linkedin}</a></div>
-                    </div>
+                    </Contacts>
                 </CVAsideParagraph>
                 <CVAsideCaption>Skills</CVAsideCaption>
                 <CVAsideParagraph height={skills.height()}>
@@ -58,7 +64,6 @@ const CV = () => {
                         </CVAsideSkillLabelContainer>
                         <CVSkillScale percentage={skill.strength}><div/></CVSkillScale>
                     </div>)}
-
                 </CVAsideParagraph>
                 <CVAsideCaption>Education</CVAsideCaption>
                 <CVAsideParagraph height={education.height}>
@@ -74,10 +79,10 @@ const CV = () => {
                 <CVMainCaption>
                     Experience
                 </CVMainCaption>
-                {experience.list.map((point, key) => <CVExperiencePoint key={point.company + key}>
+                {experience.list.map((point, key) => <CVExperiencePoint key={point.date + key}>
                     <CVExperienceDate>
                         {point.date}
-                        <CVExperienceLogo><img src={point.logo} alt={point.company}/></CVExperienceLogo>
+                        <CVExperienceLogo><img src={point.logo} alt={point.jobName}/></CVExperienceLogo>
                     </CVExperienceDate>
                     <CVExperienceBody>
                         <CVExperienceTitle>{point.jobName}</CVExperienceTitle>

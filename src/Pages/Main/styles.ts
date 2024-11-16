@@ -27,7 +27,7 @@ export const Description = styled.div`
     line-height: 20px;
 `
 
-export const Photo = styled.div`
+export const Photo = styled.img`
     height: 126px;
     min-width: 122px;
     max-width: 122px;
@@ -35,7 +35,7 @@ export const Photo = styled.div`
     background: url(${MyPhoto}) top no-repeat;
     background-size: 160px;
     border: 4px solid ${variables.glow20Color};
-    margin: 10px 0;
+    margin: 0 0 5px 0;
 `
 export const ArticleList = styled.div`
     display: flex;
