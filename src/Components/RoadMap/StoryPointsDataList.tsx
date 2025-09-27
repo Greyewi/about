@@ -13,6 +13,7 @@ import SurfingIcon from '@mui/icons-material/Surfing';
 import VideogameAssetIcon from '@mui/icons-material/VideogameAsset';
 import ShowChartIcon from '@mui/icons-material/ShowChart';
 import CastleIcon from '@mui/icons-material/Castle';
+import AcUnitIcon from '@mui/icons-material/AcUnit';
 import {GoalPoint} from "./styles"
 
 export interface PointI {
@@ -176,7 +177,16 @@ export const StoryPointsDataList: PointI[] = [
         plot: "I started a new project from scratch, using a monorepo ecosystem with an inner core library. During this time, I also sought comfort in a new D&D community, finding balance between work and play.",
         goals: <span>New skills: <GoalPoint>Monorepo</GoalPoint>, <GoalPoint>NX and Lerna.js</GoalPoint>, <GoalPoint>Playwright</GoalPoint>, <GoalPoint>TON network</GoalPoint>, <GoalPoint>Blueprint</GoalPoint>, <GoalPoint>Tact</GoalPoint></span>,
         addition: <CastleIcon fontSize="large"/>,
-        plotPosition: '-290px',
+        plotPosition: '-250px',
         goalsPosition: "100px"
+    },
+    {
+        id: "the fifteen time",
+        date: '2024',
+        plot: "Joined an international company with a focus on the TON ecosystem. Redirected full attention to this role; wrapped up teaching commitments and placed additional tasks on hold.",
+        goals: <span>New skills: <GoalPoint>Jotai</GoalPoint>, <GoalPoint>Python</GoalPoint>, <GoalPoint>Strapi</GoalPoint>, <GoalPoint>FunC</GoalPoint>, <GoalPoint>Sentry</GoalPoint></span>,
+        addition: <AcUnitIcon fontSize="large"/>,
+        plotPosition: '-250px',
+        goalsPosition: "80px"
     },
 ]
