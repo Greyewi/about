@@ -5,6 +5,7 @@ import InitGroupLogo from '../../shared/img/podkl_6.png'
 import CkDigitalLogo from '../../shared/img/medium_37e3e54613a14bf780935b3b7ad1a5b6.png'
 import PspuLogo from '../../shared/img/PSPU.webp'
 import PlayToEarnLogo from '../../shared/img/playToEarn.jpeg'
+import TonstakersLogo from '../../shared/img/Tonstakers.png'
 import React from 'react'
 
 interface CVPerson {
@@ -50,7 +51,7 @@ export const CVDataAside = (): CVDataAsideI => ({
             {name: 'JS', description: "ES++", strength: 90},
             {name: 'React', description: "Hooks, SSR, Concurrent mode+", strength: 90},
             {name: 'State managers', description: "Redux & toolkit, Context, React/query", strength: 95},
-            {name: 'Styles', description: "CSS-modules, MUI, Ant-design, SASS, Emotion", strength: 70},
+            {name: 'Styles', description: "CSS-modules, MUI, Open-Props, SASS, Emotion", strength: 70},
             {name: 'Typescript', description: "V5", strength: 85},
             {name: 'Node JS', description: "Express, Nest.js, PrismaORM", strength: 75},
             {name: 'System Design', description: "SOLID, YAGNI, Patterns (OOP and FP)", strength: 85},
@@ -97,8 +98,19 @@ export const CVDataMain: CVDataMainI = {
     experience: {
         list: [
             {
+                date: "2024 - ",
+                jobName: "TS/JS Web3 Fullstack Engineer ",
+                logo: TonstakersLogo,
+                company:<a href="https://tonstakers.com" target="_blank" rel="noreferrer">Tonstakers</a>,
+                description: <ul>
+                    <li>Maintained the main staking application, improved performance, and modernized the architecture.</li>
+                    <li>Delivered with AI a pixel-perfect landing page matching the provided design specifications.</li>
+                    <li>Implemented integrations with third-party Web3 services to extend product functionality.</li>
+                </ul>
+            },
+            {
               date: "2022 - 2024",
-              jobName: "JS Full-Stack Developer",
+              jobName: "TS/JS Web3 Full-Stack Developer",
               logo: PlayToEarnLogo,
               company: "Play to Earn",
               description: <ul>
