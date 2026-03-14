@@ -5,10 +5,17 @@ import useScrollPosition from './useScrollPosition'
 import {useState, useEffect, useCallback, useRef} from "react"
 
 const RoadMap = () => {
-    const {current} = useRef({
+    const {current} = useRef<{
+        roadMapWidth: number,
+        bodyStyle: CSSStyleDeclaration | null
+    }>({
         roadMapWidth: StoryPointsDataList.length * 700,
-        bodyStyle: window.document.body.style
+        bodyStyle: null
     })
+
+    useEffect(() => {
+        current.bodyStyle = window.document.body.style
+    }, []) // empty deps — runs once on mount; current is a stable ref value
 
     const [scrollPosition, setScrollPosition] = useScrollPosition(0, 200)
     const [openedPointList, setOpenedPointList] = useState<string[]>([])
@@ -16,7 +23,7 @@ const RoadMap = () => {
     useEffect(() => setOpenedPointList(prev => [...prev, StoryPointsDataList[scrollPosition].id]), [scrollPosition])
     useEffect(() => {
         return () => {
-            current.bodyStyle.overflow = "auto"
+            if (current.bodyStyle) current.bodyStyle.overflow = "auto"
         }
     }, [current])
 
@@ -28,6 +35,7 @@ const RoadMap = () => {
         setScrollPosition(e, Math.round(scrollLeft / (current.roadMapWidth - clientWidth) * (StoryPointsDataList.length -1)))
 
         target.scrollLeft = scrollLeft + e.deltaY
+        if (!current.bodyStyle) return
         if (target.offsetWidth + scrollLeft >= target.scrollWidth) {
             current.bodyStyle.overflow = "auto"
         }
@@ -36,13 +44,14 @@ const RoadMap = () => {
         }
     }, [setScrollPosition, current])
 
-    const handleSetRoadMapFocus = useCallback(
-        () => window.scrollY === 0 ? current.bodyStyle.overflow = "hidden" : current.bodyStyle.overflow = "auto",
-        [current])
+    const handleSetRoadMapFocus = useCallback(() => {
+        if (typeof window === 'undefined' || !current.bodyStyle) return
+        current.bodyStyle.overflow = window.scrollY === 0 ? "hidden" : "auto"
+    }, [current])
 
-    const handleSetRoadMapBlur = useCallback(
-        () => current.bodyStyle.overflow = "auto",
-        [current])
+    const handleSetRoadMapBlur = useCallback(() => {
+        if (current.bodyStyle) current.bodyStyle.overflow = "auto"
+    }, [current])
 
     return (
         <MapContainer
