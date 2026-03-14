@@ -1,8 +1,4 @@
 import styled, {createGlobalStyle} from 'styled-components'
-import PressStart from './shared/fonts/PressStart.ttf'
-import SuperLegend from './shared/fonts/SuperLegend.ttf'
-import ModeSeven from './shared/fonts/Modeseven.ttf'
-import RobotoSlab from './shared/fonts/RobotoSlab.ttf'
 
 interface IVariables {
     [property: string]: string
@@ -21,34 +17,6 @@ export const variables: IVariables = {
 }
 
 export const GlobalStyles = createGlobalStyle`
-  @font-face {
-    font-family: 'ModeSeven';
-    src: url(${ModeSeven}) format('truetype');
-    font-style: normal;
-    font-display: auto;
-  }
-
-  @font-face {
-    font-family: 'Legend';
-    src: url(${SuperLegend}) format('truetype');
-    font-style: normal;
-    font-display: auto;
-  }
-
-  @font-face {
-    font-family: 'PressStart';
-    src: url(${PressStart}) format('truetype');
-    font-style: normal;
-    font-display: auto;
-  }
-
-  @font-face {
-    font-family: 'RobotoSlab';
-    src: url(${RobotoSlab}) format('truetype');
-    font-style: normal;
-    font-display: auto;
-  }
-
   body {
     font-family: 'ModeSeven', 'Legend', Roboto;
     background-color: ${variables.blue20Color};
