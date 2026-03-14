@@ -17,6 +17,34 @@ export const variables: IVariables = {
 }
 
 export const GlobalStyles = createGlobalStyle`
+  @font-face {
+    font-family: 'ModeSeven';
+    src: url('/fonts/Modeseven.ttf') format('truetype');
+    font-style: normal;
+    font-display: auto;
+  }
+
+  @font-face {
+    font-family: 'Legend';
+    src: url('/fonts/SuperLegend.ttf') format('truetype');
+    font-style: normal;
+    font-display: auto;
+  }
+
+  @font-face {
+    font-family: 'PressStart';
+    src: url('/fonts/PressStart.ttf') format('truetype');
+    font-style: normal;
+    font-display: auto;
+  }
+
+  @font-face {
+    font-family: 'RobotoSlab';
+    src: url('/fonts/RobotoSlab.ttf') format('truetype');
+    font-style: normal;
+    font-display: auto;
+  }
+
   body {
     font-family: 'ModeSeven', 'Legend', Roboto;
     background-color: ${variables.blue20Color};
