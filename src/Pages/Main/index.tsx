@@ -1,8 +1,13 @@
-import React from 'react';
-import {Wrapper} from '../../styles'
-import {Legend, Description, OuterLink} from './styles'
-import { PopupWidget } from "react-calendly";
+import React from 'react'
+import dynamic from 'next/dynamic'
+import { Wrapper } from '../../styles'
+import { Legend, Description, OuterLink } from './styles'
 import usePrintText from '../../Hooks/usePrintText'
+
+const PopupWidget = dynamic(
+    () => import('react-calendly').then(m => m.PopupWidget),
+    { ssr: false }
+)
 
 const fullLegend = `Hi there! I'm Suntsev Sergey.
                 I'm glad to see you on my site. Make yourself at home!`
@@ -18,15 +23,17 @@ function Main() {
                 I specialize in quality web development.<br/>
               I show my journey on <OuterLink href="https://www.instagram.com/greyewi">Instagram</OuterLink> and commit code to <OuterLink href="https://github.com/Greyewi">Github</OuterLink>.
             </Description>
-          <PopupWidget
-            url="https://calendly.com/greyewi/60min"
-            rootElement={document.getElementById("modal") || document.createElement('div')}
-            text="Click here to schedule!"
-            textColor="#1C2C35"
-            color="#B0FBBC"
-          />
+            <PopupWidget
+                url="https://calendly.com/greyewi/60min"
+                rootElement={typeof document !== 'undefined'
+                    ? (document.getElementById('modal') ?? document.createElement('div'))
+                    : document.createElement('div')}
+                text="Click here to schedule!"
+                textColor="#1C2C35"
+                color="#B0FBBC"
+            />
         </Wrapper>
     )
 }
 
-export default Main;
+export default Main
