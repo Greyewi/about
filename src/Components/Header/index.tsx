@@ -1,7 +1,7 @@
 import React from "react";
 import {HeaderElement, Logo} from './styles'
 import {H2, Typography, WrapperInline} from "../../styles";
-import {Link} from 'react-router-dom'
+import Link from 'next/link'
 import ExpandedNavBar from "./ExpandedNavBar";
 
 function Header() {
@@ -15,10 +15,10 @@ function Header() {
                     </Logo>
                 </H2>
                 <ExpandedNavBar>
-                    <Link to="/"><Typography>Main</Typography></Link>
-                    <Link to="/history"><Typography>Story</Typography></Link>
-                    <Link to="/cv"><Typography>CV</Typography></Link>
-                    {/*<Link to="/mind-map"><Typography>Mind map</Typography></Link>*/}
+                    <Link href="/"><Typography>Main</Typography></Link>
+                    <Link href="/history"><Typography>Story</Typography></Link>
+                    <Link href="/cv"><Typography>CV</Typography></Link>
+                    {/*<Link href="/mind-map"><Typography>Mind map</Typography></Link>*/}
                 </ExpandedNavBar>
             </WrapperInline>
         </HeaderElement>
