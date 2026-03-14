@@ -25,7 +25,7 @@ const RoadMap = () => {
         return () => {
             if (current.bodyStyle) current.bodyStyle.overflow = "auto"
         }
-    }, [current])
+    }, [])
 
     const handleScroll = useCallback((e) => {
         const target = e.currentTarget

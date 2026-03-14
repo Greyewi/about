@@ -27,7 +27,7 @@ function Main() {
                 url="https://calendly.com/greyewi/60min"
                 rootElement={typeof document !== 'undefined'
                     ? (document.getElementById('modal') ?? document.createElement('div'))
-                    : document.createElement('div')}
+                    : undefined as unknown as HTMLElement}
                 text="Click here to schedule!"
                 textColor="#1C2C35"
                 color="#B0FBBC"
