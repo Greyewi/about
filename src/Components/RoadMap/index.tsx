@@ -2,7 +2,7 @@ import {Line, MapContainer} from './styles'
 import {StoryPointsDataList} from './StoryPointsDataList'
 import StoryPoint from './StoryPoint'
 import useScrollPosition from './useScrollPosition'
-import {useState, useEffect, useCallback, useRef} from "react"
+import React, {useState, useEffect, useCallback, useRef} from "react"
 
 const RoadMap = () => {
     const {current} = useRef<{
@@ -27,7 +27,7 @@ const RoadMap = () => {
         }
     }, [])
 
-    const handleScroll = useCallback((e) => {
+    const handleScroll = useCallback((e: React.WheelEvent<HTMLDivElement>) => {
         const target = e.currentTarget
         const scrollLeft = target.scrollLeft
         const clientWidth = target.clientWidth

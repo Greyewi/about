@@ -24,7 +24,7 @@ const Cvs = () => {
                 About me
             </h2>
             <div style={{display: dropped.includes('about') ? 'block': 'none'}}>
-                <i>"It's not gods who make pots."</i>
+                <i>&quot;It&apos;s not gods who make pots.&quot;</i>
                 <ul>
                     <li>Age: {new Date().getFullYear() - 1992} years</li>
                     <li>Nation: Russian</li>

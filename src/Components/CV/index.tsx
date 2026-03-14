@@ -33,7 +33,7 @@ const CV = () => {
                 <h1>Suntsev Sergey</h1>
                 <h3>Web Engineer</h3>
                 <SummaryWithPhoto>
-                    <Photo src={MyPhoto} alt="Sergey's photo"/>
+                    <Photo src={typeof MyPhoto === 'string' ? MyPhoto : (MyPhoto as {src: string}).src} alt="Sergey's photo"/>
                     <span>{about}</span>
                 </SummaryWithPhoto>
                 <CVAsideCaption>Personal Info</CVAsideCaption>
@@ -82,7 +82,7 @@ const CV = () => {
                 {experience.list.map((point, key) => <CVExperiencePoint key={point.date + key}>
                     <CVExperienceDate>
                         {point.date}
-                        <CVExperienceLogo><img src={point.logo} alt={point.jobName}/></CVExperienceLogo>
+                        <CVExperienceLogo><img src={typeof point.logo === 'string' ? point.logo : point.logo.src} alt={point.jobName}/></CVExperienceLogo>
                     </CVExperienceDate>
                     <CVExperienceBody>
                         <CVExperienceTitle>{point.jobName}</CVExperienceTitle>

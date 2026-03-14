@@ -7,6 +7,7 @@ import PspuLogo from '../../shared/img/PSPU.webp'
 import PlayToEarnLogo from '../../shared/img/playToEarn.jpeg'
 import TonstakersLogo from '../../shared/img/Tonstakers.png'
 import React from 'react'
+import { StaticImageData } from 'next/image'
 
 interface CVPerson {
     phone: string,
@@ -75,7 +76,7 @@ interface CVDataExpItem {
     date: string,
     jobName: string,
     company: string | JSX.Element,
-    logo: string,
+    logo: string | StaticImageData,
     description: string | JSX.Element
 }
 
@@ -201,7 +202,7 @@ export const CVDataMain: CVDataMainI = {
                 company: "Perm State Pedagogical University",
                 description: <ul>
                                 <li>
-                                    Administration of different services. Support of computer's classes.
+                                    Administration of different services. Support of computer&apos;s classes.
                                 </li>
                                 <li>
                                     There was a plenty of time in this job where I had a side-work as IT freelancer
