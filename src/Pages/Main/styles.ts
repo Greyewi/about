@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import {variables, H2} from '../../styles'
-import MyPhoto from '../../shared/images/photo.jpeg'
+import MyPhotoImport from '../../shared/images/photo.jpeg'
+const MyPhoto = typeof MyPhotoImport === 'string' ? MyPhotoImport : (MyPhotoImport as {src: string}).src
 
 export const Legend = styled.h1`
   color: ${variables.glow10Color};

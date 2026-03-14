@@ -4,7 +4,7 @@ import { Wrapper } from '../../styles'
 import { Legend, Description, OuterLink } from './styles'
 import usePrintText from '../../Hooks/usePrintText'
 
-const PopupWidget = dynamic(
+const PopupWidget = dynamic<any>(
     () => import('react-calendly').then(m => m.PopupWidget),
     { ssr: false }
 )

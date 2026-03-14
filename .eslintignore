@@ -1,0 +1,8 @@
+src/App.tsx
+src/App.test.tsx
+src/index.tsx
+src/react-app-env.d.ts
+src/reportWebVitals.ts
+src/setupTests.ts
+bot/
+botRougue/

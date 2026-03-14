@@ -1,4 +1,4 @@
-import {useCallback, useRef, memo, useEffect} from 'react'
+import React, {useCallback, useRef, memo, useEffect} from 'react'
 import {MMItem} from "./styles"
 import useFormatLines from './useFormatLines'
 import {DragItem} from './Reducer'
@@ -25,8 +25,8 @@ function DraggableItem({children, id, to, from, defaultTop = 250, defaultLeft = 
         }
     }, [movedLine, id, to, lastChangedId])
 
-    const handleDragStart = useCallback((e) => {
-        const rect = e.target.getBoundingClientRect()
+    const handleDragStart = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+        const rect = (e.target as HTMLElement).getBoundingClientRect()
         insideRectRef.current = {top: e.pageY - rect.top, left: e.pageX - rect.left}
     }, [])
 
@@ -39,7 +39,7 @@ function DraggableItem({children, id, to, from, defaultTop = 250, defaultLeft = 
         e.dataTransfer.dropEffect = 'move'
     }
 
-    const handleDragBlock = useCallback((e) => {
+    const handleDragBlock = useCallback((e: React.DragEvent<HTMLDivElement>) => {
         e.preventDefault()
         if (insideRectRef.current && rootElementRef.current && e.pageY && e.pageX){
 

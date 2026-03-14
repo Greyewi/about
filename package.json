@@ -45,6 +45,11 @@
     "bot_deploy": "node bot/server.js"
   },
   "eslintConfig": {
-    "extends": ["next/core-web-vitals"]
+    "extends": [
+      "next/core-web-vitals"
+    ]
+  },
+  "devDependencies": {
+    "eslint": "^8.57.1"
   }
 }
