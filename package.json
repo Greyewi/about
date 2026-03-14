@@ -2,6 +2,9 @@
   "name": "about",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=22.0.0"
+  },
   "dependencies": {
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
@@ -12,55 +15,36 @@
     "@testing-library/user-event": "^12.1.10",
     "@types/jest": "^26.0.15",
     "@types/node": "^18.0.0",
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0",
-    "@types/react-router": "^5.1.16",
-    "@types/react-router-dom": "^5.1.8",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
     "@types/styled-components": "^5.1.13",
     "axios": "^0.21.3",
+    "dayjs": "^1.11.19",
     "dotenv": "^16.0.1",
+    "eslint-config-next": "^14.2.0",
+    "next": "^14.2.0",
     "puppeteer": "^18.0.5",
-    "react": "^17.0.2",
+    "react": "^18.3.1",
     "react-calendly": "^4.1.1",
-    "react-dom": "^17.0.2",
-    "react-error-overlay": "^6.0.10",
+    "react-dom": "^18.3.1",
     "react-lineto": "^3.3.0",
     "react-markdown": "^7.0.1",
-    "react-router-dom": "^5.2.1",
-    "react-scripts": "^5.0.1",
     "react-xarrows": "^2.0.2",
     "styled-components": "^5.3.1",
     "telegraf": "^4.8.5",
     "ts-node-dev": "^2.0.0",
     "typegram": "^3.10.0",
-    "typescript": "^4.1.2",
-    "web-vitals": "^1.0.1"
+    "typescript": "^4.1.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "bot": "ts-node-dev bot/server.ts",
-    "botGame": "ts-node-dev botRougue/server.ts",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "bot": "ts-node-dev --respawn --transpile-only bot/server.ts",
+    "botGame": "ts-node-dev --respawn --transpile-only botRougue/server.ts",
     "bot_deploy": "node bot/server.js"
   },
   "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "extends": ["next/core-web-vitals"]
   }
 }
