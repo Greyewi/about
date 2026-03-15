@@ -1,11 +1,29 @@
-import styled from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
 import {variables, H2} from '../../styles'
+import { Phase } from '../../Hooks/usePrintText'
+
+const blink = keyframes`
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+`
+
+export const Cursor = styled.span<{ $phase: Phase }>`
+  display: inline-block;
+  width: 0.55em;
+  height: 1em;
+  background: ${variables.glow10Color};
+  vertical-align: text-bottom;
+  margin-left: 2px;
+  ${({ $phase }) => $phase === 'idle' && css`
+    animation: ${blink} 1s step-end 2;
+  `}
+`
 import MyPhotoImport from '../../shared/images/photo.jpeg'
 const MyPhoto = typeof MyPhotoImport === 'string' ? MyPhotoImport : (MyPhotoImport as {src: string}).src
 
 export const Legend = styled.h1`
   color: ${variables.glow10Color};
-  font-family: 'Legend','ModeSeven',Roboto,serif;
+  font-family: var(--font-legend), var(--font-mode-seven), Roboto, serif;
   line-height: 179%;
   font-weight: 500;
   font-size: 32px;

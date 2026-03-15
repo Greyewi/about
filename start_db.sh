@@ -3,7 +3,7 @@ set -e
 
 SERVER="127.0.0.1";
 PW="blablabla5";
-DB="cryptogoals";
+DB="temp";
 
 echo "echo stop & remove old docker [$SERVER] and starting new fresh instance of [$SERVER]"
 (docker kill $SERVER || :) && \

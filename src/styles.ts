@@ -17,36 +17,7 @@ export const variables: IVariables = {
 }
 
 export const GlobalStyles = createGlobalStyle`
-  @font-face {
-    font-family: 'ModeSeven';
-    src: url('/fonts/Modeseven.ttf') format('truetype');
-    font-style: normal;
-    font-display: auto;
-  }
-
-  @font-face {
-    font-family: 'Legend';
-    src: url('/fonts/SuperLegend.ttf') format('truetype');
-    font-style: normal;
-    font-display: auto;
-  }
-
-  @font-face {
-    font-family: 'PressStart';
-    src: url('/fonts/PressStart.ttf') format('truetype');
-    font-style: normal;
-    font-display: auto;
-  }
-
-  @font-face {
-    font-family: 'RobotoSlab';
-    src: url('/fonts/RobotoSlab.ttf') format('truetype');
-    font-style: normal;
-    font-display: auto;
-  }
-
   body {
-    font-family: 'ModeSeven', 'Legend', Roboto;
     background-color: ${variables.blue20Color};
     width: 100%;
     height: 100vh;
@@ -104,6 +75,7 @@ export const Typography = styled.span`
 export const Layout = styled.main`
   display: flex;
   flex-direction: column;
+  font-family: var(--font-mode-seven), var(--font-legend), Roboto, sans-serif;
 `
 
 export const WrapperInline = styled.div`

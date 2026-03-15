@@ -1,7 +1,7 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
 import { Wrapper } from '../../styles'
-import { Legend, Description, OuterLink } from './styles'
+import { Legend, Description, OuterLink, Cursor } from './styles'
 import usePrintText from '../../Hooks/usePrintText'
 
 const PopupWidget = dynamic<any>(
@@ -13,11 +13,11 @@ const fullLegend = `Hi there! I'm Suntsev Sergey.
                 I'm glad to see you on my site. Make yourself at home!`
 
 function Main() {
-    const legend = usePrintText(70, fullLegend)
+    const { text: legend, phase } = usePrintText(70, fullLegend)
     return (
         <Wrapper>
             <Legend>
-              {legend}
+              {legend}<Cursor $phase={phase} />
             </Legend>
             <Description>
                 I specialize in quality web development.<br/>
