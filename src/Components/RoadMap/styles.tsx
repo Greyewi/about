@@ -77,7 +77,7 @@ export const Expand = styled.div<Props>`
   z-index: ${props => props.isExpand ? "100" : '-1'};
   transition-duration: 1s;
   cursor: auto;
-  font-family: 'RobotoSlab',serif;
+  font-family: var(--font-roboto-slab), serif;
 `
 
 export const Static = styled.div`

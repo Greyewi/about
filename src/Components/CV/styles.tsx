@@ -5,7 +5,7 @@ export const CVContainer = styled.div`
   width: 100%;
   min-height: fit-content;
   background-color: ${variables.text10Color};
-  font-family: 'RobotoSlab',serif;
+  font-family: var(--font-roboto-slab), serif;
   display: flex;
 
   @media (max-width: 1000px) {
@@ -48,7 +48,7 @@ export const CVAsideCaption = styled.div`
   padding: 5px 18px;
   font-size: 25px;
   font-weight: bold;
-  font-family: 'RobotoSlab',serif;
+  font-family: var(--font-roboto-slab), serif;
 `
 
 type CVAsideParagraphProps = {

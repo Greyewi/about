@@ -5,7 +5,7 @@ export const MMContainer = styled.div`
   width: 100%;
   min-height: calc(100vh - 100px);
   background-color: ${variables.blue30Color};
-  font-family: 'RobotoSlab',serif;
+  font-family: var(--font-roboto-slab), serif;
   display: flex;
   height: 1000px;
 `
