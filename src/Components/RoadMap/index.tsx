@@ -1,15 +1,17 @@
 import {Line, MapContainer} from './styles'
-import {StoryPointsDataList} from './StoryPointsDataList'
+import {roadmapStructure} from '../../i18n/structure'
+import {useTranslation} from '../../i18n/useTranslation'
 import StoryPoint from './StoryPoint'
 import useScrollPosition from './useScrollPosition'
 import React, {useState, useEffect, useCallback, useRef} from "react"
 
 const RoadMap = () => {
+    const {roadmap} = useTranslation()
     const {current} = useRef<{
         roadMapWidth: number,
         bodyStyle: CSSStyleDeclaration | null
     }>({
-        roadMapWidth: StoryPointsDataList.length * 700,
+        roadMapWidth: roadmapStructure.length * 700,
         bodyStyle: null
     })
 
@@ -20,7 +22,7 @@ const RoadMap = () => {
     const [scrollPosition, setScrollPosition] = useScrollPosition(0, 200)
     const [openedPointList, setOpenedPointList] = useState<string[]>([])
 
-    useEffect(() => setOpenedPointList(prev => [...prev, StoryPointsDataList[scrollPosition].id]), [scrollPosition])
+    useEffect(() => setOpenedPointList(prev => [...prev, roadmapStructure[scrollPosition].id]), [scrollPosition])
     useEffect(() => {
         return () => {
             if (current.bodyStyle) current.bodyStyle.overflow = "auto"
@@ -32,7 +34,7 @@ const RoadMap = () => {
         const scrollLeft = target.scrollLeft
         const clientWidth = target.clientWidth
 
-        setScrollPosition(e, Math.round(scrollLeft / (current.roadMapWidth - clientWidth) * (StoryPointsDataList.length -1)))
+        setScrollPosition(e, Math.round(scrollLeft / (current.roadMapWidth - clientWidth) * (roadmapStructure.length -1)))
 
         target.scrollLeft = scrollLeft + e.deltaY
         if (!current.bodyStyle) return
@@ -60,10 +62,11 @@ const RoadMap = () => {
             onMouseLeave={handleSetRoadMapBlur}
         >
             <Line width={current.roadMapWidth}>
-                {StoryPointsDataList.map((item, key) =>
+                {roadmapStructure.map((item) =>
                     <StoryPoint
                         point={item}
-                        key={item.id + key}
+                        text={roadmap[item.id]}
+                        key={item.id}
                         isOpenedPoint={openedPointList.includes(item.id)}
                         handleExpanded={false}
                     />)}

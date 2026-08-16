@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import type { RoadmapId } from './structure'
 
 export type Locale = 'en' | 'ru'
 
@@ -24,7 +25,21 @@ export interface MainText {
   description: ReactNode
 }
 
+export interface GoalItem {
+  name: string
+  note?: string
+}
+
+export interface RoadmapText {
+  plot: ReactNode
+  goalsLabel: string
+  goals: GoalItem[]
+  plotPosition?: string
+  goalsPosition?: string
+}
+
 export interface Dictionary {
   ui: UiText
   main: MainText
+  roadmap: Record<RoadmapId, RoadmapText>
 }
