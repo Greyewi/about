@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react'
-import type { RoadmapId } from './structure'
+import type { RoadmapId, SkillId, JobId } from './structure'
 
 export type Locale = 'en' | 'ru'
 
@@ -38,8 +38,20 @@ export interface RoadmapText {
   goalsPosition?: string
 }
 
+export interface CvText {
+  about: string
+  education: { name: string; description: string; gradeLevel: string }
+  skills: Record<SkillId, { name: string; description: string }>
+  experience: Record<JobId, {
+    jobName: string
+    companyName: string
+    description: ReactNode
+  }>
+}
+
 export interface Dictionary {
   ui: UiText
   main: MainText
   roadmap: Record<RoadmapId, RoadmapText>
+  cv: CvText
 }
