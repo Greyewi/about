@@ -122,7 +122,7 @@ export const cvStructure = {
     { id: 'architecture', strength: 50 },
     { id: 'devops', strength: 60 },
     { id: 'english', strength: 80 },
-  ] as { id: SkillId; strength: number }[],
+  ] satisfies { id: SkillId; strength: number }[],
   skillsHeight(): number {
     return this.skills.length * 55
   },
@@ -135,5 +135,5 @@ export const cvStructure = {
     { id: 'initgroup',    date: '2017 - 2018', logo: InitGroupLogo, companyUrl: 'https://initpro.ru/kassa' },
     { id: 'ckdigital',    date: '2016 - 2017', logo: CkDigitalLogo },
     { id: 'pspu',         date: '2013 - 2016', logo: PspuLogo },
-  ] as JobEntry[],
+  ] satisfies JobEntry[],
 }
