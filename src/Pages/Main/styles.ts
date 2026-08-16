@@ -29,9 +29,18 @@ export const Legend = styled.h1`
   font-size: 32px;
   margin: 100px 0 10px 13%;
 
+  .locale-ru & {
+    font-size: 24px;
+    line-height: 165%;
+  }
+
   @media (max-width: 768px) {
     font-size: 25px;
     margin: 50px 0 10px 13%;
+
+    .locale-ru & {
+      font-size: 16px;
+    }
   }
 `
 
