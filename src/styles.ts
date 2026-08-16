@@ -73,9 +73,17 @@ export const Typography = styled.span`
 `
 
 export const Layout = styled.main`
+  --font-display: var(--font-legend);
+  --font-body: var(--font-mode-seven);
+
+  &.locale-ru {
+    --font-display: var(--font-press-start);
+    --font-body: var(--font-roboto-slab);
+  }
+
   display: flex;
   flex-direction: column;
-  font-family: var(--font-mode-seven), var(--font-legend), Roboto, sans-serif;
+  font-family: var(--font-body), Roboto, sans-serif;
 `
 
 export const WrapperInline = styled.div`
