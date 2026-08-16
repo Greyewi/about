@@ -1,34 +1,46 @@
-import React, {useState, memo} from "react";
-import {Addition, Expand, Point, Static} from "./styles";
-import {PointI} from './StoryPointsDataList'
+import React, {useState, memo, Fragment} from "react";
+import {Addition, Expand, Point, Static, GoalPoint} from "./styles";
+import type {RoadmapEntry} from '../../i18n/structure'
+import type {RoadmapText} from '../../i18n/types'
 
 interface StoryPointI {
-  point: PointI,
+  point: RoadmapEntry,
+  text: RoadmapText,
   isOpenedPoint: boolean,
   handleExpanded: boolean
 }
 
-const StoryPoint = ({point, handleExpanded, isOpenedPoint}: StoryPointI) => {
+const StoryPoint = ({point, text, handleExpanded, isOpenedPoint}: StoryPointI) => {
     const [isExpanded, setExpanded] = useState<boolean>(false)
+    const isExpand = isExpanded || (!handleExpanded && isOpenedPoint)
 
     return (
         <Point onClick={() => setExpanded(prev => !prev)} clickable={handleExpanded}>
-            <Addition>{point.addition}</Addition>
+            <Addition>{point.icon}</Addition>
             <Expand
-                isExpand={isExpanded || (!handleExpanded && isOpenedPoint)}
+                isExpand={isExpand}
                 onClick={e => e.stopPropagation()}
-                top={point.plotPosition}
+                top={text.plotPosition ?? point.plotPosition}
             >
-                {point.plot}
+                {text.plot}
             </Expand>
             <Static>{point.date}</Static>
             <Expand
-                isExpand={isExpanded || (!handleExpanded && isOpenedPoint)}
+                isExpand={isExpand}
                 onClick={e => e.stopPropagation()}
                 isSlide
-                top={point.goalsPosition}
+                top={text.goalsPosition ?? point.goalsPosition}
             >
-                {point.goals}
+                <span>
+                    {text.goalsLabel}:{' '}
+                    {text.goals.map((goal, index) => (
+                        <Fragment key={goal.name}>
+                            <GoalPoint>{goal.name}</GoalPoint>
+                            {goal.note ? ` (${goal.note})` : ''}
+                            {index < text.goals.length - 1 ? ', ' : ''}
+                        </Fragment>
+                    ))}
+                </span>
             </Expand>
         </Point>
     )
