@@ -3,6 +3,7 @@ import localFont from 'next/font/local'
 import { GlobalStyles, Layout } from '../src/styles'
 import Header from '../src/Components/Header'
 import '../styles/globals.css'
+import { useRouter } from 'next/router'
 
 const modeSeven = localFont({
   src: '../public/fonts/Modeseven.ttf',
@@ -31,8 +32,9 @@ const pressStart = localFont({
 const fontVars = [modeSeven.variable, legendFont.variable, robotoSlab.variable, pressStart.variable].join(' ')
 
 export default function App({ Component, pageProps }: AppProps) {
+  const { locale } = useRouter()
   return (
-    <Layout className={`App-header ${fontVars}`}>
+    <Layout className={`App-header ${fontVars} locale-${locale ?? 'en'}`}>
       <GlobalStyles />
       <Header />
       <Component {...pageProps} />

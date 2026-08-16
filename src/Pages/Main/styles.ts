@@ -23,12 +23,11 @@ const MyPhoto = typeof MyPhotoImport === 'string' ? MyPhotoImport : (MyPhotoImpo
 
 export const Legend = styled.h1`
   color: ${variables.glow10Color};
-  font-family: var(--font-legend), var(--font-mode-seven), Roboto, serif;
+  font-family: var(--font-display), Roboto, serif;
   line-height: 179%;
   font-weight: 500;
   font-size: 32px;
   margin: 100px 0 10px 13%;
-
 
   @media (max-width: 768px) {
     font-size: 25px;
