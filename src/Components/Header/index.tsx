@@ -3,6 +3,7 @@ import {HeaderElement, Logo} from './styles'
 import {H2, Typography, WrapperInline} from "../../styles";
 import Link from 'next/link'
 import ExpandedNavBar from "./ExpandedNavBar";
+import LocaleSwitcher from "../LocaleSwitcher";
 import { useTranslation } from "../../i18n/useTranslation";
 
 function Header() {
@@ -22,6 +23,7 @@ function Header() {
                     <Link href="/cv"><Typography>{ui.nav.cv}</Typography></Link>
                     {/*<Link href="/mind-map"><Typography>Mind map</Typography></Link>*/}
                 </ExpandedNavBar>
+                <LocaleSwitcher />
             </WrapperInline>
         </HeaderElement>
     );
