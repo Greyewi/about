@@ -13,6 +13,10 @@ export const LocaleLink = styled(Link)<{ $active: boolean }>`
   font-size: 19px;
   line-height: 28px;
   color: ${({ $active }) => ($active ? variables.glow20Color : variables.text20Color)};
+  /* Non-colour cue for the active locale (in addition to aria-current, for
+     sighted users who can't rely on the colour difference alone). */
+  font-weight: ${({ $active }) => ($active ? 700 : 400)};
+  text-decoration: ${({ $active }) => ($active ? 'underline' : 'none')};
   cursor: pointer;
 
   @media (max-width: 768px) {
