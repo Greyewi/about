@@ -11,6 +11,13 @@ export const cv: CvText = {
     description: '2010 – 2016, магистратура, информатика в образовании',
     gradeLevel: 'Средний балл: 9.4',
   },
+  // Measured with Puppeteer at 1440px: the institution name (51 chars) and
+  // degree line wrap to two lines each in the ~396px-wide RU sidebar, so
+  // this block's natural content height is ~115px against the shared
+  // (English-tuned) 91px default in structure.tsx — override it here
+  // rather than bumping the shared constant, which would also affect the
+  // English page.
+  educationHeight: 120,
   skills: {
     'js':             { name: 'JS',                description: 'ES++' },
     'react':          { name: 'React',             description: 'Hooks, SSR, Concurrent mode+' },

@@ -41,6 +41,12 @@ export interface RoadmapText {
 export interface CvText {
   about: string
   education: { name: string; description: string; gradeLevel: string }
+  // Optional per-locale override for cvStructure.educationHeight, mirroring
+  // RoadmapText's plotPosition/goalsPosition escape hatch: the education
+  // block's institution name and degree line run measurably longer in
+  // Russian, so the shared (English-tuned) height can be overridden here
+  // without touching the locale-invariant default in structure.tsx.
+  educationHeight?: number
   skills: Record<SkillId, { name: string; description: string }>
   experience: Record<JobId, {
     jobName: string
