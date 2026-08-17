@@ -15,4 +15,12 @@ export const ui: UiText = {
     telegram: 'Telegram',
     linkedin: 'Linkedin',
   },
+  seo: {
+    title: 'Sergey Suntsev — Web & Full-Stack Engineer',
+    description: 'Personal portfolio of Sergey Suntsev, a web and full-stack engineer working with React, TypeScript and Node.js.',
+    cvTitle: 'CV — Sergey Suntsev',
+    cvDescription: "Sergey Suntsev's résumé: work experience, skills and education as a web and full-stack engineer.",
+    historyTitle: 'Story — Sergey Suntsev',
+    historyDescription: "Sergey Suntsev's career timeline, from first lines of code to full-stack engineering roles.",
+  },
 }

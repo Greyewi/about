@@ -3,6 +3,15 @@ import type { RoadmapId, SkillId, JobId } from './structure'
 
 export type Locale = 'en' | 'ru'
 
+export interface SeoText {
+  title: string
+  description: string
+  cvTitle: string
+  cvDescription: string
+  historyTitle: string
+  historyDescription: string
+}
+
 export interface UiText {
   nav: { main: string; story: string; cv: string }
   personName: string
@@ -18,6 +27,7 @@ export interface UiText {
     telegram: string
     linkedin: string
   }
+  seo: SeoText
 }
 
 export interface MainText {
