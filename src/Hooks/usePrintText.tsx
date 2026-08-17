@@ -11,15 +11,33 @@ export default function usePrintText(speed: number, text: string) {
   const timeout = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   useEffect(() => {
+    // `text` is a dependency, so this effect re-runs whenever it changes —
+    // including when it changes without a remount (e.g. a future
+    // client-side locale switch). Reset explicitly rather than relying on
+    // state carried over from the previous text: on a genuine fresh mount
+    // these are already '' / 'idle', so the reset is a no-op there.
+    setDisplayText('')
+    setPhase('idle')
+
     timeout.current = setTimeout(() => {
       setPhase('typing')
       interval.current = setInterval(() => {
         setDisplayText(prev => {
-          if (prev.length >= text.length - 1) {
+          // Guard: never index past the end of `text`. Without this,
+          // a text change combined with stale `prev` could append the
+          // literal string "undefined" (prev.length > text.length) or
+          // splice on characters from the wrong string.
+          if (prev.length >= text.length) {
+            clearInterval(interval.current!)
+            setPhase('done')
+            return prev
+          }
+          const next = prev + text[prev.length]
+          if (next.length >= text.length) {
             clearInterval(interval.current!)
             setPhase('done')
           }
-          return prev + text[prev.length]
+          return next
         })
       }, speed)
     }, BLINK_DURATION)

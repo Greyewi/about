@@ -55,26 +55,33 @@ export interface RoadmapEntry {
   goalsPosition: string
 }
 
-export const roadmapStructure: RoadmapEntry[] = [
-  { id: 'first-code',          date: '2011', icon: <BoyIcon fontSize="large"/>,                plotPosition: '-240px', goalsPosition: '100px' },
-  { id: 'first-website',       date: '2013', icon: <SchoolIcon fontSize="large"/>,             plotPosition: '-220px', goalsPosition: '100px' },
-  { id: 'first-web-app',       date: '2015', icon: <WorkspacePremiumIcon fontSize="large"/>,   plotPosition: '-240px', goalsPosition: '100px' },
-  { id: 'first-job',           date: '2016', icon: <WorkIcon fontSize="large"/>,               plotPosition: '-260px', goalsPosition: '100px' },
-  { id: 'asana-plugin',        date: '2017', icon: <WorkIcon fontSize="large"/>,               plotPosition: '-200px', goalsPosition: '100px' },
-  { id: 'product-company',     date: '2017', icon: <WorkHistoryIcon fontSize="large"/>,        plotPosition: '-245px', goalsPosition: '100px' },
-  { id: 'moscow-startup',      date: '2018', icon: <LocationCityIcon fontSize="large"/>,       plotPosition: '-280px', goalsPosition: '100px' },
-  { id: 'edtech-apps',         date: '2019', icon: <LocationCityIcon fontSize="large"/>,       plotPosition: '-280px', goalsPosition: '100px' },
-  { id: 'covid-marketplace',   date: '2020', icon: <HomeWorkIcon fontSize="large"/>,           plotPosition: '-220px', goalsPosition: '100px' },
-  { id: 'israel-freelance',    date: '2020', icon: <CoronavirusIcon fontSize="large"/>,        plotPosition: '-273px', goalsPosition: '100px' },
-  { id: 'mentoring',           date: '2021', icon: <GroupsIcon fontSize="large"/>,             plotPosition: '-273px', goalsPosition: '100px' },
-  { id: 'back-to-russia',      date: '2021', icon: <PsychologyIcon fontSize="large"/>,         plotPosition: '-240px', goalsPosition: '100px' },
-  { id: 'crypto-switch',       date: '2022', icon: <CurrencyBitcoin fontSize="large"/>,        plotPosition: '-280px', goalsPosition: '100px' },
-  { id: 'israeli-citizenship', date: '2022', icon: <SurfingIcon fontSize="large"/>,            plotPosition: '-280px', goalsPosition: '100px' },
-  { id: 'play-to-earn',        date: '2023', icon: <VideogameAssetIcon fontSize="large"/>,     plotPosition: '-280px', goalsPosition: '100px' },
-  { id: 'trading-system',      date: '2023', icon: <ShowChartIcon fontSize="large"/>,          plotPosition: '-280px', goalsPosition: '100px' },
-  { id: 'monorepo-dnd',        date: '2024', icon: <CastleIcon fontSize="large"/>,             plotPosition: '-250px', goalsPosition: '100px' },
-  { id: 'ton-company',         date: '2024', icon: <AcUnitIcon fontSize="large"/>,             plotPosition: '-250px', goalsPosition: '80px'  },
-]
+// Keyed by RoadmapId rather than a plain array: a duplicate id is TS1117,
+// a missing id is a Record error, and an id that doesn't appear in
+// ROADMAP_IDS is an excess-property error. roadmapStructure is then
+// derived from ROADMAP_IDS itself, so the array's runtime order always
+// matches the id tuple's declared order (the timeline's chronology).
+const roadmapEntries: Record<RoadmapId, Omit<RoadmapEntry, 'id'>> = {
+  'first-code':          { date: '2011', icon: <BoyIcon fontSize="large"/>,                plotPosition: '-240px', goalsPosition: '100px' },
+  'first-website':       { date: '2013', icon: <SchoolIcon fontSize="large"/>,             plotPosition: '-220px', goalsPosition: '100px' },
+  'first-web-app':       { date: '2015', icon: <WorkspacePremiumIcon fontSize="large"/>,   plotPosition: '-240px', goalsPosition: '100px' },
+  'first-job':           { date: '2016', icon: <WorkIcon fontSize="large"/>,               plotPosition: '-260px', goalsPosition: '100px' },
+  'asana-plugin':        { date: '2017', icon: <WorkIcon fontSize="large"/>,               plotPosition: '-200px', goalsPosition: '100px' },
+  'product-company':     { date: '2017', icon: <WorkHistoryIcon fontSize="large"/>,        plotPosition: '-245px', goalsPosition: '100px' },
+  'moscow-startup':      { date: '2018', icon: <LocationCityIcon fontSize="large"/>,       plotPosition: '-280px', goalsPosition: '100px' },
+  'edtech-apps':         { date: '2019', icon: <LocationCityIcon fontSize="large"/>,       plotPosition: '-280px', goalsPosition: '100px' },
+  'covid-marketplace':   { date: '2020', icon: <HomeWorkIcon fontSize="large"/>,           plotPosition: '-220px', goalsPosition: '100px' },
+  'israel-freelance':    { date: '2020', icon: <CoronavirusIcon fontSize="large"/>,        plotPosition: '-273px', goalsPosition: '100px' },
+  'mentoring':           { date: '2021', icon: <GroupsIcon fontSize="large"/>,             plotPosition: '-273px', goalsPosition: '100px' },
+  'back-to-russia':      { date: '2021', icon: <PsychologyIcon fontSize="large"/>,         plotPosition: '-240px', goalsPosition: '100px' },
+  'crypto-switch':       { date: '2022', icon: <CurrencyBitcoin fontSize="large"/>,        plotPosition: '-280px', goalsPosition: '100px' },
+  'israeli-citizenship': { date: '2022', icon: <SurfingIcon fontSize="large"/>,            plotPosition: '-280px', goalsPosition: '100px' },
+  'play-to-earn':        { date: '2023', icon: <VideogameAssetIcon fontSize="large"/>,     plotPosition: '-280px', goalsPosition: '100px' },
+  'trading-system':      { date: '2023', icon: <ShowChartIcon fontSize="large"/>,          plotPosition: '-280px', goalsPosition: '100px' },
+  'monorepo-dnd':        { date: '2024', icon: <CastleIcon fontSize="large"/>,             plotPosition: '-250px', goalsPosition: '100px' },
+  'ton-company':         { date: '2024', icon: <AcUnitIcon fontSize="large"/>,             plotPosition: '-250px', goalsPosition: '80px'  },
+}
+
+export const roadmapStructure: RoadmapEntry[] = ROADMAP_IDS.map(id => ({ id, ...roadmapEntries[id] }))
 
 export const SKILL_IDS = [
   'js', 'react', 'state-managers', 'styles', 'typescript', 'nodejs',
@@ -100,6 +107,52 @@ export interface JobEntry {
 export const numberOfYears = (start: string): number =>
   Math.round((new Date().getTime() - new Date(start).getTime()) / (1000 * 60 * 60 * 24 * 365))
 
+export interface SkillEntry {
+  id: SkillId
+  strength: number
+}
+
+// Same guarantee as roadmapEntries above: Record<SkillId, …> makes a
+// duplicate id TS1117, a missing id a Record error, and an id outside
+// SKILL_IDS an excess-property error. cvSkills is derived from SKILL_IDS
+// so its runtime order matches the tuple's declared order.
+const skillEntries: Record<SkillId, Omit<SkillEntry, 'id'>> = {
+  'js':             { strength: 90 },
+  'react':          { strength: 90 },
+  'state-managers': { strength: 95 },
+  'styles':         { strength: 70 },
+  'typescript':     { strength: 85 },
+  'nodejs':         { strength: 75 },
+  'system-design':  { strength: 85 },
+  'qa':             { strength: 70 },
+  'databases':      { strength: 70 },
+  'architecture':   { strength: 50 },
+  'devops':         { strength: 60 },
+  'english':        { strength: 80 },
+}
+
+// Hoisted to a top-level const (rather than living only inside
+// cvStructure) so `skillsHeight` below can be a plain computed value
+// instead of a `this`-dependent method — see src/Components/CV/index.tsx,
+// which destructures sibling fields off cvStructure in one place and
+// calls this one qualified in another; a `this`-bound method is a trap
+// for exactly that pattern.
+export const cvSkills: SkillEntry[] = SKILL_IDS.map(id => ({ id, ...skillEntries[id] }))
+
+// Same guarantee for the CV's job history.
+const jobEntries: Record<JobId, Omit<JobEntry, 'id'>> = {
+  'tonstakers':   { date: '2024 - ',     logo: TonstakersLogo, companyUrl: 'https://tonstakers.com' },
+  'play-to-earn': { date: '2022 - 2024', logo: PlayToEarnLogo },
+  'mentor':       { date: '2020 - 2022', logo: MentorLogo },
+  'merlion':      { date: '2020',        logo: MerlionLogo, companyUrl: 'https://merlion.com/eng/about/' },
+  'codabra':      { date: '2018 - 2020', logo: CodabraLogo, companyUrl: 'https://codabra.org' },
+  'initgroup':    { date: '2017 - 2018', logo: InitGroupLogo, companyUrl: 'https://initpro.ru/kassa' },
+  'ckdigital':    { date: '2016 - 2017', logo: CkDigitalLogo },
+  'pspu':         { date: '2013 - 2016', logo: PspuLogo },
+}
+
+export const cvExperience: JobEntry[] = JOB_IDS.map(id => ({ id, ...jobEntries[id] }))
+
 export const cvStructure = {
   person: {
     phone: '+972(536)29-40-60 (IL)',
@@ -109,31 +162,7 @@ export const cvStructure = {
     height: 140,
   },
   educationHeight: 91,
-  skills: [
-    { id: 'js', strength: 90 },
-    { id: 'react', strength: 90 },
-    { id: 'state-managers', strength: 95 },
-    { id: 'styles', strength: 70 },
-    { id: 'typescript', strength: 85 },
-    { id: 'nodejs', strength: 75 },
-    { id: 'system-design', strength: 85 },
-    { id: 'qa', strength: 70 },
-    { id: 'databases', strength: 70 },
-    { id: 'architecture', strength: 50 },
-    { id: 'devops', strength: 60 },
-    { id: 'english', strength: 80 },
-  ] satisfies { id: SkillId; strength: number }[],
-  skillsHeight(): number {
-    return this.skills.length * 55
-  },
-  experience: [
-    { id: 'tonstakers',   date: '2024 - ',    logo: TonstakersLogo, companyUrl: 'https://tonstakers.com' },
-    { id: 'play-to-earn', date: '2022 - 2024', logo: PlayToEarnLogo },
-    { id: 'mentor',       date: '2020 - 2022', logo: MentorLogo },
-    { id: 'merlion',      date: '2020',        logo: MerlionLogo, companyUrl: 'https://merlion.com/eng/about/' },
-    { id: 'codabra',      date: '2018 - 2020', logo: CodabraLogo, companyUrl: 'https://codabra.org' },
-    { id: 'initgroup',    date: '2017 - 2018', logo: InitGroupLogo, companyUrl: 'https://initpro.ru/kassa' },
-    { id: 'ckdigital',    date: '2016 - 2017', logo: CkDigitalLogo },
-    { id: 'pspu',         date: '2013 - 2016', logo: PspuLogo },
-  ] satisfies JobEntry[],
+  skills: cvSkills,
+  skillsHeight: cvSkills.length * 55,
+  experience: cvExperience,
 }
