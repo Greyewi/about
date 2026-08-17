@@ -57,7 +57,7 @@ const CV = () => {
                     </Contacts>
                 </CVAsideParagraph>
                 <CVAsideCaption>{ui.cv.skills}</CVAsideCaption>
-                <CVAsideParagraph height={cvStructure.skillsHeight()}>
+                <CVAsideParagraph height={cvStructure.skillsHeight}>
                     {skills.map((skill) => {
                         const text = cv.skills[skill.id]
                         return (
