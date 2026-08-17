@@ -44,3 +44,12 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Environment variables
+
+- `NEXT_PUBLIC_SITE_URL` — the site's public base URL (e.g. `https://example.com`, no
+  trailing slash). Optional. When set, `pages/_app.tsx` emits absolute
+  `<link rel="canonical">` and `<link rel="alternate" hrefLang="…">` tags. When unset, the
+  canonical tag is still emitted as a relative URL (which is sufficient to mark `/en/*` as
+  a duplicate of the unprefixed English pages) but hreflang tags are omitted, since search
+  engines require fully-qualified URLs there.
