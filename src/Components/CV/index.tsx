@@ -72,7 +72,7 @@ const CV = () => {
                     })}
                 </CVAsideParagraph>
                 <CVAsideCaption>{ui.cv.education}</CVAsideCaption>
-                <CVAsideParagraph height={educationHeight}>
+                <CVAsideParagraph height={cv.educationHeight ?? educationHeight}>
                     <h3>{cv.education.name}</h3>
                     <h4><i>{cv.education.description}</i></h4>
                     <div>{cv.education.gradeLevel}</div>
