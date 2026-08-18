@@ -1,5 +1,4 @@
 import {Line, MapContainer} from './styles'
-import {VisuallyHidden} from '../../styles'
 import {roadmapStructure} from '../../i18n/structure'
 import {useTranslation} from '../../i18n/useTranslation'
 import StoryPoint from './StoryPoint'
@@ -7,7 +6,7 @@ import useScrollPosition from './useScrollPosition'
 import React, {useState, useEffect, useCallback, useRef} from "react"
 
 const RoadMap = () => {
-    const {roadmap, ui} = useTranslation()
+    const {roadmap} = useTranslation()
     const {current} = useRef<{
         roadMapWidth: number,
         bodyStyle: CSSStyleDeclaration | null
@@ -62,11 +61,6 @@ const RoadMap = () => {
             onMouseEnter={handleSetRoadMapFocus}
             onMouseLeave={handleSetRoadMapBlur}
         >
-            {/* /history had no heading at all before this: the page is a
-                horizontal-scroll timeline with no natural place for a large
-                visible title without a design pass, so this gives it a real
-                <h1> for SEO/accessibility without changing the visual layout. */}
-            <VisuallyHidden as="h1">{ui.seo.historyTitle}</VisuallyHidden>
             <Line width={current.roadMapWidth}>
                 {roadmapStructure.map((item) =>
                     <StoryPoint
