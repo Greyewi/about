@@ -45,24 +45,6 @@ export const H1 = styled.h1`
   }
 `
 
-// Keeps content in the DOM and accessibility tree (screen readers, and
-// crucially non-JS crawlers reading the raw SSR HTML) while hiding it
-// visually — the standard "sr-only" pattern. Used to give animated/
-// progressively-revealed text (e.g. the homepage typewriter greeting) a
-// real, complete text node that's present from the very first response,
-// instead of relying on client-side JS to eventually fill it in.
-export const VisuallyHidden = styled.span`
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-`
-
 export const H2 = styled.h2`
   margin: 0;
   font-style: normal;
