@@ -1,6 +1,6 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
-import { Wrapper } from '../../styles'
+import { Wrapper, VisuallyHidden } from '../../styles'
 import { Legend, Description, Cursor } from './styles'
 import usePrintText from '../../Hooks/usePrintText'
 import { useTranslation } from '../../i18n/useTranslation'
@@ -16,7 +16,13 @@ function Main() {
     return (
         <Wrapper>
             <Legend>
-              {legend}<Cursor $phase={phase} />
+              {/* Real, complete greeting text present in the initial SSR HTML —
+                  usePrintText only builds `legend` up client-side over ~2s+, so
+                  without this the <h1> (the page's single most important piece
+                  of on-page text) renders empty for any crawler or link-preview
+                  bot that doesn't execute JS, and briefly for ones that do. */}
+              <VisuallyHidden>{main.greeting}</VisuallyHidden>
+              <span aria-hidden="true">{legend}</span><Cursor $phase={phase} />
             </Legend>
             <Description>
                 {main.description}
