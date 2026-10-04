@@ -54,6 +54,7 @@ export const roadmap: Record<RoadmapId, RoadmapText> = {
   },
   'mentoring': {
     plot: "Я сосредоточился на менторстве. Сейчас практически все мои ученики работают в IT-компаниях. Я продолжаю помогать им развиваться и параллельно подтягиваю собственные навыки.",
+    plotPosition: '-245px',
     goalsLabel: 'Новые навыки',
     goals: [{ name: 'Функциональное программирование' }, { name: 'Emotion.js' }, { name: 'Руководство командой' }, { name: 'Webdriver.IO' }],
   },
@@ -74,11 +75,13 @@ export const roadmap: Record<RoadmapId, RoadmapText> = {
   },
   'play-to-earn': {
     plot: "Продолжил работать в том же стартапе, где разработал play-to-earn-игру. Внедрил тестирование и добавил аварийные механизмы, защищающие платформу от взлома.",
+    plotPosition: '-225px',
     goalsLabel: 'Новые навыки',
     goals: [{ name: 'Job Workers' }, { name: 'Telegraf' }, { name: 'Postfix' }, { name: 'Сеть Solana' }, { name: 'GitLab actions' }],
   },
   'trading-system': {
     plot: "В том же стартапе я разработал биржевую систему обмена токенами. Также вместе с местным сообществом участвовал в хакатоне Solana — мы заняли пятое место.",
+    plotPosition: '-225px',
     goalsLabel: 'Новые навыки',
     goals: [{ name: 'victory.js' }, { name: 'tanstack/query (React-query)' }, { name: 'WalletConnect2' }, { name: 'Wagme.js' }, { name: 'Ant Design' }],
   },
