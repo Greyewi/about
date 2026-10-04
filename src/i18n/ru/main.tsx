@@ -3,11 +3,11 @@ import { OuterLink } from '../../Pages/Main/styles'
 
 export const main: MainText = {
   greeting: `Здравствуйте! Меня зовут Сергей Сунцев.
-                Рад видеть вас на своём сайте.`,
+                Рад видеть вас на своём сайте. Чувствуйте себя как дома!`,
   description: (
     <>
       Специализируюсь на качественной веб-разработке.<br/>
-      Свой путь показываю в <OuterLink href="https://www.instagram.com/greyewi">Instagram</OuterLink>, а код пишу на <OuterLink href="https://github.com/Greyewi">Github</OuterLink>.
+      О своём пути рассказываю в <OuterLink href="https://www.instagram.com/greyewi">Instagram</OuterLink>, а код выкладываю на <OuterLink href="https://github.com/Greyewi">GitHub</OuterLink>.
     </>
   ),
 }
