@@ -31,6 +31,7 @@ export interface UiText {
 }
 
 export interface MainText {
+  intro: string[]
   greeting: string
   description: ReactNode
 }
