@@ -14,6 +14,8 @@ import VideogameAssetIcon from "@mui/icons-material/VideogameAsset"
 import ShowChartIcon from "@mui/icons-material/ShowChart"
 import CastleIcon from "@mui/icons-material/Castle"
 import AcUnitIcon from "@mui/icons-material/AcUnit"
+import LightbulbIcon from "@mui/icons-material/Lightbulb"
+import SmartToyIcon from "@mui/icons-material/SmartToy"
 import MentorLogo from '../shared/img/attachment_71573833.jpeg'
 import MerlionLogo from '../shared/img/snffkw4xywiybmpsopun.webp'
 import CodabraLogo from '../shared/img/07f127a9-5aa3-4e59-baf2-fed12e1b8953_thumb.png'
@@ -43,6 +45,8 @@ export const ROADMAP_IDS = [
   'trading-system',
   'monorepo-dnd',
   'ton-company',
+  'my-odyssey',
+  'ai-mentoring',
 ] as const
 
 export type RoadmapId = typeof ROADMAP_IDS[number]
@@ -79,6 +83,8 @@ const roadmapEntries: Record<RoadmapId, Omit<RoadmapEntry, 'id'>> = {
   'trading-system':      { date: '2023', icon: <ShowChartIcon fontSize="large"/>,          plotPosition: '-280px', goalsPosition: '100px' },
   'monorepo-dnd':        { date: '2024', icon: <CastleIcon fontSize="large"/>,             plotPosition: '-250px', goalsPosition: '100px' },
   'ton-company':         { date: '2024', icon: <AcUnitIcon fontSize="large"/>,             plotPosition: '-250px', goalsPosition: '80px'  },
+  'my-odyssey':          { date: '2025', icon: <LightbulbIcon fontSize="large"/>,          plotPosition: '-250px', goalsPosition: '75px'  },
+  'ai-mentoring':        { date: '2025', icon: <SmartToyIcon fontSize="large"/>,           plotPosition: '-210px', goalsPosition: '75px'  },
 }
 
 export const roadmapStructure: RoadmapEntry[] = ROADMAP_IDS.map(id => ({ id, ...roadmapEntries[id] }))

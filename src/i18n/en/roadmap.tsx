@@ -92,4 +92,16 @@ export const roadmap: Record<RoadmapId, RoadmapText> = {
     goalsLabel: 'New skills',
     goals: [{ name: 'Jotai' }, { name: 'Python' }, { name: 'Strapi' }, { name: 'FunC' }, { name: 'Sentry' }],
   },
+  'my-odyssey': {
+    plot: "Rediscovered my early interest in edtech. Took part in the Methis hackathon with My Odyssey app. A user sets a goal, AI breaks it into tasks, and the community can fund it.",
+    plotPosition: '-240px',
+    goalsLabel: 'New skills',
+    goals: [{ name: 'Cursor' }, { name: 'Crowdfunding' }, { name: 'Product hypotheses' }],
+  },
+  'ai-mentoring': {
+    plot: "Started studying AI seriously. Back to active mentoring and helping businesses adopt AI, with many successful cases already.",
+    plotPosition: '-200px',
+    goalsLabel: 'New skills',
+    goals: [{ name: 'LLM' }, { name: 'AI agents' }, { name: 'Prompt engineering' }, { name: 'AI adoption for business' }],
+  },
 }
