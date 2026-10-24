@@ -3,9 +3,9 @@ import { numberOfYears } from '../structure'
 
 export const cv: CvText = {
   about: `Result-oriented web developer for over ${numberOfYears('2015')} years with ${numberOfYears('2016')} years of experience as frontend and ${numberOfYears('2019')} years as full-stack.
-            During this time I have finished a lot of big projects. It was CRM, user profiles, administration services, integration systems, multi-room chats, and so on.
-            I would like to work in a product team. I am big on working with flexible methodologies, like agile with scrum and kanban approaches.
-            I prefer to automate everything and I am enthusiastic about tackling challenging work..`,
+            During this time I have finished a lot of big projects. It was CRM, user profiles, administration services, integration systems, chats, decentralized apps, AI adoption, and so on.
+            I am big on working with flexible methodologies, like agile with scrum and kanban approaches.
+            I prefer to automate everything and I am enthusiastic about tackling challenging work.`,
   education: {
     name: 'Perm State Pedagogical University',
     description: "2010 - 2016 Master's degree, Information Science Education",
@@ -51,9 +51,12 @@ export const cv: CvText = {
       jobName: 'IT Mentor',
       companyName: 'Self-employed',
       description: <ul>
-        <li>Collaborate with various developers, sharing knowledge and experience to successfully tackle complex tasks and meet stringent deadlines.</li>
-        <li>Engage with major clients, focusing on optimizing architecture and performance to meet their unique needs and demands.</li>
-        <li>Occasionally undertake freelance projects to develop Minimum Viable Products (MVPs) or troubleshoot functional issues, applying my expertise in a flexible and responsive manner.</li>
+        <li>Teach web development from scratch and prepare developers of any level for technical interviews.</li>
+        <li>My students work at Yandex, Sber, Tinkoff, Ozon, Wildberries, Uber, and Disney.</li>
+        <li>Consult teams: project audits, code reviews, and architecture improvements.</li>
+        <li>Run QA sessions on web UI testing and test automation.</li>
+        <li>Teach Web3: wallets, transactions, and smart contracts on ETH, Solana, and TON.</li>
+        <li>Help adopt AI: AI agents, prompting, vibe coding, and local models.</li>
       </ul>,
     },
     'merlion': {
