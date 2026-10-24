@@ -41,7 +41,7 @@ const CV = () => {
                 <CVAsideParagraph height={person.height}>
                     <Contacts>
                         <b>{ui.cv.phone}</b>
-                        <div>{person.phone}</div>
+                        <div><a href={"https://wa.me/" + person.phone.replace(/\D/g, '')}>{person.phone}</a></div>
                     </Contacts>
                     <Contacts>
                         <b>{ui.cv.email}</b>

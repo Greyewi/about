@@ -1,7 +1,7 @@
 import type { AppProps } from 'next/app'
 import localFont from 'next/font/local'
 import Head from 'next/head'
-import { GlobalStyles, Layout } from '../src/styles'
+import { GlobalStyles, Layout, CalendlyBadgeFont } from '../src/styles'
 import Header from '../src/Components/Header'
 import '../styles/globals.css'
 import { useRouter } from 'next/router'
@@ -32,7 +32,16 @@ const pressStart = localFont({
   display: 'block',
 })
 
-const fontVars = [modeSeven.variable, legendFont.variable, robotoSlab.variable, pressStart.variable].join(' ')
+// Bedstead (CC0, https://bjh21.me.uk/bedstead/) recreates the same SAA5050
+// teletext glyphs as ModeSeven but also covers Cyrillic, so the Russian
+// body text keeps the English look.
+const bedstead = localFont({
+  src: '../public/fonts/Bedstead.otf',
+  variable: '--font-bedstead',
+  display: 'block',
+})
+
+const fontVars = [modeSeven.variable, legendFont.variable, robotoSlab.variable, pressStart.variable, bedstead.variable].join(' ')
 
 // Route (locale-free `router.pathname`) -> which pair of SeoText keys to use.
 // Any route not listed here (e.g. /mind-map) falls back to the site-wide
@@ -83,6 +92,7 @@ export default function App({ Component, pageProps }: AppProps) {
         )}
       </Head>
       <GlobalStyles />
+      <CalendlyBadgeFont $fontFamily={bedstead.style.fontFamily} />
       <Header />
       <Component {...pageProps} />
     </Layout>

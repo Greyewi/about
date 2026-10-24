@@ -16,7 +16,7 @@ import CastleIcon from "@mui/icons-material/Castle"
 import AcUnitIcon from "@mui/icons-material/AcUnit"
 import LightbulbIcon from "@mui/icons-material/Lightbulb"
 import SmartToyIcon from "@mui/icons-material/SmartToy"
-import MentorLogo from '../shared/img/attachment_71573833.jpeg'
+import MentorLogo from '../shared/img/mentor.png'
 import MerlionLogo from '../shared/img/snffkw4xywiybmpsopun.webp'
 import CodabraLogo from '../shared/img/07f127a9-5aa3-4e59-baf2-fed12e1b8953_thumb.png'
 import InitGroupLogo from '../shared/img/podkl_6.png'
@@ -97,7 +97,7 @@ export const SKILL_IDS = [
 export type SkillId = typeof SKILL_IDS[number]
 
 export const JOB_IDS = [
-  'tonstakers', 'play-to-earn', 'mentor', 'merlion',
+  'tonstakers', 'mentor', 'play-to-earn', 'merlion',
   'codabra', 'initgroup', 'ckdigital', 'pspu',
 ] as const
 
@@ -148,8 +148,8 @@ export const cvSkills: SkillEntry[] = SKILL_IDS.map(id => ({ id, ...skillEntries
 // Same guarantee for the CV's job history.
 const jobEntries: Record<JobId, Omit<JobEntry, 'id'>> = {
   'tonstakers':   { date: '2024 - ',     logo: TonstakersLogo, companyUrl: 'https://tonstakers.com' },
+  'mentor':       { date: '2020 - ',     logo: MentorLogo },
   'play-to-earn': { date: '2022 - 2024', logo: PlayToEarnLogo },
-  'mentor':       { date: '2020 - 2022', logo: MentorLogo },
   'merlion':      { date: '2020',        logo: MerlionLogo, companyUrl: 'https://merlion.com/eng/about/' },
   'codabra':      { date: '2018 - 2020', logo: CodabraLogo, companyUrl: 'https://codabra.org' },
   'initgroup':    { date: '2017 - 2018', logo: InitGroupLogo, companyUrl: 'https://initpro.ru/kassa' },

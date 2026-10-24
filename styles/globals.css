@@ -3,10 +3,6 @@ body {
   overscroll-behavior: none;
 }
 
-body .calendly-badge-widget .calendly-badge-content {
-  font-family: 'Legend', 'ModeSeven', Roboto, serif;
-}
-
 @media print {
   .no-print, .no-print * {
     display: none !important;

@@ -16,7 +16,7 @@ export const LocaleLink = styled(Link)<{ $active: boolean }>`
   /* Non-colour cue for the active locale (in addition to aria-current, for
      sighted users who can't rely on the colour difference alone). */
   font-weight: ${({ $active }) => ($active ? 700 : 400)};
-  text-decoration: ${({ $active }) => ($active ? 'underline' : 'none')};
+  text-decoration: none;
   cursor: pointer;
 
   @media (max-width: 768px) {
@@ -27,4 +27,8 @@ export const LocaleLink = styled(Link)<{ $active: boolean }>`
 
 export const Divider = styled.span`
   color: ${variables.blue50Color};
+  /* ModeSeven (EN body font) draws '|' as a double bar, like the SAA5050
+     teletext chip it copies; Bedstead draws a single one. Pin the divider
+     to Bedstead so both locales show the same single bar. */
+  font-family: var(--font-bedstead), sans-serif;
 `

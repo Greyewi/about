@@ -10,7 +10,7 @@ export const ui: UiText = {
     skills: 'Навыки',
     education: 'Образование',
     experience: 'Опыт работы',
-    phone: 'Телефон',
+    phone: 'WhatsApp',
     email: 'E-mail',
     telegram: 'Telegram',
     linkedin: 'LinkedIn',
