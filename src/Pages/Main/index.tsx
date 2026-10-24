@@ -10,9 +10,14 @@ const PopupWidget = dynamic<any>(
     { ssr: false }
 )
 
-function Main() {
+interface Props {
+    introIndex?: number
+}
+
+function Main({ introIndex }: Props) {
     const { main, ui } = useTranslation()
-    const { text: legend, phase } = usePrintText(70, main.greeting)
+    const intro = introIndex === undefined ? undefined : main.intro[introIndex]
+    const { text: legend, phase } = usePrintText(70, main.greeting, intro)
     return (
         <Wrapper>
             <Legend>
