@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import {variables} from '../../styles'
 
+
 export const HeaderElement = styled.header`
   display: flex;
   justify-content: space-evenly;
@@ -23,7 +24,8 @@ export const NavBar = styled.span`
   width: calc(100% + 30px);
   max-width: 650px;
   justify-content: space-evenly;
-  
+  gap: 16px;
+
   @media (max-width: 768px) {
     justify-content: flex-end;
     > a {
@@ -79,7 +81,25 @@ export const ExpandedArea = styled.nav.attrs((props) => ({ onClick: props.onClic
 export const Logo = styled.div`
   width: 203px;
 
+  /* Bedstead (the RU body font) has none of the kaomoji glyphs, so the
+     fallbacks would differ per locale; pin it to the EN font. */
+  > span:first-child {
+    font-family: var(--font-mode-seven), Roboto, sans-serif;
+  }
+
   @media (max-width: 768px) {
     width: 170px;
+  }
+`
+
+// The table in the logo kaomoji. It is flipped by rotating the same glyphs
+// rather than swapping in ┻━┻, so the upside-down table matches exactly.
+export const Table = styled.span`
+  display: inline-block;
+  /* Five hard frames (every 45°) instead of a smooth turn, 8-bit style. */
+  transition: transform 0.4s steps(5, jump-none);
+
+  ${Logo}:hover & {
+    transform: translateY(0.45em) rotate(180deg);
   }
 `

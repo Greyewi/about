@@ -13,7 +13,7 @@ export const main: MainText = {
   description: (
     <>
       I specialize in quality web development.<br/>
-      I show my journey on <OuterLink href="https://www.instagram.com/greyewi">Instagram</OuterLink> and commit code to <OuterLink href="https://github.com/Greyewi">Github</OuterLink>.
+      I share my life on <OuterLink href="https://www.instagram.com/greyewi">Instagram</OuterLink>, my career on <OuterLink href="https://www.linkedin.com/in/sergey-suntsev-219817113">LinkedIn</OuterLink>, and commit code to <OuterLink href="https://github.com/Greyewi">GitHub</OuterLink>.
     </>
   ),
 }

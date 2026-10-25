@@ -28,6 +28,10 @@ export const Legend = styled.h1`
   font-weight: 500;
   font-size: 32px;
   margin: 100px 0 10px 13%;
+  /* Invisible shadows only widen the area Chrome repaints around the text.
+     Without them, erasing the intro left stray pixels above the glyphs until
+     something (e.g. selecting the text) forced a repaint. */
+  text-shadow: 0 -0.3em 0 transparent, 0 0.3em 0 transparent, -0.2em 0 0 transparent, 0.2em 0 0 transparent;
 
   .locale-ru & {
     font-size: 24px;

@@ -36,15 +36,16 @@ export const cv: CvText = {
       </ul>,
     },
     'play-to-earn': {
-      jobName: 'TS/JS Web3 Full-Stack Developer',
-      companyName: 'Play to Earn',
+      jobName: 'Lead Full Stack Web3 Engineer',
+      companyName: 'Play to Earn LTD',
       description: <ul>
-        <li>Engaged in a significant play-to-earn cryptocurrency project, contributing to its overall development and success.</li>
+        <li>Led the development cycle by planning scrum sprints, coordinating task execution, supporting the team throughout delivery, and facilitating releases.</li>
+        <li>Configured and managed GitLab Continuous Integration (CI) to ensure seamless code deployment and testing.</li>
+        <li>Developed a trading bot system on the Solana blockchain.</li>
         <li>Successfully refactored the existing legacy codebase, enhancing efficiency and maintainability.</li>
         <li>Implemented Walletconnect v2 authentication and developed a parser for Ethereum blocks using web3 and web sockets, improving overall connectivity and data handling.</li>
         <li>Conducted a comprehensive system audit and integrated the findings with Telegram for streamlined reporting.</li>
         <li>Designed and developed an internal NFT marketplace, statistics page, and crafting system, providing valuable tools for user engagement.</li>
-        <li>Configured and managed GitLab Continuous Integration (CI) to ensure seamless code deployment and testing.</li>
       </ul>,
     },
     'mentor': {

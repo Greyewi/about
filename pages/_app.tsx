@@ -1,12 +1,14 @@
 import type { AppProps } from 'next/app'
 import localFont from 'next/font/local'
 import Head from 'next/head'
-import { GlobalStyles, Layout, CalendlyBadgeFont } from '../src/styles'
+import { GlobalStyles, Layout } from '../src/styles'
 import Header from '../src/Components/Header'
 import '../styles/globals.css'
 import { useRouter } from 'next/router'
 import { useTranslation } from '../src/i18n/useTranslation'
 import type { SeoText } from '../src/i18n/types'
+import { cvStructure } from '../src/i18n/structure'
+import { SITE_URL, SAME_AS, jsonLd, localePath } from '../src/seo'
 
 const modeSeven = localFont({
   src: '../public/fonts/Modeseven.ttf',
@@ -49,16 +51,21 @@ const fontVars = [modeSeven.variable, legendFont.variable, robotoSlab.variable, 
 const ROUTE_SEO_KEYS: Record<string, { title: keyof SeoText; description: keyof SeoText }> = {
   '/cv': { title: 'cvTitle', description: 'cvDescription' },
   '/history': { title: 'historyTitle', description: 'historyDescription' },
+  '/services': { title: 'servicesTitle', description: 'servicesDescription' },
+  '/services/mentoring': { title: 'mentoringTitle', description: 'mentoringDescription' },
+  '/services/qa': { title: 'qaTitle', description: 'qaDescription' },
+  '/services/ai': { title: 'aiTitle', description: 'aiDescription' },
 }
 
-// NEXT_PUBLIC_SITE_URL: the site's public base URL (e.g. https://example.com,
+const OG_LOCALES: Record<string, string> = { en: 'en_US', ru: 'ru_RU' }
+
+// SITE_URL (src/seo.ts, from NEXT_PUBLIC_SITE_URL): the site's public base URL (e.g. https://example.com,
 // no trailing slash), used to emit absolute canonical/hreflang tags. There is
 // no domain configured anywhere else in this repo (only a deploy IP), so
 // this must be set explicitly wherever the app is actually deployed — see
 // README.md. Left unset, canonical URLs are emitted relative (still valid,
 // still de-duplicates the /en/* pages Next's i18n routing produces) and
 // hreflang is omitted entirely, since Google requires absolute URLs there.
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/+$/, '')
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter()
@@ -73,8 +80,7 @@ export default function App({ Component, pageProps }: AppProps) {
   // (e.g. on /ru/cv, router.asPath is '/cv' and router.locale is 'ru'), so
   // the current locale's own URL has to be reconstructed by re-adding its
   // prefix (skipped for the default locale, which is served unprefixed).
-  const pathFor = (loc: string) =>
-    loc === defaultLocale ? asPath : (asPath === '/' ? `/${loc}` : `/${loc}${asPath}`)
+  const pathFor = (loc: string) => localePath(asPath, loc, defaultLocale ?? 'en')
 
   const canonicalHref = SITE_URL ? `${SITE_URL}${pathFor(locale ?? defaultLocale ?? 'en')}` : pathFor(locale ?? defaultLocale ?? 'en')
 
@@ -90,9 +96,27 @@ export default function App({ Component, pageProps }: AppProps) {
         {SITE_URL && (
           <link rel="alternate" hrefLang="x-default" href={`${SITE_URL}${pathFor(defaultLocale ?? 'en')}`} />
         )}
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content={ui.personName} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:locale" content={OG_LOCALES[locale ?? 'en']} />
+        {SITE_URL && <meta property="og:url" content={canonicalHref} />}
+        {SITE_URL && <meta property="og:image" content={`${SITE_URL}/og-image.jpg`} />}
+        <meta name="twitter:card" content="summary" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd({
+          '@context': 'https://schema.org',
+          '@type': 'Person',
+          name: ui.personName,
+          jobTitle: ui.jobTitle,
+          email: `mailto:${cvStructure.person.email}`,
+          image: SITE_URL ? `${SITE_URL}/og-image.jpg` : undefined,
+          url: SITE_URL ? `${SITE_URL}${localePath('/', locale ?? 'en', defaultLocale ?? 'en')}` : undefined,
+          sameAs: SAME_AS,
+          knowsAbout: ['JavaScript', 'TypeScript', 'React', 'Node.js', 'Web3', 'AI agents', 'Mentoring'],
+        })} />
       </Head>
       <GlobalStyles />
-      <CalendlyBadgeFont $fontFamily={bedstead.style.fontFamily} />
       <Header />
       <Component {...pageProps} />
     </Layout>

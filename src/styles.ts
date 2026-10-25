@@ -72,15 +72,6 @@ export const Typography = styled.span`
   }
 `
 
-// The Calendly badge is portalled into #modal, outside <Layout>, so the
-// next/font CSS variables set on Layout don't reach it. The font's real
-// (hashed) family name is passed in from _app instead.
-export const CalendlyBadgeFont = createGlobalStyle<{ $fontFamily: string }>`
-  body .calendly-badge-widget .calendly-badge-content {
-    font-family: ${({ $fontFamily }) => $fontFamily}, Roboto, sans-serif;
-  }
-`
-
 export const Layout = styled.main`
   --font-display: var(--font-legend);
   --font-body: var(--font-mode-seven);

@@ -78,9 +78,10 @@ export const roadmap: Record<RoadmapId, RoadmapText> = {
     goals: [{ name: 'Job Workers' }, { name: 'Telegraf' }, { name: 'Postfix' }, { name: 'Solana network' }, { name: 'Gitlab actions' }],
   },
   'trading-system': {
-    plot: "While working at this startup, I developed a comprehensive trading system. I also participated in a Solana Hackathon with a local community, where we placed fifth.",
+    plot: "While working at this startup, I developed a comprehensive trading system. I also participated in a Solana Hackathon with a local community.",
     goalsLabel: 'New skills',
     goals: [{ name: 'victory.js' }, { name: 'tanstack/query (React-query)' }, { name: 'WalletConnect2' }, { name: 'Wagme.js' }, { name: 'Ant Design' }],
+    plotPosition: '-225px',
   },
   'monorepo-dnd': {
     plot: "I started a new project from scratch, using a monorepo ecosystem with an inner core library. During this time, I also sought comfort in a new D&D community, finding balance between work and play.",

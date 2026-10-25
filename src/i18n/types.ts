@@ -10,13 +10,33 @@ export interface SeoText {
   cvDescription: string
   historyTitle: string
   historyDescription: string
+  servicesTitle: string
+  servicesDescription: string
+  mentoringTitle: string
+  mentoringDescription: string
+  qaTitle: string
+  qaDescription: string
+  aiTitle: string
+  aiDescription: string
 }
 
 export interface UiText {
-  nav: { main: string; story: string; cv: string }
+  nav: { main: string; story: string; cv: string; services: string }
   personName: string
   jobTitle: string
-  calendlyCta: string
+  contact: {
+    cta: string
+    title: string
+    note: string
+    close: string
+  }
+  service: {
+    faqTitle: string
+    hubTitle: string
+    hubLead: string
+    more: string
+    back: string
+  }
   cv: {
     personalInfo: string
     skills: string
@@ -66,9 +86,30 @@ export interface CvText {
   }>
 }
 
+export type ServiceId = 'mentoring' | 'qa' | 'ai'
+
+export interface ServiceSection {
+  title: string
+  items: string[]
+}
+
+export interface ServicePageText {
+  // Short name of the service, used in Service JSON-LD.
+  name: string
+  // One or two sentences for the card on /services.
+  summary: string
+  h1: string
+  lead: string
+  sections: ServiceSection[]
+  faq: { q: string; a: string }[]
+  ctaTitle: string
+  ctaText: string
+}
+
 export interface Dictionary {
   ui: UiText
   main: MainText
   roadmap: Record<RoadmapId, RoadmapText>
   cv: CvText
+  services: Record<ServiceId, ServicePageText>
 }

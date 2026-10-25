@@ -1,10 +1,22 @@
 import type { UiText } from '../types'
 
 export const ui: UiText = {
-  nav: { main: 'Main', story: 'Story', cv: 'CV' },
+  nav: { main: 'Main', story: 'Story', cv: 'CV', services: 'Services' },
   personName: 'Suntsev Sergey',
   jobTitle: 'Web Engineer',
-  calendlyCta: 'Click here to schedule!',
+  contact: {
+    cta: 'Message me',
+    title: 'Message me',
+    note: 'I usually reply within 24 hours.',
+    close: 'Close',
+  },
+  service: {
+    faqTitle: 'FAQ',
+    hubTitle: 'Mentoring & Lessons',
+    hubLead: 'One-on-one online lessons in programming, testing and AI. Pick a direction, or just message me and we will figure it out together.',
+    more: 'Learn more',
+    back: 'All services',
+  },
   cv: {
     personalInfo: 'Personal Info',
     skills: 'Skills',
@@ -16,11 +28,19 @@ export const ui: UiText = {
     linkedin: 'Linkedin',
   },
   seo: {
-    title: 'Sergey Suntsev — Web & Full-Stack Engineer',
-    description: 'Personal portfolio of Sergey Suntsev, a web and full-stack engineer working with React, TypeScript and Node.js.',
+    title: 'Sergey Suntsev — Full-Stack Engineer, Programming & AI Mentor',
+    description: 'Sergey Suntsev, full-stack engineer and tech mentor. One-on-one online lessons in programming and AI, interview prep and AI adoption for business.',
     cvTitle: 'CV — Sergey Suntsev',
     cvDescription: "Sergey Suntsev's résumé: work experience, skills and education as a web and full-stack engineer.",
     historyTitle: 'Story — Sergey Suntsev',
     historyDescription: "Sergey Suntsev's career timeline, from first lines of code to full-stack engineering roles.",
+    servicesTitle: 'Online Tech Mentor: Programming, QA & AI — Sergey Suntsev',
+    servicesDescription: 'One-on-one online lessons with a tech mentor: web development and interview prep, test automation (QA), AI tutoring and AI adoption for business.',
+    mentoringTitle: 'Online Programming Mentor & Interview Coaching — Sergey Suntsev',
+    mentoringDescription: 'One-on-one web development mentoring: JavaScript, React and Node.js from scratch, mock interviews and code review. Students work at Yandex, Ozon, Uber and Disney.',
+    qaTitle: 'QA Mentor Online: Test Automation, API Testing, Interview Prep — Sergey Suntsev',
+    qaDescription: 'One-on-one QA mentoring: test automation in TypeScript (Playwright, Puppeteer, WebdriverIO, Jest), API testing, SQL, QA interview prep and moving from manual testing to automation.',
+    aiTitle: 'AI Tutor: Vibe Coding, Claude Code & AI Agents — Sergey Suntsev',
+    aiDescription: 'One-on-one AI lessons: Cursor, Claude Code, AI agents, prompting and local models. Help with adopting AI in your business.',
   },
 }

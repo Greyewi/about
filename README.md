@@ -52,4 +52,6 @@ To learn React, check out the [React documentation](https://reactjs.org/).
   `<link rel="canonical">` and `<link rel="alternate" hrefLang="…">` tags. When unset, the
   canonical tag is still emitted as a relative URL (which is sufficient to mark `/en/*` as
   a duplicate of the unprefixed English pages) but hreflang tags are omitted, since search
-  engines require fully-qualified URLs there.
+  engines require fully-qualified URLs there. Also used for absolute URLs in `/sitemap.xml`,
+  `/robots.txt`, Open Graph tags and JSON-LD (sitemap and robots fall back to the request
+  host when unset).
