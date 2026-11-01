@@ -18,6 +18,8 @@ export const ui: UiText = {
     groupBusiness: 'For business',
     more: 'Learn more',
     back: 'All services',
+    subpagesTitle: 'Go deeper',
+    reviews: 'Student reviews and rating (in Russian) are on',
   },
   cv: {
     personalInfo: 'Personal Info',
@@ -46,5 +48,11 @@ export const ui: UiText = {
     aiDescription: 'One-on-one Claude Code coaching and AI coding lessons: vibe coding, Cursor, how to build AI agents, prompting and local models. No coding background needed.',
     businessTitle: 'AI Consulting for Small Business, Code Audits & Custom Development — Sergey Suntsev',
     businessDescription: 'AI implementation for small and mid-sized businesses, AI training for employees, code and architecture audits, and custom web and Web3 development.',
+    claudeCodeTitle: 'Learn Claude Code & Vibe Coding from Scratch: 1:1 Coaching — Sergey Suntsev',
+    claudeCodeDescription: 'One-on-one Claude Code coaching for beginners, graduates and job seekers: setup, your own project, CLAUDE.md, skills and MCP. A program built around your goals and pace.',
+    mockInterviewTitle: 'Frontend & Backend Mock Interview with a Senior Engineer — Sergey Suntsev',
+    mockInterviewDescription: 'Mock technical interview with a senior engineer: JavaScript, React, Node.js, SQL, live coding and system design. Detailed feedback and a prep plan. Students work at Yandex, Ozon, Uber and Disney.',
+    frontendMentoringTitle: 'React & JavaScript Mentor for Developers, 1:1 — Sergey Suntsev',
+    frontendMentoringDescription: 'One-on-one frontend mentoring: JavaScript, TypeScript, React and Next.js, code review, portfolio projects and growing from junior to middle. Students work at Yandex, Ozon, Uber and Disney.',
   },
 }

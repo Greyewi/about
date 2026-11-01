@@ -20,7 +20,7 @@ export const roadmap: Record<RoadmapId, RoadmapText> = {
   'first-job': {
     plot: "After graduation I got my first job as developer. It was a small outsource company I wrote site functional on PHP and JS. Moreover, I was concentrated on JS and this language became my general language",
     goalsLabel: 'New skills',
-    goals: [{ name: 'ES5+' }, { name: 'GIT' }, { name: 'Lodash' }, { name: 'HTTP/S' }, { name: 'Nginx' }],
+    goals: [{ name: 'ES5+' }, { name: 'Git' }, { name: 'Lodash' }, { name: 'HTTP/S' }, { name: 'Nginx' }],
   },
   'asana-plugin': {
     plot: "On the first job I created the first react client-server application. It was a plugin for the Asana app, which managed  employees KPI",
@@ -50,7 +50,7 @@ export const roadmap: Record<RoadmapId, RoadmapText> = {
   'israel-freelance': {
     plot: "I got a visa to the educational program in Israel and it was my chance. Unfortunately, this visa didn't permit me to work, and I became a freelancer. Since then I created a lot of pet projects and tried myself in the education area.",
     goalsLabel: 'New skills',
-    goals: [{ name: 'Typescript' }, { name: 'Nest.js' }, { name: 'Docker' }, { name: 'Styled-components' }, { name: 'English B1' }],
+    goals: [{ name: 'TypeScript' }, { name: 'Nest.js' }, { name: 'Docker' }, { name: 'Styled-components' }, { name: 'English B1' }],
   },
   'mentoring': {
     plot: "I have gathered a wide range of educational materials for my students. Currently, over 90% of them are employed by IT companies. Some are now working as QA engineers in international IT companies. I continue to support them in their development, while also improving my own QA skills.",
@@ -70,7 +70,7 @@ export const roadmap: Record<RoadmapId, RoadmapText> = {
   'israeli-citizenship': {
     plot: "A new opportunity arose with a startup at a small distributed company, where I worked as a senior full-stack developer. I eventually obtained Israeli citizenship and relocated to Netanya. It’s a lovely city with a distinct 'Miami in the 90s' vibe.",
     goalsLabel: 'New skills',
-    goals: [{ name: 'Mobx' }, { name: 'gitlab CI/CD' }, { name: 'Transactions system architecture' }, { name: 'PGPool' }, { name: 'ETH network' }, { name: 'Vitest' }],
+    goals: [{ name: 'MobX' }, { name: 'gitlab CI/CD' }, { name: 'Transactions system architecture' }, { name: 'PGPool' }, { name: 'ETH network' }, { name: 'Vitest' }],
   },
   'play-to-earn': {
     plot: "I am still working at the startup, where I developed a play-to-earn game. Although the game has launched, it remains under ongoing development and support. I have implemented extensive testing and emergency systems to protect the game from hackers.",
@@ -80,7 +80,7 @@ export const roadmap: Record<RoadmapId, RoadmapText> = {
   'trading-system': {
     plot: "While working at this startup, I developed a comprehensive trading system. I also participated in a Solana Hackathon with a local community.",
     goalsLabel: 'New skills',
-    goals: [{ name: 'victory.js' }, { name: 'tanstack/query (React-query)' }, { name: 'WalletConnect2' }, { name: 'Wagme.js' }, { name: 'Ant Design' }],
+    goals: [{ name: 'Victory' }, { name: 'tanstack/query (React-query)' }, { name: 'WalletConnect v2' }, { name: 'wagmi' }, { name: 'Ant Design' }],
     plotPosition: '-225px',
   },
   'monorepo-dnd': {
@@ -100,7 +100,7 @@ export const roadmap: Record<RoadmapId, RoadmapText> = {
     goals: [{ name: 'Cursor' }, { name: 'Crowdfunding' }, { name: 'Product hypotheses' }],
   },
   'ai-mentoring': {
-    plot: "Started studying AI seriously. Back to active mentoring and helping businesses adopt AI, with many successful cases already.",
+    plot: <span>Started studying AI seriously. Back to active mentoring and helping businesses adopt AI. Student reviews (in Russian) are on <a className="App-link" href='https://profi.ru/profile/SuntsevSM'>Profi.ru</a>.</span>,
     plotPosition: '-200px',
     goalsLabel: 'New skills',
     goals: [{ name: 'LLM' }, { name: 'AI agents' }, { name: 'Prompt engineering' }, { name: 'AI adoption for business' }],

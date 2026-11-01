@@ -9,14 +9,14 @@ export const cv: CvText = {
   education: {
     name: 'Perm State Pedagogical University',
     description: "2010 - 2016 Master's degree, Information Science Education",
-    gradeLevel: 'Grade: 9.4',
+    gradeLevel: 'Diploma with honours',
   },
   skills: {
     'js':             { name: 'JS',              description: 'ES++' },
     'react':          { name: 'React',           description: 'Hooks, SSR, Concurrent mode+' },
     'state-managers': { name: 'State managers',  description: 'Redux & toolkit, Context, React/query' },
     'styles':         { name: 'Styles',          description: 'CSS-modules, MUI, Open-Props, SASS, Emotion' },
-    'typescript':     { name: 'Typescript',      description: 'V5' },
+    'typescript':     { name: 'TypeScript',      description: 'V5' },
     'nodejs':         { name: 'Node JS',         description: 'Express, Nest.js, PrismaORM' },
     'system-design':  { name: 'System Design',   description: 'SOLID, YAGNI, Patterns (OOP and FP)' },
     'qa':             { name: 'Q/A engineering', description: 'Jest, RTL, Playwright, Vitest' },
@@ -56,7 +56,7 @@ export const cv: CvText = {
         <li>My students work at Yandex, Sber, Tinkoff, Ozon, Wildberries, Uber, and Disney.</li>
         <li>Consult teams: project audits, code reviews, and architecture improvements.</li>
         <li>Run QA sessions on web UI testing and test automation.</li>
-        <li>Teach Web3: wallets, transactions, and smart contracts on ETH, Solana, and TON.</li>
+        <li>Teach Web3: wallets, transactions, and smart contracts on ETH and Solana.</li>
         <li>Help adopt AI: AI agents, prompting, vibe coding, and local models.</li>
       </ul>,
     },

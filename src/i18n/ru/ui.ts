@@ -18,6 +18,8 @@ export const ui: UiText = {
     groupBusiness: 'Для бизнеса',
     more: 'Подробнее',
     back: 'Все услуги',
+    subpagesTitle: 'Подробнее по направлениям',
+    reviews: 'Отзывы и рейтинг учеников можно посмотреть на',
   },
   cv: {
     personalInfo: 'Личные данные',
@@ -46,5 +48,11 @@ export const ui: UiText = {
     aiDescription: 'Индивидуальное обучение вайб-кодингу и работе с нейросетями: Cursor, Claude Code, как создать ИИ-агента, промпты и локальные модели. Даже без опыта программирования.',
     businessTitle: 'Внедрение ИИ в бизнес, аудит кода и разработка на заказ — Сергей Сунцев',
     businessDescription: 'Внедрение нейросетей и ИИ-агентов в бизнес-процессы, обучение сотрудников работе с нейросетями, аудит кода и архитектуры, разработка веб-приложений и Web3-проектов на заказ.',
+    claudeCodeTitle: 'Обучение Claude Code и вайб-кодингу с нуля, 1-на-1 — Сергей Сунцев',
+    claudeCodeDescription: 'Индивидуальное обучение Claude Code для начинающих, выпускников и тех, кто ищет работу в IT: установка, свой проект, CLAUDE.md, skills и MCP. Программа под ваши цели и темп.',
+    mockInterviewTitle: 'Мок-собеседование frontend и backend онлайн, подготовка к техническому интервью — Сергей Сунцев',
+    mockInterviewDescription: 'Мок-собеседование с senior-разработчиком: JavaScript, React, Node.js, SQL, live coding и system design. Подробный разбор и план подготовки. Ученики работают в Яндексе, Ozon, Т-Банке и Сбере.',
+    frontendMentoringTitle: 'Ментор по frontend онлайн: JavaScript, TypeScript, React — Сергей Сунцев',
+    frontendMentoringDescription: 'Индивидуальный ментор по фронтенду: JavaScript, TypeScript, React и Next.js, ревью кода, проекты для портфолио и рост от junior до middle. Ученики работают в Яндексе, Ozon, Т-Банке и Сбере.',
   },
 }

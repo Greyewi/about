@@ -4,6 +4,7 @@ import { Wrapper } from '../../styles'
 import { Article, Title, Lead, SectionTitle, Cards, Card } from '../Service/styles'
 import { useTranslation } from '../../i18n/useTranslation'
 import type { ServiceId } from '../../i18n/types'
+import { SERVICE_PATHS } from '../../serviceTree'
 import Contact from '../../Components/Contact'
 
 // Services grouped by audience: people learning or growing in tech, and businesses.
@@ -24,7 +25,7 @@ function Services() {
                         <SectionTitle>{ui.service[group.title]}</SectionTitle>
                         <Cards>
                             {group.ids.map(id => (
-                                <Card as={Link} key={id} href={`/services/${id}`}>
+                                <Card as={Link} key={id} href={SERVICE_PATHS[id]}>
                                     <SectionTitle as="h3">{services[id].name}</SectionTitle>
                                     <p>{services[id].summary}</p>
                                     <span>{ui.service.more} →</span>

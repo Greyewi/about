@@ -132,3 +132,13 @@ export const Card = styled.a`
     color: ${variables.glow20Color};
   }
 `
+
+export const Reviews = styled.p`
+  margin: -10px 0 20px 0;
+  color: ${variables.text20Color};
+
+  a {
+    color: ${variables.glow20Color};
+    text-decoration: underline;
+  }
+`

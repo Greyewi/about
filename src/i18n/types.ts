@@ -20,6 +20,12 @@ export interface SeoText {
   aiDescription: string
   businessTitle: string
   businessDescription: string
+  claudeCodeTitle: string
+  claudeCodeDescription: string
+  mockInterviewTitle: string
+  mockInterviewDescription: string
+  frontendMentoringTitle: string
+  frontendMentoringDescription: string
 }
 
 export interface UiText {
@@ -41,6 +47,8 @@ export interface UiText {
     groupBusiness: string
     more: string
     back: string
+    subpagesTitle: string
+    reviews: string
   }
   cv: {
     personalInfo: string
@@ -91,7 +99,7 @@ export interface CvText {
   }>
 }
 
-export type ServiceId = 'mentoring' | 'qa' | 'ai' | 'business'
+export type ServiceId = 'mentoring' | 'qa' | 'ai' | 'business' | 'claudeCode' | 'mockInterview' | 'frontendMentoring'
 
 export interface ServiceSection {
   title: string
