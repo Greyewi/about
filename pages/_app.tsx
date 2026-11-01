@@ -55,6 +55,7 @@ const ROUTE_SEO_KEYS: Record<string, { title: keyof SeoText; description: keyof 
   '/services/mentoring': { title: 'mentoringTitle', description: 'mentoringDescription' },
   '/services/qa': { title: 'qaTitle', description: 'qaDescription' },
   '/services/ai': { title: 'aiTitle', description: 'aiDescription' },
+  '/services/business': { title: 'businessTitle', description: 'businessDescription' },
 }
 
 const OG_LOCALES: Record<string, string> = { en: 'en_US', ru: 'ru_RU' }

@@ -6,7 +6,7 @@ import { cvStructure } from './i18n/structure'
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/+$/, '')
 
 // Routes listed in sitemap.xml, in both locales.
-export const PUBLIC_ROUTES = ['/', '/services', '/services/mentoring', '/services/qa', '/services/ai', '/history', '/cv']
+export const PUBLIC_ROUTES = ['/', '/services', '/services/mentoring', '/services/qa', '/services/ai', '/services/business', '/history', '/cv']
 
 export const SAME_AS = [
   'https://www.linkedin.com/in/sergey-suntsev-219817113',

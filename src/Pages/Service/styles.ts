@@ -119,7 +119,7 @@ export const Card = styled.a`
     border-color: ${variables.glow20Color};
   }
 
-  > h2 {
+  > h2, > h3 {
     margin-top: 0;
   }
 

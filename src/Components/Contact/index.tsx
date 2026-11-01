@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import WhatsAppIcon from '@mui/icons-material/WhatsApp'
 import TelegramIcon from '@mui/icons-material/Telegram'
 import CloseIcon from '@mui/icons-material/Close'
+import EmailIcon from '@mui/icons-material/Email'
 import { OpenButton, Overlay, Dialog, Title, CloseButton, Messenger, Note } from './styles'
 import { useTranslation } from '../../i18n/useTranslation'
 import { cvStructure } from '../../i18n/structure'
@@ -40,6 +41,9 @@ function Contact({ floating }: Props) {
                         </Messenger>
                         <Messenger href={`https://t.me/${person.tg}`} target="_blank" rel="noopener noreferrer">
                             <TelegramIcon /> Telegram
+                        </Messenger>
+                        <Messenger href={`mailto:${person.email}`}>
+                            <EmailIcon /> {person.email}
                         </Messenger>
                         <Note>{ui.contact.note}</Note>
                     </Dialog>

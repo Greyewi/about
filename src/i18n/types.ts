@@ -18,6 +18,8 @@ export interface SeoText {
   qaDescription: string
   aiTitle: string
   aiDescription: string
+  businessTitle: string
+  businessDescription: string
 }
 
 export interface UiText {
@@ -34,6 +36,9 @@ export interface UiText {
     faqTitle: string
     hubTitle: string
     hubLead: string
+    // Section headings on /services, one per audience.
+    groupPeople: string
+    groupBusiness: string
     more: string
     back: string
   }
@@ -86,7 +91,7 @@ export interface CvText {
   }>
 }
 
-export type ServiceId = 'mentoring' | 'qa' | 'ai'
+export type ServiceId = 'mentoring' | 'qa' | 'ai' | 'business'
 
 export interface ServiceSection {
   title: string

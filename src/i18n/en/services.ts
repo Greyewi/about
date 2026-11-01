@@ -5,17 +5,17 @@ const devYears = numberOfYears('2015')
 
 export const services: Record<ServiceId, ServicePageText> = {
   mentoring: {
-    name: 'Programming mentoring',
-    summary: 'Web development from scratch, interview prep, code review and project audits.',
-    h1: 'Programming Mentor & Tutor',
+    name: 'Software developer mentoring',
+    summary: 'Learning to code as an adult, mock technical interviews and code review for frontend and full-stack developers.',
+    h1: 'Software Developer Mentor: From First Code to Job Offer',
     lead: `One-on-one online lessons in web development, from your first lines of code to a job offer. I have been writing code for over ${devYears} years and mentoring since 2020. My students work at Yandex, Sber, Tinkoff, Ozon, Wildberries, Uber and Disney.`,
     sections: [
       {
         title: 'What I help with',
         items: [
           'Web development from scratch: HTML, CSS, JavaScript, TypeScript, React, Node.js.',
-          'Technical interview prep: mock interviews, coding tasks and common questions.',
-          'Code review and project audits, architecture advice.',
+          'Frontend and full-stack interview prep: mock technical interviews, coding tasks and common questions.',
+          'Code review of pet projects and work code, architecture advice.',
           'Web UI testing and test automation.',
           'Web3: wallets, transactions and smart contracts on ETH, Solana and TON.',
         ],
@@ -23,9 +23,8 @@ export const services: Record<ServiceId, ServicePageText> = {
       {
         title: 'Who it is for',
         items: [
-          'People getting into tech who want a personal approach instead of a mass course.',
+          'Adults learning to code with a mentor instead of a mass course.',
           'Junior and middle developers preparing for interviews or aiming for the next level.',
-          'Teams that need an outside look at their code and architecture.',
         ],
       },
       {
@@ -55,9 +54,9 @@ export const services: Record<ServiceId, ServicePageText> = {
     ctaText: 'Message me: we will get to know each other, review your level and make a plan.',
   },
   qa: {
-    name: 'QA mentoring',
-    summary: 'Test automation in TypeScript, API testing, SQL and QA interview prep.',
-    h1: 'QA & Test Automation Mentor',
+    name: 'Test automation mentoring',
+    summary: 'Playwright and TypeScript test automation, API testing, SQL and QA interview preparation.',
+    h1: 'Test Automation Mentor: Playwright & TypeScript',
     lead: `One-on-one lessons for testers: web UI test automation, API testing and interview prep. I have been writing code for over ${devYears} years and look at tests from a developer's side, so I help you write tests that actually catch bugs.`,
     sections: [
       {
@@ -107,10 +106,10 @@ export const services: Record<ServiceId, ServicePageText> = {
     ctaText: 'Message me: we will review your testing experience and make a plan.',
   },
   ai: {
-    name: 'AI tutoring and AI adoption',
-    summary: 'Vibe coding in Cursor and Claude Code, AI agents, prompting and AI adoption for business.',
-    h1: 'AI Tutor & AI Adoption for Business',
-    lead: 'One-on-one lessons on working with AI: vibe coding in Cursor and Claude Code, AI agents, prompting and local models. I also help businesses bring AI into real processes, with many successful cases already.',
+    name: 'Claude Code and AI coding mentoring',
+    summary: 'Vibe coding in Claude Code and Cursor, how to build AI agents, prompting and local models.',
+    h1: 'Claude Code & AI Coding Mentor',
+    lead: 'One-on-one coaching on coding with AI: vibe coding in Claude Code and Cursor, building your own AI agents, prompting and local models. No coding background needed.',
     sections: [
       {
         title: 'What you will learn',
@@ -122,19 +121,10 @@ export const services: Record<ServiceId, ServicePageText> = {
         ],
       },
       {
-        title: 'AI for business',
-        items: [
-          'I review your processes and find where AI saves time and money.',
-          'Chatbots and assistants for customers and staff.',
-          'Automating routine work: documents, reports, request handling.',
-          'Training your team to work with AI.',
-        ],
-      },
-      {
         title: 'Who it is for',
         items: [
           'People who want to use AI in their work, not just try it out.',
-          'Founders and teams who want to adopt AI.',
+          'Founders who want to build prototypes and automations themselves.',
           'Developers who want to ship faster with AI tools.',
         ],
       },
@@ -155,5 +145,54 @@ export const services: Record<ServiceId, ServicePageText> = {
     ],
     ctaTitle: 'Tell me about your task',
     ctaText: 'Message me: we will figure out what to learn or automate first.',
+  },
+  business: {
+    name: 'AI adoption, code audits and development',
+    summary: 'AI implementation in business processes, AI training for employees, code audits and custom development.',
+    h1: 'AI Consulting, Code Audits & Custom Development',
+    lead: `I help companies bring AI into real processes, review code quality and build web applications end to end. I have been writing code for over ${devYears} years, led development at a Web3 startup, and already have many successful AI adoption cases.`,
+    sections: [
+      {
+        title: 'AI implementation',
+        items: [
+          'I review your processes and find where AI saves time and money.',
+          'AI agents, chatbots and assistants for customers and staff.',
+          'Automating routine work: documents, reports, request handling.',
+          'AI training for employees.',
+        ],
+      },
+      {
+        title: 'Code audit',
+        items: [
+          'Code and architecture review: bottlenecks, technical debt, risks.',
+          'Test quality and coverage review, with an improvement plan.',
+          'An outside look before scaling, acquiring a project or changing teams.',
+        ],
+      },
+      {
+        title: 'Custom development',
+        items: [
+          'Web applications in TypeScript, React, Next.js and Node.js.',
+          'Web3: wallets, smart contracts and integrations with ETH, Solana and TON.',
+          'Improving and refactoring existing projects, test automation and CI.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: 'Where do we start with AI adoption?',
+        a: 'With a short call: we go through your processes and pick one or two tasks where AI pays off fastest.',
+      },
+      {
+        q: 'What do I get after a code audit?',
+        a: 'A report with the issues found, a risk assessment and a prioritized list of improvements.',
+      },
+      {
+        q: 'Do you work with small businesses?',
+        a: 'Yes, with businesses of any size, from startups and small companies to large teams.',
+      },
+    ],
+    ctaTitle: 'Tell me about your task',
+    ctaText: 'Message me: we will discuss your task, timeline and how we can work together.',
   },
 }
