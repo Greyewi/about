@@ -1,7 +1,9 @@
 import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 
-export default class MyDocument extends Document {
+type MyDocumentProps = { locale: string }
+
+export default class MyDocument extends Document<MyDocumentProps> {
   static async getInitialProps(ctx: DocumentContext) {
     const sheet = new ServerStyleSheet()
     const originalRenderPage = ctx.renderPage
@@ -15,6 +17,7 @@ export default class MyDocument extends Document {
       const initialProps = await Document.getInitialProps(ctx)
       return {
         ...initialProps,
+        locale: ctx.locale ?? 'en',
         styles: [initialProps.styles, sheet.getStyleElement()],
       }
     } finally {
@@ -24,7 +27,7 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang="ru">
+      <Html lang={this.props.locale}>
         <Head>
           <link rel="icon" href="/iconGreyewi.png" />
         </Head>

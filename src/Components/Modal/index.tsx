@@ -1,14 +1,17 @@
 import { createPortal } from 'react-dom'
-import React, { FC, useState, useEffect } from 'react'
+import React, { FC, useSyncExternalStore } from 'react'
 
 type Props = { children: React.ReactElement }
 
-export const Modal: FC<Props> = ({ children }) => {
-    const [modalRoot, setModalRoot] = useState<Element | null>(null)
+const subscribe = () => () => {}
 
-    useEffect(() => {
-        setModalRoot(document.querySelector('#modal'))
-    }, [])
+export const Modal: FC<Props> = ({ children }) => {
+    // null on the server and during hydration, the #modal element afterwards
+    const modalRoot = useSyncExternalStore(
+        subscribe,
+        () => document.querySelector('#modal'),
+        () => null
+    )
 
     if (!modalRoot) return null
 

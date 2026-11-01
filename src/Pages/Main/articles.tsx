@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import axios from 'axios'
 import ReactMarkdown from 'react-markdown'
 import {ArticleList, Article, ArticleBody, ArticleTitle} from './styles'
 
@@ -33,14 +32,15 @@ const Articles = () => {
     const [articles, setArticles] = useState<IArticle[]>([])
 
     useEffect(() => {
-        axios({
-            method: 'get',
-            url: 'https://api.github.com/repos/Greyewi/about/issues',
+        fetch('https://api.github.com/repos/Greyewi/about/issues', {
             headers: {
                 'Authorization': 'Bearer '+ process.env.BEARER_TOKEN
             }
         }).then((response) => {
-            setArticles(response.data)
+            if (!response.ok) throw new Error(`HTTP ${response.status}`)
+            return response.json()
+        }).then((data: IArticle[]) => {
+            setArticles(data)
         }).catch((error) => {
             console.log(error);
         });

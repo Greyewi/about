@@ -10,46 +10,37 @@
     "@emotion/styled": "^11.8.1",
     "@mui/icons-material": "^5.6.0",
     "@mui/material": "^5.6.0",
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "@types/jest": "^26.0.15",
-    "@types/node": "^18.0.0",
-    "@types/react": "^18.3.0",
-    "@types/react-dom": "^18.3.0",
-    "@types/styled-components": "^5.1.13",
-    "axios": "1.15.2",
     "dayjs": "^1.11.19",
     "dotenv": "^16.0.1",
-    "eslint-config-next": "^14.2.0",
-    "next": "16.2.5",
-    "puppeteer": "^18.0.5",
+    "next": "16.4.3",
     "react": "^18.3.1",
-    "react-calendly": "^4.1.1",
     "react-dom": "^18.3.1",
     "react-lineto": "^3.3.0",
     "react-markdown": "^7.0.1",
-    "react-xarrows": "^2.0.2",
     "styled-components": "^5.3.1",
-    "telegraf": "^4.8.5",
-    "ts-node-dev": "^2.0.0",
-    "typegram": "^3.10.0",
-    "typescript": "^5.9.3"
+    "telegraf": "^4.8.5"
   },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "bot": "ts-node-dev --respawn --transpile-only bot/server.ts",
     "botGame": "ts-node-dev --respawn --transpile-only botRougue/server.ts",
-    "bot_deploy": "node bot/server.js"
-  },
-  "eslintConfig": {
-    "extends": [
-      "next/core-web-vitals"
-    ]
+    "lint": "eslint ."
   },
   "devDependencies": {
-    "eslint": "^8.57.1"
+    "@testing-library/dom": "^10.4.2",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.8",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^22.20.5",
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
+    "@types/styled-components": "^5.1.36",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.4.3",
+    "puppeteer": "^25.16.0",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.9.3"
   }
 }

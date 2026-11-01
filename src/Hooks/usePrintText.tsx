@@ -1,36 +1,74 @@
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useState } from "react"
 
 export type Phase = 'idle' | 'typing' | 'done'
 
 const BLINK_DURATION = 2000 // 2 full blink cycles before typing starts
+const INTRO_HOLD = 2000 // how long the intro line stays on screen before erasing
+const ERASE_SPEED_RATIO = 0.5 // erasing runs faster than typing
 
-export default function usePrintText(speed: number, text: string) {
-  const [displayText, setDisplayText] = useState('')
+// Shows `intro` (if given) as-is from the first render, holds it, erases it,
+// then types `text`.
+export default function usePrintText(speed: number, text: string, intro?: string) {
+  const [displayText, setDisplayText] = useState(intro ?? '')
   const [phase, setPhase] = useState<Phase>('idle')
-  const interval = useRef<ReturnType<typeof setInterval> | null>(null)
-  const timeout = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const [prevInputs, setPrevInputs] = useState({ speed, text, intro })
+
+  // `text`/`intro` can change without a remount (e.g. a client-side locale
+  // switch). Reset during render so the effect below starts from a clean
+  // state; on a fresh mount this is a no-op.
+  if (prevInputs.speed !== speed || prevInputs.text !== text || prevInputs.intro !== intro) {
+    setPrevInputs({ speed, text, intro })
+    setDisplayText(intro ?? '')
+    setPhase('idle')
+  }
 
   useEffect(() => {
-    timeout.current = setTimeout(() => {
+    let cancelled = false
+    let timer: ReturnType<typeof setTimeout> | null = null
+    const wait = (ms: number) => new Promise<void>(resolve => {
+      timer = setTimeout(resolve, ms)
+    })
+
+    const type = async (value: string, delay: number) => {
       setPhase('typing')
-      interval.current = setInterval(() => {
-        setDisplayText(prev => {
-          if (prev.length >= text.length - 1) {
-            clearInterval(interval.current!)
-            setPhase('done')
-          }
-          return prev + text[prev.length]
-        })
-      }, speed)
-    }, BLINK_DURATION)
+      for (let i = 1; i <= value.length; i++) {
+        await wait(delay)
+        if (cancelled) return
+        setDisplayText(value.slice(0, i))
+      }
+    }
+
+    const erase = async (value: string) => {
+      setPhase('typing')
+      for (let i = value.length - 1; i >= 0; i--) {
+        await wait(speed * ERASE_SPEED_RATIO)
+        if (cancelled) return
+        setDisplayText(value.slice(0, i))
+      }
+    }
+
+    const run = async () => {
+      if (intro) {
+        // The intro is already on screen (rendered on the server): hold, erase.
+        await wait(INTRO_HOLD)
+        if (cancelled) return
+        await erase(intro)
+        if (cancelled) return
+      }
+      await wait(intro ? BLINK_DURATION / 2 : BLINK_DURATION)
+      if (cancelled) return
+      await type(text, speed)
+      if (cancelled) return
+      setPhase('done')
+    }
+
+    run()
 
     return () => {
-      clearTimeout(timeout.current!)
-      clearInterval(interval.current!)
-      timeout.current = null
-      interval.current = null
+      cancelled = true
+      if (timer) clearTimeout(timer)
     }
-  }, [speed, text])
+  }, [speed, text, intro])
 
   return { text: displayText, phase }
 }

@@ -1,0 +1,130 @@
+import type { ReactNode } from 'react'
+import type { RoadmapId, SkillId, JobId } from './structure'
+
+export type Locale = 'en' | 'ru'
+
+export interface SeoText {
+  title: string
+  description: string
+  cvTitle: string
+  cvDescription: string
+  historyTitle: string
+  historyDescription: string
+  servicesTitle: string
+  servicesDescription: string
+  mentoringTitle: string
+  mentoringDescription: string
+  qaTitle: string
+  qaDescription: string
+  aiTitle: string
+  aiDescription: string
+  businessTitle: string
+  businessDescription: string
+  claudeCodeTitle: string
+  claudeCodeDescription: string
+  mockInterviewTitle: string
+  mockInterviewDescription: string
+  frontendMentoringTitle: string
+  frontendMentoringDescription: string
+}
+
+export interface UiText {
+  nav: { main: string; story: string; cv: string; services: string }
+  // Visually hidden H1 of the History page (the timeline has no visible heading).
+  historyHeading: string
+  personName: string
+  jobTitle: string
+  contact: {
+    cta: string
+    title: string
+    note: string
+    close: string
+  }
+  service: {
+    faqTitle: string
+    hubTitle: string
+    hubLead: string
+    // Section headings on /services, one per audience.
+    groupPeople: string
+    groupBusiness: string
+    more: string
+    back: string
+    subpagesTitle: string
+    reviews: string
+  }
+  cv: {
+    personalInfo: string
+    skills: string
+    education: string
+    experience: string
+    phone: string
+    email: string
+    telegram: string
+    linkedin: string
+  }
+  seo: SeoText
+}
+
+export interface MainText {
+  intro: string[]
+  greeting: string
+  description: ReactNode
+}
+
+export interface GoalItem {
+  name: string
+  note?: string
+}
+
+export interface RoadmapText {
+  plot: ReactNode
+  goalsLabel: string
+  goals: GoalItem[]
+  plotPosition?: string
+  goalsPosition?: string
+}
+
+export interface CvText {
+  about: string
+  education: { name: string; description: string; gradeLevel: string }
+  // Optional per-locale override for cvStructure.educationHeight, mirroring
+  // RoadmapText's plotPosition/goalsPosition escape hatch: the education
+  // block's institution name and degree line run measurably longer in
+  // Russian, so the shared (English-tuned) height can be overridden here
+  // without touching the locale-invariant default in structure.tsx.
+  educationHeight?: number
+  skills: Record<SkillId, { name: string; description: string }>
+  experience: Record<JobId, {
+    jobName: string
+    companyName: string
+    description: ReactNode
+  }>
+}
+
+export type ServiceId = 'mentoring' | 'qa' | 'ai' | 'business' | 'claudeCode' | 'mockInterview' | 'frontendMentoring'
+
+export interface ServiceSection {
+  title: string
+  items: string[]
+}
+
+export interface ServicePageText {
+  // Short name of the service, used in Service JSON-LD.
+  name: string
+  // One or two sentences for the card on /services.
+  summary: string
+  h1: string
+  lead: string
+  sections: ServiceSection[]
+  faq: { q: string; a: string }[]
+  ctaTitle: string
+  ctaText: string
+}
+
+export interface Dictionary {
+  ui: UiText
+  main: MainText
+  roadmap: Record<RoadmapId, RoadmapText>
+  cv: CvText
+  services: Record<ServiceId, ServicePageText>
+}

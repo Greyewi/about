@@ -23,16 +23,28 @@ const MyPhoto = typeof MyPhotoImport === 'string' ? MyPhotoImport : (MyPhotoImpo
 
 export const Legend = styled.h1`
   color: ${variables.glow10Color};
-  font-family: var(--font-legend), var(--font-mode-seven), Roboto, serif;
+  font-family: var(--font-display), Roboto, serif;
   line-height: 179%;
   font-weight: 500;
   font-size: 32px;
   margin: 100px 0 10px 13%;
+  /* Invisible shadows only widen the area Chrome repaints around the text.
+     Without them, erasing the intro left stray pixels above the glyphs until
+     something (e.g. selecting the text) forced a repaint. */
+  text-shadow: 0 -0.3em 0 transparent, 0 0.3em 0 transparent, -0.2em 0 0 transparent, 0.2em 0 0 transparent;
 
+  .locale-ru & {
+    font-size: 24px;
+    line-height: 165%;
+  }
 
   @media (max-width: 768px) {
     font-size: 25px;
     margin: 50px 0 10px 13%;
+
+    .locale-ru & {
+      font-size: 16px;
+    }
   }
 `
 
