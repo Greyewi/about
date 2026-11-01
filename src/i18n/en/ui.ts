@@ -2,6 +2,7 @@ import type { UiText } from '../types'
 
 export const ui: UiText = {
   nav: { main: 'Main', story: 'Story', cv: 'CV', services: 'Services' },
+  historyHeading: "The developer's way",
   personName: 'Suntsev Sergey',
   jobTitle: 'Web Engineer',
   contact: {
@@ -40,12 +41,12 @@ export const ui: UiText = {
     historyDescription: "Sergey Suntsev's career timeline, from first lines of code to full-stack engineering roles.",
     servicesTitle: 'Online Tech Mentor & Business Services: Programming, QA, AI — Sergey Suntsev',
     servicesDescription: 'One-on-one online lessons with a tech mentor: coding for adults, mock interviews, test automation mentoring, Claude Code coaching. For business: AI consulting, code audits and custom development.',
-    mentoringTitle: 'Software Developer Mentor: Mock Interviews & Coding for Adults — Sergey Suntsev',
-    mentoringDescription: 'One-on-one mentoring for frontend and full-stack developers: mock technical interviews, code review, and learning to code with a mentor as an adult. Students work at Yandex, Ozon, Uber and Disney.',
+    mentoringTitle: 'Software Developer Mentor: From First Code to Job Offer — Sergey Suntsev',
+    mentoringDescription: 'One-on-one mentoring for software developers: learning to code as an adult, JavaScript, TypeScript and Node.js, interview prep and code review.',
     qaTitle: 'Test Automation Mentor: Playwright & TypeScript, QA Interview Prep — Sergey Suntsev',
     qaDescription: 'One-on-one QA mentoring: test automation in TypeScript (Playwright, Puppeteer, WebdriverIO, Jest), API testing, SQL, QA interview prep and moving from manual testing to automation.',
-    aiTitle: 'Claude Code & AI Coding Mentor: Vibe Coding, Cursor, AI Agents — Sergey Suntsev',
-    aiDescription: 'One-on-one Claude Code coaching and AI coding lessons: vibe coding, Cursor, how to build AI agents, prompting and local models. No coding background needed.',
+    aiTitle: 'AI Coding Mentor: AI Agents, Prompting & Cursor — Sergey Suntsev',
+    aiDescription: 'One-on-one AI coding lessons: how to build AI agents, prompting, Cursor and local models. No coding background needed.',
     businessTitle: 'AI Consulting for Small Business, Code Audits & Custom Development — Sergey Suntsev',
     businessDescription: 'AI implementation for small and mid-sized businesses, AI training for employees, code and architecture audits, and custom web and Web3 development.',
     claudeCodeTitle: 'Learn Claude Code & Vibe Coding from Scratch: 1:1 Coaching — Sergey Suntsev',

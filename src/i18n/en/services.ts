@@ -7,7 +7,7 @@ const frontendYears = numberOfYears('2016')
 export const services: Record<ServiceId, ServicePageText> = {
   mentoring: {
     name: 'Software developer mentoring',
-    summary: 'Learning to code as an adult, mock technical interviews and code review for frontend and full-stack developers.',
+    summary: 'Learning to code as an adult, JavaScript, TypeScript and Node.js, interview prep and code review.',
     h1: 'Software Developer Mentor: From First Code to Job Offer',
     lead: `One-on-one online lessons in web development: we start from scratch, prepare for interviews and work toward your first offer. I have been writing code for over ${devYears} years and mentoring since 2020. My students work at Yandex, Sber, T-Bank, Ozon, Wildberries, Uber and Disney.`,
     sections: [
@@ -107,15 +107,15 @@ export const services: Record<ServiceId, ServicePageText> = {
     ctaText: 'Message me: we will review your testing experience and make a plan.',
   },
   ai: {
-    name: 'Claude Code and AI coding mentoring',
-    summary: 'Vibe coding in Claude Code and Cursor, how to build AI agents, prompting and local models.',
-    h1: 'Claude Code & AI Coding Mentor',
-    lead: 'One-on-one coaching on coding with AI: vibe coding in Claude Code and Cursor, building your own AI agents, prompting and local models. No coding background needed.',
+    name: 'AI coding mentoring',
+    summary: 'How to build AI agents, prompting, Cursor and local models, with no coding background needed.',
+    h1: 'AI Coding Mentor: AI Agents, Prompting & Cursor',
+    lead: 'One-on-one coaching on coding with AI: building your own AI agents, prompting, working in Cursor and running local models. No coding background needed. Claude Code and vibe coding have their own program, linked below.',
     sections: [
       {
         title: 'What you will learn',
         items: [
-          'Build websites, bots and prototypes in Cursor and Claude Code, even with no coding background.',
+          'Build websites, bots and prototypes in Cursor, even with no coding background.',
           'Write prompts that get predictable results from ChatGPT, Claude and Gemini.',
           'Build AI agents that get tasks done on their own.',
           'Run AI models on your own machine without sending data outside.',

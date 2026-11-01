@@ -54,4 +54,5 @@ To learn React, check out the [React documentation](https://reactjs.org/).
   a duplicate of the unprefixed English pages) but hreflang tags are omitted, since search
   engines require fully-qualified URLs there. Also used for absolute URLs in `/sitemap.xml`,
   `/robots.txt`, Open Graph tags and JSON-LD (sitemap and robots fall back to the request
-  host when unset).
+  host when unset). Production value (`https://greyewi.dev`) lives in `.env.production`,
+  which `next build` reads; the value is inlined at build time, so changing it needs a rebuild.

@@ -30,6 +30,8 @@ export interface SeoText {
 
 export interface UiText {
   nav: { main: string; story: string; cv: string; services: string }
+  // Visually hidden H1 of the History page (the timeline has no visible heading).
+  historyHeading: string
   personName: string
   jobTitle: string
   contact: {
