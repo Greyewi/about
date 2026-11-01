@@ -11,14 +11,18 @@ const ERASE_SPEED_RATIO = 0.5 // erasing runs faster than typing
 export default function usePrintText(speed: number, text: string, intro?: string) {
   const [displayText, setDisplayText] = useState(intro ?? '')
   const [phase, setPhase] = useState<Phase>('idle')
+  const [prevInputs, setPrevInputs] = useState({ speed, text, intro })
 
-  useEffect(() => {
-    // `text`/`intro` are dependencies, so this effect re-runs whenever they
-    // change — including without a remount (e.g. a client-side locale
-    // switch). Reset explicitly; on a fresh mount this is a no-op.
+  // `text`/`intro` can change without a remount (e.g. a client-side locale
+  // switch). Reset during render so the effect below starts from a clean
+  // state; on a fresh mount this is a no-op.
+  if (prevInputs.speed !== speed || prevInputs.text !== text || prevInputs.intro !== intro) {
+    setPrevInputs({ speed, text, intro })
     setDisplayText(intro ?? '')
     setPhase('idle')
+  }
 
+  useEffect(() => {
     let cancelled = false
     let timer: ReturnType<typeof setTimeout> | null = null
     const wait = (ms: number) => new Promise<void>(resolve => {
