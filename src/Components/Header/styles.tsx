@@ -94,12 +94,14 @@ export const Logo = styled.div`
 
 // The table in the logo kaomoji. It is flipped by rotating the same glyphs
 // rather than swapping in ┻━┻, so the upside-down table matches exactly.
+// The figure stands to the right and throws the table left, so it turns
+// counterclockwise (-180deg).
 export const Table = styled.span`
   display: inline-block;
   /* Five hard frames (every 45°) instead of a smooth turn, 8-bit style. */
   transition: transform 0.4s steps(5, jump-none);
 
   ${Logo}:hover & {
-    transform: translateY(0.45em) rotate(180deg);
+    transform: translateY(0.45em) rotate(-180deg);
   }
 `

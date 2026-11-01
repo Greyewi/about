@@ -30,7 +30,7 @@ export const cv: CvText = {
       jobName: 'TS/JS Web3 Fullstack Engineer ',
       companyName: 'Tonstakers',
       description: <ul>
-        <li>Maintained the main staking application, improved performance, and modernized the architecture.</li>
+        <li>Contributed to the company's core projects, in particular optimizing performance and refactoring the codebase.</li>
         <li>Delivered with AI a pixel-perfect landing page matching the provided design specifications.</li>
         <li>Implemented integrations with third-party Web3 services to extend product functionality.</li>
       </ul>,
