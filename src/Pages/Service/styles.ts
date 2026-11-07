@@ -8,7 +8,7 @@ export const Article = styled.article`
   line-height: 24px;
 
   @media (max-width: 768px) {
-    margin: 30px 16px 80px 16px;
+    margin: 30px ${variables.mobileGutter} 80px;
   }
 `
 

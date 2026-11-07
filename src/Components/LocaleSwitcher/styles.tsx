@@ -7,6 +7,13 @@ export const SwitcherContainer = styled.div`
   gap: 8px;
   align-items: center;
   margin-left: 16px;
+
+  /* On phones the nav links are hidden: push the switcher right, next to
+     the burger (whose icon has 10px of hit area on its left). */
+  @media (max-width: 768px) {
+    margin-left: auto;
+    margin-right: 10px;
+  }
 `
 
 export const LocaleLink = styled(Link)<{ $active: boolean }>`

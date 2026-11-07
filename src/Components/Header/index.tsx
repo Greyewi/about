@@ -17,14 +17,13 @@ function Header() {
                         <div>Greyewi</div>
                     </Logo>
                 </H2>
-                <ExpandedNavBar>
+                <ExpandedNavBar actions={<LocaleSwitcher />}>
                     <Link href="/"><Typography>{ui.nav.main}</Typography></Link>
                     <Link href="/services"><Typography>{ui.nav.services}</Typography></Link>
                     <Link href="/history"><Typography>{ui.nav.story}</Typography></Link>
                     <Link href="/cv"><Typography>{ui.nav.cv}</Typography></Link>
                     {/*<Link href="/mind-map"><Typography>Mind map</Typography></Link>*/}
                 </ExpandedNavBar>
-                <LocaleSwitcher />
             </WrapperInline>
         </HeaderElement>
     );

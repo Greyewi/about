@@ -183,6 +183,10 @@ export const CVExperienceBody = styled.div`
     }
     
     li {
+      /* Long URLs in the list (e.g. codabra.org/schedule/msk) widened the
+         page on phones. */
+      overflow-wrap: anywhere;
+
       @media print {
         page-break-after: avoid;
       }

@@ -2,6 +2,7 @@ import type { UiText } from '../types'
 
 export const ui: UiText = {
   nav: { main: 'Main', story: 'Story', cv: 'CV', services: 'Services' },
+  menu: { open: 'Open menu', close: 'Close menu' },
   historyHeading: "The developer's way",
   personName: 'Suntsev Sergey',
   jobTitle: 'Web Engineer',

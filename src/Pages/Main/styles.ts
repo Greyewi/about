@@ -40,7 +40,7 @@ export const Legend = styled.h1`
 
   @media (max-width: 768px) {
     font-size: 25px;
-    margin: 50px 0 10px 13%;
+    margin: 50px ${variables.mobileGutter} 10px;
 
     .locale-ru & {
       font-size: 16px;
@@ -56,6 +56,10 @@ export const Description = styled.div`
     color: ${variables.text10Color};
     margin: 10px 0 190px 13%;
     line-height: 20px;
+
+    @media (max-width: 768px) {
+      margin: 10px ${variables.mobileGutter} 190px;
+    }
 `
 
 export const Photo = styled.img`

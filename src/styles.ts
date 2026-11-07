@@ -14,6 +14,8 @@ export const variables: IVariables = {
     text20Color: '#C9E2F0',
     glow10Color: '#B0FBBC',
     glow20Color: '#82F9A1',
+    // Side padding of header and page content on phones.
+    mobileGutter: '16px',
 }
 
 export const GlobalStyles = createGlobalStyle`
@@ -93,7 +95,9 @@ export const WrapperInline = styled.div`
   align-items: center;
 
   @media (max-width: 768px) {
-    width: calc(100vw - 6%);
+    width: 100%;
+    padding: 0 ${variables.mobileGutter};
+    box-sizing: border-box;
   }
 `
 
@@ -102,7 +106,9 @@ export const Wrapper = styled.div`
   flex-direction: column;
   width: calc(100vw - 20%);
 
+  /* Full width on phones: the pages' own content sets the side gutter.
+     A narrower block here sat flush left with the gap only on the right. */
   @media (max-width: 768px) {
-    width: calc(100vw - 6%);
+    width: 100%;
   }
 `
