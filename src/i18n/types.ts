@@ -36,6 +36,12 @@ export interface UiText {
   historyHeading: string
   personName: string
   jobTitle: string
+  cookies: {
+    label: string
+    text: string
+    accept: string
+    decline: string
+  }
   contact: {
     cta: string
     title: string

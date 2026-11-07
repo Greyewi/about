@@ -3,6 +3,8 @@ import localFont from 'next/font/local'
 import Head from 'next/head'
 import { GlobalStyles, Layout } from '../src/styles'
 import Header from '../src/Components/Header'
+import Analytics from '../src/Components/Analytics'
+import CookieConsent from '../src/Components/CookieConsent'
 import '../styles/globals.css'
 import { useRouter } from 'next/router'
 import { useTranslation } from '../src/i18n/useTranslation'
@@ -123,6 +125,8 @@ export default function App({ Component, pageProps }: AppProps) {
       <GlobalStyles />
       <Header />
       <Component {...pageProps} />
+      <Analytics />
+      <CookieConsent />
     </Layout>
   )
 }

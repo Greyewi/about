@@ -56,3 +56,6 @@ To learn React, check out the [React documentation](https://reactjs.org/).
   `/robots.txt`, Open Graph tags and JSON-LD (sitemap and robots fall back to the request
   host when unset). Production value (`https://greyewi.dev`) lives in `.env.production`,
   which `next build` reads; the value is inlined at build time, so changing it needs a rebuild.
+- `NEXT_PUBLIC_GA_ID` — Google Analytics 4 measurement ID (`G-XXXXXXXXXX`), set in
+  `.env.production`. The GA4 tag (`src/Components/Analytics`) loads only in production builds
+  and only when this is a valid ID; empty means no counter. Also inlined at build time.

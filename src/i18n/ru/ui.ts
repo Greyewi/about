@@ -6,6 +6,12 @@ export const ui: UiText = {
   historyHeading: 'Путь программиста',
   personName: 'Сергей Сунцев',
   jobTitle: 'Веб-инженер',
+  cookies: {
+    label: 'Согласие на cookies',
+    text: 'Сайт использует cookies Google Analytics, чтобы понимать, какие страницы полезны. Разрешить?',
+    accept: 'Принять',
+    decline: 'Отказаться',
+  },
   contact: {
     cta: 'Написать мне',
     title: 'Напишите мне',
