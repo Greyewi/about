@@ -28,6 +28,12 @@ export const ui: UiText = {
     back: 'Все услуги',
     subpagesTitle: 'Подробнее по направлениям',
     reviews: 'Отзывы и рейтинг учеников можно посмотреть на',
+    articlesTitle: 'Материалы по теме',
+  },
+  article: {
+    authorRole: 'веб-инженер и ментор',
+    updated: 'Обновлено',
+    relatedService: 'Если нужна помощь',
   },
   cv: {
     personalInfo: 'Личные данные',

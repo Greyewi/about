@@ -28,6 +28,12 @@ export const ui: UiText = {
     back: 'All services',
     subpagesTitle: 'Go deeper',
     reviews: 'Student reviews and rating (in Russian) are on',
+    articlesTitle: 'Related guides',
+  },
+  article: {
+    authorRole: 'web engineer and mentor',
+    updated: 'Updated',
+    relatedService: 'If you want help with this',
   },
   cv: {
     personalInfo: 'Personal Info',

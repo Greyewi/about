@@ -5,21 +5,24 @@ import { useRouter } from 'next/router'
 import { Wrapper } from '../../styles'
 import { Article, BackLink, Title, Lead, SectionTitle, List, Question, Answer, Cta, Cards, Card, Reviews } from './styles'
 import { useTranslation } from '../../i18n/useTranslation'
-import type { ServiceId } from '../../i18n/types'
+import type { Locale, ServiceId } from '../../i18n/types'
 import Contact from '../../Components/Contact'
 import { SITE_URL, PROFI_URL, jsonLd, localePath } from '../../seo'
 import { SERVICE_PATHS, SERVICE_PARENT, childrenOf } from '../../serviceTree'
+import { articlePath, articlesFor } from '../../articles'
+import { TextLinks } from '../Article/styles'
 
 interface Props {
     id: ServiceId
 }
 
 function Service({ id }: Props) {
-    const { services, ui } = useTranslation()
+    const { services, articles, ui } = useTranslation()
     const { locale, defaultLocale } = useRouter()
     const page = services[id]
     const parent = SERVICE_PARENT[id]
     const subpages = childrenOf(id)
+    const related = articlesFor(id, (locale ?? 'en') as Locale)
 
     const absoluteUrl = (path: string) => SITE_URL ? `${SITE_URL}${localePath(path, locale ?? 'en', defaultLocale ?? 'en')}` : undefined
     const pageUrl = absoluteUrl(SERVICE_PATHS[id])
@@ -105,6 +108,16 @@ function Service({ id }: Props) {
                         </div>
                     ))}
                 </section>
+                {related.length > 0 && (
+                    <section>
+                        <SectionTitle>{ui.service.articlesTitle}</SectionTitle>
+                        <TextLinks>
+                            {related.map(article => (
+                                <li key={article}><Link href={articlePath(article)}>{articles[article]?.h1}</Link></li>
+                            ))}
+                        </TextLinks>
+                    </section>
+                )}
                 <Cta>
                     <SectionTitle>{page.ctaTitle}</SectionTitle>
                     <div>{page.ctaText}</div>

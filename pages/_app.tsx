@@ -11,6 +11,7 @@ import { useTranslation } from '../src/i18n/useTranslation'
 import type { SeoText } from '../src/i18n/types'
 import { cvStructure } from '../src/i18n/structure'
 import { SITE_URL, SAME_AS, jsonLd, localePath } from '../src/seo'
+import type { PageSeo } from '../src/seo'
 
 const modeSeven = localFont({
   src: '../public/fonts/Modeseven.ttf',
@@ -78,9 +79,14 @@ export default function App({ Component, pageProps }: AppProps) {
   const { locale, defaultLocale, locales, pathname, asPath } = router
   const { ui } = useTranslation()
 
+  // Articles carry their own title, description and locale list in pageProps.
+  const pageSeo = (pageProps as { seo?: PageSeo }).seo
   const seoKeys = ROUTE_SEO_KEYS[pathname]
-  const title = seoKeys ? ui.seo[seoKeys.title] : ui.seo.title
-  const description = seoKeys ? ui.seo[seoKeys.description] : ui.seo.description
+  const title = pageSeo?.title ?? (seoKeys ? ui.seo[seoKeys.title] : ui.seo.title)
+  const description = pageSeo?.description ?? (seoKeys ? ui.seo[seoKeys.description] : ui.seo.description)
+  const pageLocales = pageSeo?.locales ?? locales ?? []
+  // x-default points at the default locale when the page exists in it, otherwise at the page itself.
+  const xDefaultLocale = pageLocales.includes(defaultLocale ?? 'en') ? (defaultLocale ?? 'en') : (locale ?? 'en')
 
   // `asPath` is already locale-free under Next's Pages Router i18n routing
   // (e.g. on /ru/cv, router.asPath is '/cv' and router.locale is 'ru'), so
@@ -96,13 +102,13 @@ export default function App({ Component, pageProps }: AppProps) {
         <title>{title}</title>
         <meta name="description" content={description} />
         <link rel="canonical" href={canonicalHref} />
-        {SITE_URL && (locales ?? []).map(loc => (
+        {SITE_URL && pageLocales.map(loc => (
           <link key={loc} rel="alternate" hrefLang={loc} href={`${SITE_URL}${pathFor(loc)}`} />
         ))}
         {SITE_URL && (
-          <link rel="alternate" hrefLang="x-default" href={`${SITE_URL}${pathFor(defaultLocale ?? 'en')}`} />
+          <link rel="alternate" hrefLang="x-default" href={`${SITE_URL}${pathFor(xDefaultLocale)}`} />
         )}
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content={pageSeo?.ogType ?? 'website'} />
         <meta property="og:site_name" content={ui.personName} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />

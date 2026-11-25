@@ -59,6 +59,16 @@ export interface UiText {
     back: string
     subpagesTitle: string
     reviews: string
+    // Heading of the plain list of related articles on a service page.
+    articlesTitle: string
+  }
+  article: {
+    // Shown after the author's name in the byline; also the author's jobTitle in Article JSON-LD.
+    authorRole: string
+    // "Updated" label in the byline, followed by the date.
+    updated: string
+    // Heading above the card of the service the article leads to.
+    relatedService: string
   }
   cv: {
     personalInfo: string
@@ -129,10 +139,35 @@ export interface ServicePageText {
   ctaText: string
 }
 
+export type ArticleId = 'claudeCodeBeginners' | 'mockInterviewGuide' | 'claudeCodeVsCursorVsCodex'
+
+// One block of article body. Strings may wrap inline code in backticks and contain [text](url) links.
+export type ArticleBlock =
+  | { p: string }
+  | { list: string[] }
+  | { steps: string[] }
+  | { code: string }
+  | { table: { head: string[]; rows: string[][] } }
+
+export interface ArticleText {
+  // <title> and meta description.
+  title: string
+  description: string
+  h1: string
+  // Direct answer to the query in two or three sentences; also the Article JSON-LD description.
+  lead: string
+  sections: { title: string; blocks: ArticleBlock[] }[]
+  faq: { q: string; a: string }[]
+  ctaTitle: string
+  ctaText: string
+}
+
 export interface Dictionary {
   ui: UiText
   main: MainText
   roadmap: Record<RoadmapId, RoadmapText>
   cv: CvText
   services: Record<ServiceId, ServicePageText>
+  // An article may exist in one locale only; a missing entry means no page in that locale.
+  articles: Partial<Record<ArticleId, ArticleText>>
 }

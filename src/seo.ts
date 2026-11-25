@@ -8,6 +8,15 @@ export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/+$/, '')
 // Routes listed in sitemap.xml, in both locales.
 export const PUBLIC_ROUTES = ['/', '/services', '/services/mentoring', '/services/mentoring/frontend', '/services/mentoring/mock-interview', '/services/qa', '/services/ai', '/services/ai/claude-code', '/services/business', '/history', '/cv']
 
+// Per-page SEO passed through pageProps by pages whose title is not keyed by route (articles).
+export interface PageSeo {
+  title: string
+  description: string
+  // Locales the page exists in; hreflang is emitted only for these.
+  locales: string[]
+  ogType: 'article'
+}
+
 export const PROFI_URL = 'https://profi.ru/profile/SuntsevSM'
 
 export const SAME_AS = [
